@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b6g43eep4scsy"]
+[gd_scene load_steps=3 format=3 uid="uid://b6g43eep4scsy"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="1_0ohqa"]
+[ext_resource type="Script" path="res://Scripts/Managers/ChoicesManager.cs" id="2_rkub5"]
 
 [node name="Main" type="Node2D"]
 
@@ -44,5 +47,12 @@ grow_vertical = 2
 color = Color(0.140447, 0.140447, 0.140447, 1)
 
 [node name="Managers" type="Node2D" parent="."]
+
+[node name="GameManager" type="Node2D" parent="Managers"]
+script = ExtResource("1_0ohqa")
+
+[node name="ChoicesManager" type="Node2D" parent="Managers"]
+script = ExtResource("2_rkub5")
+initPriority = 1
 
 [node name="GameContainer" type="Node2D" parent="."]

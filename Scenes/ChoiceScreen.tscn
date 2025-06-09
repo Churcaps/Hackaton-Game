@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxp4ssrjdk4d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6u2fv"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lhqx"]
+font_size = 64
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v2nxr"]
+
+[node name="ChoiceScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219501, 0.219501, 0.219501, 1)
+
+[node name="ContexteLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.259
+anchor_top = 0.125
+anchor_right = 0.674
+anchor_bottom = 0.234
+offset_left = 0.959961
+offset_right = 0.559937
+offset_bottom = 0.599976
+text = "Blabla c la merde"
+label_settings = SubResource("LabelSettings_6u2fv")
+
+[node name="CostChoice1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094
+anchor_top = 0.532
+anchor_right = 0.262
+anchor_bottom = 0.587
+offset_left = 0.359985
+offset_top = -0.200012
+offset_right = 0.279907
+offset_bottom = -0.200012
+text = "This Item : x X"
+label_settings = SubResource("LabelSettings_1lhqx")
+
+[node name="CostChoice2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.405
+anchor_top = 0.53
+anchor_right = 0.573
+anchor_bottom = 0.585
+offset_left = 1.19995
+offset_top = -6.10352e-05
+offset_right = 1.12
+offset_bottom = -6.10352e-05
+text = "This Item : x X"
+label_settings = SubResource("LabelSettings_1lhqx")
+
+[node name="CostChoice3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.717
+anchor_top = 0.544
+anchor_right = 0.885
+anchor_bottom = 0.599
+offset_left = -0.52002
+offset_top = -0.400024
+offset_right = -0.600098
+offset_bottom = -0.400085
+text = "This Item : x X"
+label_settings = SubResource("LabelSettings_1lhqx")
+
+[node name="Choice1" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.039
+anchor_top = 0.516
+anchor_right = 0.324
+anchor_bottom = 0.631
+offset_left = -4.84
+offset_top = 206.4
+offset_right = -6.44
+offset_bottom = 205.4
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v2nxr")
+text = "Moi faire ca"
+
+[node name="Choice2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.348
+anchor_top = 0.522
+anchor_right = 0.633
+anchor_bottom = 0.637
+offset_left = -4.88007
+offset_top = 206.8
+offset_right = -6.47998
+offset_bottom = 205.8
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v2nxr")
+text = "Moi faire ca"
+
+[node name="Choice3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.666
+anchor_top = 0.524
+anchor_right = 0.95
+anchor_bottom = 0.639
+offset_left = -5.95996
+offset_top = 206.6
+offset_right = -5.0
+offset_bottom = 205.6
+theme_override_font_sizes/font_size = 128
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v2nxr")
+text = "Moi faire ca"
