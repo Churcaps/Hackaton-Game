@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="Hackaton-Game"
-config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+run/main_scene="res://Scenes/Main.tscn"
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1600
+window/stretch/mode="viewport"
 
 [dotnet]
 
 project/assembly_name="Hackaton-Game"
+
+[rendering]
+
+renderer/rendering_method="mobile"
