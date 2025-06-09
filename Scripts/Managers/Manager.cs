@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 // Author : PACCAPELO Auguste
 
@@ -11,6 +12,7 @@ namespace Com.IsartDigital.Hackaton
 		// ---------- VARIABLES ---------- \\
 
 		// ----- Managers ----- \\
+		[Export] protected int initPriority = 0;
 		public static int numManager { get; private set; } = 0;
 		private static Dictionary<Type, Manager> allManagers = new Dictionary<Type, Manager>();
 		public static Action allManagersFinishedInits;
@@ -30,7 +32,7 @@ namespace Com.IsartDigital.Hackaton
 		public override void _Ready()
 		{
 			thisType = GetType();
-
+			
 			// Prevent duplicate manager of the same type
 			if (allManagers.ContainsKey(thisType))
 			{
@@ -68,7 +70,9 @@ namespace Com.IsartDigital.Hackaton
 		{
 			if (!isInitsFinished)
 			{
-				foreach (Manager lManager in allManagers.Values) lManager.Init();
+				List<Manager> allManagersList = allManagers.Values.ToList();
+				allManagersList.Sort((a, b) => b.initPriority.CompareTo(a.initPriority));
+				foreach (Manager lManager in allManagersList) lManager.Init();
 				isInitsFinished = true;
 				allManagersFinishedInits?.Invoke();
 				return;
