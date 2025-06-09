@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Com.IsartDigital.Hackaton
 {
-	public abstract class Manager : Node2D
+	public abstract partial class Manager : Node2D
 	{
 		// ---------- VARIABLES ---------- \\
 

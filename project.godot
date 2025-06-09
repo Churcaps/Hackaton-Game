@@ -18,6 +18,8 @@ config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 
 window/size/viewport_width=2560
 window/size/viewport_height=1600
+window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
@@ -28,3 +30,4 @@ project/assembly_name="Hackaton-Game"
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
