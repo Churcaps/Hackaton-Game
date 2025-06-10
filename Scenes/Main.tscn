@@ -1,14 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6g43eep4scsy"]
 
-[ext_resource type="PackedScene" uid="uid://b84hbn2ung4ex" path="res://Scenes/CharacterSelection.tscn" id="1_dfsjn"]
+[ext_resource type="PackedScene" uid="uid://clb352hc0p2kl" path="res://Scenes/in_game.tscn" id="1_a07bw"]
 [ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="2_so8hn"]
 [ext_resource type="Script" path="res://Scripts/Managers/ChoicesManager.cs" id="3_vf3j2"]
 
 [node name="Main" type="Node2D"]
 
 [node name="UI" type="CanvasLayer" parent="."]
-
-[node name="CharacterSelection" parent="UI" instance=ExtResource("1_dfsjn")]
 
 [node name="Menu" type="Control" parent="UI"]
 layout_mode = 3
@@ -17,6 +15,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="InGame" parent="UI/Menu" instance=ExtResource("1_a07bw")]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
 
 [node name="HUD" type="Control" parent="UI"]
 layout_mode = 3

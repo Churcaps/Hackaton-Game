@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcleoqm6tvtpp"]
+[gd_scene load_steps=15 format=3 uid="uid://clb352hc0p2kl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/InGame.cs" id="1_t226q"]
 
@@ -33,7 +33,29 @@ fill_to = Vector2(0, 0.524786)
 font_size = 136
 font_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "livreImage", "phoneImage")]
+[sub_resource type="Gradient" id="Gradient_7hjub"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q6d35"]
+gradient = SubResource("Gradient_7hjub")
+width = 734
+height = 124
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0.0591935)
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3cge"]
+font_size = 76
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 56
+shadow_color = Color(0, 0, 0, 0.8)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_guii4"]
+gradient = SubResource("Gradient_7hjub")
+width = 734
+height = 124
+fill_from = Vector2(0, 0.566567)
+
+[node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "livreImage", "phoneImage", "cityString")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,6 +67,7 @@ book = NodePath("Book")
 phone = NodePath("Phone")
 livreImage = NodePath("ColorRect2")
 phoneImage = NodePath("pphone")
+cityString = NodePath("Label")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -167,9 +190,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1126.0
+offset_left = -404.0
 offset_top = -683.0
-offset_right = 1126.0
+offset_right = 404.0
 offset_bottom = 683.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -178,11 +201,72 @@ color = Color(1, 0.556863, 1, 1)
 
 [node name="Label" type="Label" parent="pphone"]
 layout_mode = 0
-offset_left = 934.0
-offset_top = 146.0
-offset_right = 1713.0
-offset_bottom = 332.0
+offset_left = 887.0
+offset_top = 128.0
+offset_right = 1666.0
+offset_bottom = 314.0
 text = "TELEPHONE"
 label_settings = SubResource("LabelSettings_lduvr")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pphone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = -440.0
+offset_right = 377.0
+offset_bottom = 626.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 170
+
+[node name="TextureButton" type="TextureButton" parent="pphone/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_q6d35")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="pphone/VBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = -41.0
+offset_bottom = 114.0
+grow_horizontal = 2
+text = "PHILIPPE"
+label_settings = SubResource("LabelSettings_c3cge")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="pphone/VBoxContainer/TextureButton"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 12.0
+offset_right = 136.0
+offset_bottom = 106.0
+
+[node name="TextureButton2" type="TextureButton" parent="pphone/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_guii4")
+ignore_texture_size = true
+
+[node name="Label2" type="Label" parent="pphone/VBoxContainer/TextureButton2"]
+offset_top = 4.0
+offset_right = 718.0
+offset_bottom = 122.0
+text = "GENEVIève"
+label_settings = SubResource("LabelSettings_c3cge")
+horizontal_alignment = 2
+uppercase = true
+
+[node name="ColorRect" type="ColorRect" parent="pphone/VBoxContainer/TextureButton2/Label2"]
+offset_left = 32.0
+offset_top = 12.0
+offset_right = 136.0
+offset_bottom = 106.0
