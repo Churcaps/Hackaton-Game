@@ -48,8 +48,8 @@ namespace Com.IsartDigital.Hackaton
 
 		public static void SetBaseStats(int pMoney, int pComfort, int pSocial)
 		{
-			allItems.Add(StatType.Money, pMoney);
-			allItems.Add(StatType.Comfort, pComfort);
+			allItems.Add(StatType.Argent, pMoney);
+			allItems.Add(StatType.Confort, pComfort);
 			allItems.Add(StatType.Social, pSocial);
 		}
 
@@ -68,13 +68,13 @@ namespace Com.IsartDigital.Hackaton
 			allItems[pStat] += pAmout;
 			switch (pStat)
 			{
-				case StatType.Comfort:
+				case StatType.Confort:
                     allItems[pStat] = Mathf.Clamp(allItems[pStat], minComfortLevel, maxComfortLevel);
 					break;
 				case StatType.Social:
                     allItems[pStat] = Mathf.Clamp(allItems[pStat], minContactLebel, maxContactLevel);
 					break;
-				case StatType.Money:
+				case StatType.Argent:
                     allItems[pStat] = Mathf.Clamp(allItems[pStat], minMoneyLevel, maxContactLevel);
 					break;
 				default:
@@ -85,9 +85,9 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Destructor ----- \\
 
-		public override void Destructor()
+		public override void Destructor(bool Destroy = true)
 		{
-			base.Destructor();
+			base.Destructor(Destroy);
 		}
 	}
 }

@@ -283,5 +283,6 @@ offset_bottom = 106.0
 script = ExtResource("2_tj4er")
 
 [node name="ChoicesManager" type="Node2D" parent="Managers"]
+scale = Vector2(0.995385, 1)
 script = ExtResource("3_tspvd")
 initPriority = 1

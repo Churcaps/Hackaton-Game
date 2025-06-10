@@ -4,16 +4,14 @@ namespace Com.IsartDigital.Hackaton
 {
 	public enum StatType
 	{
-		Comfort,
+		Confort,
 		Social,
-		Money,
+		Argent,
+        Tent,
+        Cloting,
         Food,
-        Clothing,
-        Phone,
-        Passport,
-        Medication,
-        SurvivalKit,
-        Tent
+        HealthKit,
+        Water
     }
 
     public enum CharactersEnum

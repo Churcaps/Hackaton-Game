@@ -68,7 +68,7 @@ namespace Com.IsartDigital.ProjectName
                                 GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Student;
                                 break;
 						}
-
+						GetParent<CharacterSelection>().LoadStats();
 						continue;
 					}
 

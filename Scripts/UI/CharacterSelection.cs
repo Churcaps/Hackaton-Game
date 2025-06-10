@@ -23,9 +23,9 @@ public partial class CharacterSelection : Control
 
 	private Dictionary<CharactersEnum, Dictionary<StatType, int>> charactersStats = new Dictionary<CharactersEnum, Dictionary<StatType, int>>()
 	{
-		{CharactersEnum.OldLady, new Dictionary<StatType, int>() { {StatType.Money, 6 }, {StatType.Social, 5 }, {StatType.Comfort, 2 } } },
-        {CharactersEnum.Rich, new Dictionary<StatType, int>() { {StatType.Money, 8 }, {StatType.Social, 1 }, {StatType.Comfort, 6 } } },
-        {CharactersEnum.Student, new Dictionary<StatType, int>() { {StatType.Money, 1 }, {StatType.Social, 8 }, {StatType.Comfort, 6 } } }
+		{CharactersEnum.OldLady, new Dictionary<StatType, int>() { {StatType.Argent, 6 }, {StatType.Social, 5 }, {StatType.Confort, 2 } } },
+        {CharactersEnum.Rich, new Dictionary<StatType, int>() { {StatType.Argent, 8 }, {StatType.Social, 1 }, {StatType.Confort, 6 } } },
+        {CharactersEnum.Student, new Dictionary<StatType, int>() { {StatType.Argent, 1 }, {StatType.Social, 8 }, {StatType.Confort, 6 } } }
     };
 
 	public CharactersEnum characterSelected;
@@ -70,7 +70,7 @@ public partial class CharacterSelection : Control
 			GetTree().ChangeSceneToPacked(inGameScene);
 		};
 		Dictionary<StatType, int> lStats = charactersStats[characterSelected];
-		GameManager.SetBaseStats(lStats[StatType.Money], lStats[StatType.Comfort], lStats[StatType.Social]);
+		GameManager.SetBaseStats(lStats[StatType.Argent], lStats[StatType.Confort], lStats[StatType.Social]);
 	}
 
 	private void ReturnCharacterSelection()
@@ -126,5 +126,16 @@ public partial class CharacterSelection : Control
 	private void ShowCharacterInfo()
 	{
 		characterInfo.VisibleCharacters = currentCharacterCount;
+	}
+
+	public void LoadStats()
+	{
+		Dictionary<StatType, int> lStats = charactersStats[characterSelected];
+		string lText = "";
+		foreach (StatType lStat in lStats.Keys)
+		{
+			lText += lStat.ToString() + " : " + lStats[lStat].ToString() + "\n";
+		}
+		characterInfo.Text = lText;
 	}
 }

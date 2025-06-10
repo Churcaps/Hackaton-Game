@@ -82,14 +82,20 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Destructor ----- \\
 
-		public virtual void Destructor()
+		public virtual void Destructor(bool Destroy = true)
 		{
 			if (allManagers[thisType] == this)
 			{
 				numManager--;
 				allManagers.Remove(thisType);
 			}
-			QueueFree();
+			if (Destroy) QueueFree();
 		}
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+			Destructor(false);
+        }
 	}
 }
