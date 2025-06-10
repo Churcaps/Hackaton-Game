@@ -6,7 +6,7 @@ public partial class InGame : Control
 {
     private PackedScene choiceScreenScene = GD.Load<PackedScene>("res://Scenes/ChoiceScreen.tscn");
 
-    [Export] private TextureButton book, phone;
+    [Export] private TextureButton book, phone, next;
 	[Export] private ColorRect livreImage, phoneImage;
 	[Export] private Label cityString;
 
@@ -15,6 +15,7 @@ public partial class InGame : Control
 	{
 		book.Pressed += OpenBook;
 		phone.Pressed += OpenPhone;
+		next.Pressed += NextPhase;
 		livreImage.GetChild<Button>(0).Pressed += CloseBook;
 		phoneImage.GetChild<Button>(0).Pressed += ClosePhone;
 
@@ -24,6 +25,11 @@ public partial class InGame : Control
 		lTween.Finished += ShowChoices;
 
 		cityString.Text = Manager.GetManager<GameManager>().cityName;
+	}
+
+	private void NextPhase()
+	{
+		GetTree().ReloadCurrentScene();
 	}
 
 	private void CloseBook()

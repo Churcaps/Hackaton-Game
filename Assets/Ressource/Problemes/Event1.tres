@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ProblemRessource" load_steps=5 format=3 uid="uid://eo0ybl154cxi"]
+
+[ext_resource type="Resource" uid="uid://c2st2jeya4bff" path="res://Assets/Ressource/Choices/E1_C1.tres" id="1_n2x4a"]
+[ext_resource type="Resource" uid="uid://ck6asgkocxjhi" path="res://Assets/Ressource/Choices/E1_C2.tres" id="2_6rtl3"]
+[ext_resource type="Resource" uid="uid://corpb7iu34ivw" path="res://Assets/Ressource/Choices/E1_C3.tres" id="3_s66s1"]
+[ext_resource type="Script" path="res://Scripts/Tool/ProblemRessource.cs" id="4_xd33a"]
+
+[resource]
+script = ExtResource("4_xd33a")
+name = ""
+text = "Des inondations record dans la ville suite à des précipitations dignes du Déluge, vous n’êtes pas épargné"
+allChoices = Array[Object]([ExtResource("1_n2x4a"), ExtResource("2_6rtl3"), ExtResource("3_s66s1")])

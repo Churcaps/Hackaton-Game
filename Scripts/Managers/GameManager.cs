@@ -81,9 +81,9 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Destructor ----- \\
 
-		public override void Destructor()
+		public override void Destructor(bool Destroy = true)
 		{
-			base.Destructor();
+			base.Destructor(Destroy);
 		}
 	}
 }

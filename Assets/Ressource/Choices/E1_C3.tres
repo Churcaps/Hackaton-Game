@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://corpb7iu34ivw"]
+
+[ext_resource type="Script" path="res://Scripts/Tool/ChoicesRessource.cs" id="1_6s1fc"]
+
+[resource]
+script = ExtResource("1_6s1fc")
+name = "CHOIX 3"
+text = "Minimiser les dégâts et assainir l’habitation"
+typesChanges = Array[int]([])
+amoutChanges = PackedInt32Array()
+resultString = "Tous les vêtements, draps, literie et meubles de Philippe ayant été contaminé par l’inondation, il vous est reconnaissant de lui avoir donné des vêtements chauds. Cependant, votre logement sens le moisi…"
+resultType = Array[int]([2])
+resultAmount = PackedInt32Array(-1)

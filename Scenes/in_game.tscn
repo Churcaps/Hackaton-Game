@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://clb352hc0p2kl"]
+[gd_scene load_steps=18 format=3 uid="uid://clb352hc0p2kl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/InGame.cs" id="1_t226q"]
 [ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="2_tj4er"]
@@ -16,12 +16,19 @@ height = 184
 fill_from = Vector2(0.59556, 0.671795)
 fill_to = Vector2(0.0670005, 0.0324786)
 
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vrol5"]
+gradient = SubResource("Gradient_7b8wc")
+width = 169
+height = 184
+fill_from = Vector2(0.342447, 0.747009)
+fill_to = Vector2(0.643949, 0.364103)
+
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_rhas8"]
 gradient = SubResource("Gradient_7b8wc")
 width = 169
 height = 184
-fill_from = Vector2(0.576948, 0.517949)
-fill_to = Vector2(0, 0.524786)
+fill_from = Vector2(0.614171, 0.545299)
+fill_to = Vector2(0, 0.531624)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6dj5"]
 
@@ -57,7 +64,7 @@ width = 734
 height = 124
 fill_from = Vector2(0, 0.566567)
 
-[node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "livreImage", "phoneImage", "cityString")]
+[node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "next", "livreImage", "phoneImage", "cityString")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,7 +73,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t226q")
 book = NodePath("Book")
-phone = NodePath("Phone")
+phone = NodePath("Phone2")
+next = NodePath("next")
 livreImage = NodePath("ColorRect2")
 phoneImage = NodePath("pphone")
 cityString = NodePath("Label")
@@ -105,7 +113,17 @@ offset_right = 236.0
 offset_bottom = 1555.0
 texture_normal = SubResource("GradientTexture2D_va1ph")
 
-[node name="Phone" type="TextureButton" parent="."]
+[node name="next" type="TextureButton" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2347.0
+offset_top = 1375.0
+offset_right = 2520.0
+offset_bottom = 1559.0
+texture_normal = SubResource("GradientTexture2D_vrol5")
+
+[node name="Phone2" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 1134.0
