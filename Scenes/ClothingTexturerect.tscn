@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1flswopg03m1"]
+
+[ext_resource type="Texture2D" uid="uid://dmqdkw68rgkrp" path="res://Assets/Textures/Icons/Clothing.png" id="1_cvh4l"]
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(225, 250)
+anchors_preset = -1
+anchor_right = 0.088
+anchor_bottom = 0.156
+offset_right = -0.280014
+offset_bottom = 0.399994
+texture = ExtResource("1_cvh4l")
+expand_mode = 1
+stretch_mode = 4
