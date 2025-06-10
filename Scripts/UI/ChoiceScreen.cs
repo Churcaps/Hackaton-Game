@@ -19,6 +19,7 @@ namespace Com.IsartDigital.Hackaton
 		[Export] public Label[] choiceTexts;
 		[Export] public Label[] choiceCosts;
 		[Export] public Label[] choiceNames;
+		[Export] public ColorRect resultColorRect; 
 
         // ----- Others ----- \\
 
@@ -33,6 +34,7 @@ namespace Com.IsartDigital.Hackaton
 			base._Ready();
 
 			Manager.GetManager<ChoicesManager>().SetChoiceScreen(this);
+			Manager.GetManager<ChoicesManager>().resultColorRect2 = resultColorRect;
 		}
 
 		public override void _Process(double pDelta)

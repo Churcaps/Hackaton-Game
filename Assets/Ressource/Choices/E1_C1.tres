@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://c2st2jeya4bff"]
+
+[ext_resource type="Script" path="res://Scripts/Tool/ChoicesRessource.cs" id="1_jocvg"]
+
+[resource]
+script = ExtResource("1_jocvg")
+name = "CHOIX 1"
+text = "Donner de sa personne pour aider le quartier"
+typesChanges = Array[int]([])
+amoutChanges = PackedInt32Array()
+resultString = "Tous les vêtements, draps, literie et meubles de Philippe ayant été contaminé par l’inondation, il vous est reconnaissant de lui avoir donné des vêtements chauds. Cependant, votre logement sens le moisi…"
+resultType = Array[int]([0, 1])
+resultAmount = PackedInt32Array(-2, 2)

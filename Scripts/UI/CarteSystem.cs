@@ -8,6 +8,7 @@ public partial class CarteSystem : Control
 	[Export] private Array<Button> mapButtons = new Array<Button>();
 	[Export] private Array<string> stringNames = new Array<string>();
 	[Export] private PackedScene inGameScene;
+	[Export] private Label textInfo, textStats;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -33,7 +34,7 @@ public partial class CarteSystem : Control
 			Manager.GetManager<GameManager>().cityName = stringNames[pIndex];
 			GetTree().ChangeSceneToPacked(inGameScene);
 		};
-		
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

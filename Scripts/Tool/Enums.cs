@@ -11,7 +11,8 @@ namespace Com.IsartDigital.Hackaton
         Cloting,
         Food,
         HealthKit,
-        Water
+        Water,
+        Contact
     }
 
     public enum CharactersEnum

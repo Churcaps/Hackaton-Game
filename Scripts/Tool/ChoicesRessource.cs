@@ -11,5 +11,8 @@ namespace Com.IsartDigital.Hackaton
 		[Export] public string text;
 		[Export] public Godot.Collections.Array<StatType> typesChanges;
 		[Export] public int[] amoutChanges;
+		[Export] public string resultString;
+		[Export] public Godot.Collections.Array<StatType> resultType;
+		[Export] public int[] resultAmount;
 	}
 }

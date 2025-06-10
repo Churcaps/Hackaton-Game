@@ -12,8 +12,9 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Paths ----- \\
 
-		private const string PROB_PATH = "res://Assets/Ressource/Problemes/TestProb1.tres";
+		private const string PROB_PATH = "res://Assets/Ressource/Problemes/Event1.tres";
 		private ProblemRessource probRes = GD.Load<ProblemRessource>(PROB_PATH);
+		public ColorRect resultColorRect2;
 
 		// ----- Nodes ----- \\
 
@@ -69,12 +70,29 @@ namespace Com.IsartDigital.Hackaton
 		private void ButtonPressed(ChoicesRessource pChoice)
 		{
 			int lLength = pChoice.typesChanges.Count;
-			for (int i = 0;i < lLength;i++)
+			for (int i = 0; i < lLength; i++)
 			{
 				GetManager<GameManager>().UpdateStat(pChoice.typesChanges[i], -pChoice.amoutChanges[i]);
 			}
-            GetManager<GameManager>().PrintAllStats();
-        }
+
+			ShowResult(pChoice);
+		}
+
+		private void ShowResult(ChoicesRessource pChoice)
+		{
+			resultColorRect2.Visible = true;
+
+			resultColorRect2.GetChild<Label>(0).Text = pChoice.resultString;
+
+			for (int i = 0; i < pChoice.resultAmount.Count(); i++)
+			{
+				resultColorRect2.GetChild<Label>(1).Text += "\n" + pChoice.resultAmount[i].ToString() + " " + pChoice.resultType[i].ToString();
+			}
+
+			Tween lTWeen = CreateTween();
+			GetParent<Node2D>().GetParent<Control>().GetChild<TextureButton>(3).Visible = true;
+			lTWeen.TweenProperty(GetParent<Node2D>().GetParent<Control>().GetChild<TextureButton>(3), "modulate", Colors.White, 0.5f);
+		}
 
 		// ----- Destructor ----- \\
 
