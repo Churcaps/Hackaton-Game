@@ -7,13 +7,13 @@ namespace Com.IsartDigital.Hackaton
 {
 	public partial class ChoiceScreen : Control
 	{
-		// ---------- VARIABLES ---------- \\
+        // ---------- VARIABLES ---------- \\
 
-		// ----- Paths ----- \\
+        // ----- Paths ----- \\
 
-		// ----- Nodes ----- \\
+        // ----- Nodes ----- \\
 
-		[Export] public Label probName;
+        [Export] public Label probName;
 		[Export] public Label probText;
 		[Export] public TextureButton[] choiceButtons;
 		[Export] public Label[] choiceTexts;

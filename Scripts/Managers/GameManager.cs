@@ -12,8 +12,6 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Paths ----- \\
 
-		private PackedScene choiceScreenScene = GD.Load<PackedScene>("res://Scenes/ChoiceScreen.tscn");
-
 		// ----- Nodes ----- \\
 
 		[Export] private Control menuContainer;
@@ -40,7 +38,6 @@ namespace Com.IsartDigital.Hackaton
 			allItems.Add(StatType.Comfort, 0);
 			allItems.Add(StatType.Social, 0);
             PrintAllStats();
-            menuContainer.AddChild(choiceScreenScene.Instantiate());
 		}
 
 		public override void _Process(double pDelta)

@@ -122,6 +122,7 @@ text = "FREJUS"
 label_settings = SubResource("LabelSettings_17raa")
 
 [node name="Button" type="Button" parent="France/TextureRect3"]
+layout_mode = 0
 offset_left = -246.0
 offset_top = -151.0
 offset_right = 322.0
@@ -150,6 +151,7 @@ text = "LA ROCHELLE"
 label_settings = SubResource("LabelSettings_17raa")
 
 [node name="Button" type="Button" parent="France/TextureRect4"]
+layout_mode = 0
 offset_left = -246.0
 offset_top = -151.0
 offset_right = 322.0

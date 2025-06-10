@@ -6,6 +6,5 @@
 script = ExtResource("1_443vk")
 name = "Choix 2"
 text = "BlaBla"
-typesChanges = Array[int]([2, 0])
-amoutChanges = PackedInt32Array(1, 2)
-choiceWeight = 0
+typesChanges = Array[int]([2])
+amoutChanges = PackedInt32Array(1)

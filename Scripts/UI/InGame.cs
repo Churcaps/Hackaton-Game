@@ -1,11 +1,12 @@
 using Com.IsartDigital.Hackaton;
-using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Godot;
 using System;
 
 public partial class InGame : Control
 {
-	[Export] private TextureButton book, phone;
+    private PackedScene choiceScreenScene = GD.Load<PackedScene>("res://Scenes/ChoiceScreen.tscn");
+
+    [Export] private TextureButton book, phone;
 	[Export] private ColorRect livreImage, phoneImage;
 	[Export] private Label cityString;
 
@@ -19,6 +20,8 @@ public partial class InGame : Control
 
 		Tween lTween = GetTree().CreateTween().SetTrans(Tween.TransitionType.Quart).SetEase(Tween.EaseType.Out);
 		lTween.TweenProperty(this, "modulate", Colors.White, 0.8f);
+		lTween.TweenInterval(0.33f);
+		lTween.Finished += ShowChoices;
 
 		cityString.Text = Manager.GetManager<GameManager>().cityName;
 	}
@@ -49,5 +52,14 @@ public partial class InGame : Control
 		phoneImage.GetChild<Button>(0).Visible = true;
 		Tween lTween = GetTree().CreateTween().SetTrans(Tween.TransitionType.Quart).SetEase(Tween.EaseType.Out);
 		lTween.TweenProperty(phoneImage, "modulate", Colors.White, 0.5f);
+	}
+
+	private void ShowChoices()
+	{
+		ChoiceScreen lScreen = choiceScreenScene.Instantiate<ChoiceScreen>();
+		lScreen.Modulate = Colors.Transparent;
+        AddChild(lScreen);
+		Tween lTween = CreateTween();
+		lTween.TweenProperty(lScreen, "modulate", Colors.White, 0.75f);
 	}
 }
