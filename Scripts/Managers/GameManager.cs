@@ -21,6 +21,7 @@ namespace Com.IsartDigital.Hackaton
 		// ----- Others ----- \\
 
 		// Gameplay
+		public string cityName;
 		private int minComfortLevel = -5, maxComfortLevel = 5;
 		private int minContactLebel = -5, maxContactLevel = 5;
 		private int minMoneyLevel = 0, maxMoneyLevel = 10;

@@ -1,0 +1,170 @@
+[gd_scene load_steps=12 format=3 uid="uid://umjofpgqnlu8"]
+
+[ext_resource type="Script" path="res://Scripts/UI/CarteSystem.cs" id="1_asinq"]
+[ext_resource type="PackedScene" uid="uid://b6g43eep4scsy" path="res://Scenes/Main.tscn" id="2_rw2ev"]
+[ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="3_pnu1d"]
+[ext_resource type="Script" path="res://Scripts/Managers/ChoicesManager.cs" id="4_6d1eg"]
+
+[sub_resource type="Gradient" id="Gradient_iypfo"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_upjxu"]
+gradient = SubResource("Gradient_iypfo")
+
+[sub_resource type="LabelSettings" id="LabelSettings_17raa"]
+font_size = 71
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0l0f0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51ppa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_com4g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw1l6"]
+
+[node name="Carte" type="Control" node_paths=PackedStringArray("mapButtons")]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asinq")
+mapButtons = [NodePath("France/TextureRect2/Button"), NodePath("France/TextureRect3/Button"), NodePath("France/TextureRect4/Button")]
+stringNames = ["STRASBOURG", "FREJUS", "LA ROCHELLE"]
+inGameScene = ExtResource("2_rw2ev")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.199298, 0.229485, 0.138312, 1)
+
+[node name="France" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.182
+anchor_top = 0.104
+anchor_right = 0.818
+anchor_bottom = 0.899
+offset_left = -0.920044
+offset_top = 0.599991
+offset_right = 0.919922
+offset_bottom = -0.400024
+color = Color(0.14902, 0.101961, 1, 0.458824)
+
+[node name="TextureRect" type="TextureRect" parent="France"]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 200.0
+offset_right = 812.0
+offset_bottom = 261.0
+texture = SubResource("GradientTexture1D_upjxu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="France/TextureRect"]
+layout_mode = 0
+offset_left = -59.0
+offset_top = -111.0
+offset_right = 138.0
+offset_bottom = -14.0
+text = "PARIS"
+label_settings = SubResource("LabelSettings_17raa")
+
+[node name="TextureRect2" type="TextureRect" parent="France"]
+layout_mode = 0
+offset_left = 1486.0
+offset_top = 457.0
+offset_right = 1545.0
+offset_bottom = 518.0
+texture = SubResource("GradientTexture1D_upjxu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="France/TextureRect2"]
+layout_mode = 0
+offset_left = -183.0
+offset_top = -120.0
+offset_right = 280.0
+offset_bottom = -23.0
+text = "STRASBOURG"
+label_settings = SubResource("LabelSettings_17raa")
+
+[node name="Button" type="Button" parent="France/TextureRect2"]
+layout_mode = 0
+offset_left = -246.0
+offset_top = -151.0
+offset_right = 322.0
+offset_bottom = 125.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0l0f0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
+
+[node name="TextureRect3" type="TextureRect" parent="France"]
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 1174.0
+offset_right = 1166.0
+offset_bottom = 1235.0
+texture = SubResource("GradientTexture1D_upjxu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="France/TextureRect3"]
+layout_mode = 0
+offset_left = -59.0
+offset_top = -111.0
+offset_right = 138.0
+offset_bottom = -14.0
+text = "FREJUS"
+label_settings = SubResource("LabelSettings_17raa")
+
+[node name="Button" type="Button" parent="France/TextureRect3"]
+offset_left = -246.0
+offset_top = -151.0
+offset_right = 322.0
+offset_bottom = 125.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0l0f0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
+
+[node name="TextureRect4" type="TextureRect" parent="France"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 736.0
+offset_right = 119.0
+offset_bottom = 797.0
+texture = SubResource("GradientTexture1D_upjxu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="France/TextureRect4"]
+layout_mode = 0
+offset_left = -197.0
+offset_top = -122.0
+offset_right = 261.0
+offset_bottom = -25.0
+text = "LA ROCHELLE"
+label_settings = SubResource("LabelSettings_17raa")
+
+[node name="Button" type="Button" parent="France/TextureRect4"]
+offset_left = -246.0
+offset_top = -151.0
+offset_right = 322.0
+offset_bottom = 125.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0l0f0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
+
+[node name="Managers" type="Node2D" parent="."]
+
+[node name="GameManager" type="Node2D" parent="Managers" node_paths=PackedStringArray("menuContainer")]
+script = ExtResource("3_pnu1d")
+menuContainer = NodePath("")
+
+[node name="ChoicesManager" type="Node2D" parent="Managers"]
+script = ExtResource("4_6d1eg")
+initPriority = 1

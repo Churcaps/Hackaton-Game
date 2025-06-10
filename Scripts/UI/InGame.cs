@@ -1,3 +1,5 @@
+using Com.IsartDigital.Hackaton;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Godot;
 using System;
 
@@ -5,6 +7,7 @@ public partial class InGame : Control
 {
 	[Export] private TextureButton book, phone;
 	[Export] private ColorRect livreImage, phoneImage;
+	[Export] private Label cityString;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -17,6 +20,7 @@ public partial class InGame : Control
 		Tween lTween = GetTree().CreateTween().SetTrans(Tween.TransitionType.Quart).SetEase(Tween.EaseType.Out);
 		lTween.TweenProperty(this, "modulate", Colors.White, 0.8f);
 
+		cityString.Text = Manager.GetManager<GameManager>().cityName;
 	}
 
 	private void CloseBook()
