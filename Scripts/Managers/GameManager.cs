@@ -12,18 +12,20 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Paths ----- \\
 
+		private PackedScene choiceScreenScene = GD.Load<PackedScene>("res://Scenes/ChoiceScreen.tscn");
+
 		// ----- Nodes ----- \\
+
+		[Export] private Control menuContainer;
 
 		// ----- Others ----- \\
 
 		// Gameplay
-		public int comfortLevel, contactLevel, moneyLevel;
-
 		private int minComfortLevel = -5, maxComfortLevel = 5;
 		private int minContactLebel = -5, maxContactLevel = 5;
 		private int minMoneyLevel = 0, maxMoneyLevel = 10;
 
-		public List<ItemType> allItems = new List<ItemType>();
+		public Dictionary<StatType, int> allItems = new Dictionary<StatType, int>();
 
 		// ---------- FUNCTIONS ---------- \\
 
@@ -31,7 +33,10 @@ namespace Com.IsartDigital.Hackaton
 
 		private GameManager() : base() { }
 
-		protected override void Init() { }
+		protected override void Init()
+		{
+			menuContainer.AddChild(choiceScreenScene.Instantiate());
+		}
 
 		public override void _Process(double pDelta)
 		{
@@ -44,16 +49,20 @@ namespace Com.IsartDigital.Hackaton
 
 		public void UpdateStat(StatType pStat, int pAmout)
 		{
+			allItems[pStat] += pAmout;
 			switch (pStat)
 			{
 				case StatType.Comfort:
-					comfortLevel = Mathf.Clamp(comfortLevel + pAmout, minComfortLevel, maxComfortLevel);
+                    allItems[pStat] = Mathf.Clamp(allItems[pStat] + pAmout, minComfortLevel, maxComfortLevel);
 					break;
-				case StatType.Contact:
-					contactLevel = Mathf.Clamp(contactLevel + pAmout, minContactLebel, maxContactLevel);
+				case StatType.Social:
+                    allItems[pStat] = Mathf.Clamp(allItems[pStat] + pAmout, minContactLebel, maxContactLevel);
 					break;
 				case StatType.Money:
-					moneyLevel = Mathf.Clamp(moneyLevel + pAmout, minMoneyLevel, maxContactLevel);
+                    allItems[pStat] = Mathf.Clamp(allItems[pStat] + pAmout, minMoneyLevel, maxContactLevel);
+					break;
+				default:
+					if (allItems[pStat] <= 0) allItems.Remove(pStat);
 					break;
 			}
 		}

@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxp4ssrjdk4d"]
+[gd_scene load_steps=5 format=3 uid="uid://dxp4ssrjdk4d"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ChoiceScreen.cs" id="1_k38h5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6u2fv"]
 font_size = 128
@@ -8,13 +10,19 @@ font_size = 64
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v2nxr"]
 
-[node name="ChoiceScreen" type="Control"]
+[node name="ChoiceScreen" type="Control" node_paths=PackedStringArray("probName", "probText", "choiceNames", "choiceTexts", "choiceCosts")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k38h5")
+probName = NodePath("ContexteLabel")
+probText = NodePath("ProbText")
+choiceNames = [NodePath("Choice1"), NodePath("Choice2"), NodePath("Choice3")]
+choiceTexts = [NodePath("ChoiceTexte1"), NodePath("ChoiceTexte2"), NodePath("ChoiceTexte3")]
+choiceCosts = [NodePath("CostChoice1"), NodePath("CostChoice2"), NodePath("CostChoice3")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -36,6 +44,20 @@ offset_left = 0.959961
 offset_right = 0.559937
 offset_bottom = 0.599976
 text = "Blabla c la merde"
+label_settings = SubResource("LabelSettings_6u2fv")
+
+[node name="ProbText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.246
+anchor_right = 0.688
+anchor_bottom = 0.356
+offset_left = -1.0
+offset_top = 0.399994
+offset_right = 0.719971
+offset_bottom = -0.600037
+text = "il se passe ca et ca"
 label_settings = SubResource("LabelSettings_6u2fv")
 
 [node name="CostChoice1" type="Label" parent="."]
@@ -124,3 +146,45 @@ offset_bottom = 205.6
 theme_override_font_sizes/font_size = 128
 theme_override_styles/focus = SubResource("StyleBoxEmpty_v2nxr")
 text = "Moi faire ca"
+
+[node name="ChoiceTexte1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.802
+anchor_right = 0.317
+anchor_bottom = 0.906
+offset_left = -1.24001
+offset_top = -0.200073
+offset_right = -0.743896
+offset_bottom = -0.665039
+text = "C ca et ca et ca pck ca"
+label_settings = SubResource("LabelSettings_1lhqx")
+
+[node name="ChoiceTexte2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.351
+anchor_top = 0.802
+anchor_right = 0.639
+anchor_bottom = 0.906
+offset_left = -0.560059
+offset_top = -0.200073
+offset_right = -0.0639648
+offset_bottom = -0.665039
+text = "C ca et ca et ca pck ca"
+label_settings = SubResource("LabelSettings_1lhqx")
+
+[node name="ChoiceTexte3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.651
+anchor_top = 0.796
+anchor_right = 0.939
+anchor_bottom = 0.899
+offset_left = -0.560059
+offset_top = -0.600098
+offset_right = -0.0639648
+offset_bottom = 0.534912
+text = "C ca et ca et ca pck ca"
+label_settings = SubResource("LabelSettings_1lhqx")

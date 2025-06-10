@@ -13,19 +13,25 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Nodes ----- \\
 
-		// ----- Others ----- \\
+		[Export] public Label probName;
+		[Export] public Label probText;
+		[Export] public Button[] choiceNames;
+		[Export] public Label[] choiceTexts;
+		[Export] public Label[] choiceCosts;
 
-		// ---------- FUNCTIONS ---------- \\
+        // ----- Others ----- \\
 
-		// ----- Constructor & Ready & Process ----- \\
+        // ---------- FUNCTIONS ---------- \\
 
-		protected ChoiceScreen () : base() { }
+        // ----- Constructor & Ready & Process ----- \\
+
+        protected ChoiceScreen () : base() { }
 
 		public override void _Ready()
 		{
 			base._Ready();
 
-			Label mlabel = new Label();
+			Manager.GetManager<ChoicesManager>().SetChoiceScreen(this);
 		}
 
 		public override void _Process(double pDelta)
