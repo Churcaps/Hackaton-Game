@@ -35,7 +35,7 @@ namespace Com.IsartDigital.Hackaton
 
 		protected override void Init()
 		{
-			menuContainer.AddChild(choiceScreenScene.Instantiate());
+			//menuContainer.AddChild(choiceScreenScene.Instantiate());
 		}
 
 		public override void _Process(double pDelta)

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6g43eep4scsy"]
+[gd_scene load_steps=4 format=3 uid="uid://b6g43eep4scsy"]
 
-[ext_resource type="PackedScene" uid="uid://dowwobsvv7mah" path="res://Scenes/CharacterSelection.tscn" id="1_dfsjn"]
+[ext_resource type="PackedScene" uid="uid://b84hbn2ung4ex" path="res://Scenes/CharacterSelection.tscn" id="1_dfsjn"]
+[ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="2_so8hn"]
+[ext_resource type="Script" path="res://Scripts/Managers/ChoicesManager.cs" id="3_vf3j2"]
 
 [node name="Main" type="Node2D"]
 
@@ -8,6 +10,30 @@
 
 [node name="CharacterSelection" parent="UI" instance=ExtResource("1_dfsjn")]
 
+[node name="Menu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUD" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Managers" type="Node2D" parent="."]
+
+[node name="GameManager" type="Node2D" parent="Managers" node_paths=PackedStringArray("menuContainer")]
+script = ExtResource("2_so8hn")
+menuContainer = NodePath("../../UI/Menu")
+
+[node name="ChoicesManager" type="Node2D" parent="Managers"]
+script = ExtResource("3_vf3j2")
+initPriority = 1
 
 [node name="GameContainer" type="Node2D" parent="."]
