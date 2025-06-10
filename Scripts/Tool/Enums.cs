@@ -15,4 +15,11 @@ namespace Com.IsartDigital.Hackaton
         SurvivalKit,
         Tent
     }
+
+    public enum CharactersEnum
+    {
+        OldLady,
+        Student,
+        Rich
+    }
 }

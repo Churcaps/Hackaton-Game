@@ -43,7 +43,7 @@ namespace Com.IsartDigital.Hackaton
 		}
 
 		// ----- My Functions ----- \\
-
+		
 		// ----- Destructor ----- \\
 
 		protected override void Dispose(bool pDisposing)

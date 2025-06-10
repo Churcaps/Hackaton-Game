@@ -20,11 +20,11 @@ namespace Com.IsartDigital.Hackaton
 
 		// Gameplay
 		public string cityName;
-		private int minComfortLevel = -5, maxComfortLevel = 5;
-		private int minContactLebel = -5, maxContactLevel = 5;
+		private int minComfortLevel = 0, maxComfortLevel = 10;
+		private int minContactLebel = 0, maxContactLevel = 10;
 		private int minMoneyLevel = 0, maxMoneyLevel = 10;
 
-		public Dictionary<StatType, int> allItems = new Dictionary<StatType, int>();
+		public static Dictionary<StatType, int> allItems = new Dictionary<StatType, int>();
 
 		// ---------- FUNCTIONS ---------- \\
 
@@ -34,11 +34,8 @@ namespace Com.IsartDigital.Hackaton
 
 		protected override void Init()
 		{
-            allItems.Add(StatType.Money, 0);
-			allItems.Add(StatType.Comfort, 0);
-			allItems.Add(StatType.Social, 0);
             PrintAllStats();
-		}
+        }
 
 		public override void _Process(double pDelta)
 		{
@@ -48,6 +45,13 @@ namespace Com.IsartDigital.Hackaton
 		}
 
 		// ----- My Functions ----- \\
+
+		public static void SetBaseStats(int pMoney, int pComfort, int pSocial)
+		{
+			allItems.Add(StatType.Money, pMoney);
+			allItems.Add(StatType.Comfort, pComfort);
+			allItems.Add(StatType.Social, pSocial);
+		}
 
 		public void PrintAllStats()
 		{
