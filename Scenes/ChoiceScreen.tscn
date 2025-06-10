@@ -1,16 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxp4ssrjdk4d"]
+[gd_scene load_steps=8 format=3 uid="uid://dxp4ssrjdk4d"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ChoiceScreen.cs" id="1_k38h5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6u2fv"]
 font_size = 128
 
+[sub_resource type="LabelSettings" id="LabelSettings_g7fgq"]
+font_size = 80
+
 [sub_resource type="LabelSettings" id="LabelSettings_1lhqx"]
+font_size = 48
+
+[sub_resource type="Gradient" id="Gradient_ur6tx"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.054902, 0.054902, 0.054902, 0.615686)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g5576"]
+gradient = SubResource("Gradient_ur6tx")
+width = 600
+height = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_3luym"]
 font_size = 64
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v2nxr"]
-
-[node name="ChoiceScreen" type="Control" node_paths=PackedStringArray("probName", "probText", "choiceNames", "choiceTexts", "choiceCosts")]
+[node name="ChoiceScreen" type="Control" node_paths=PackedStringArray("probName", "probText", "choiceButtons", "choiceTexts", "choiceCosts", "choiceNames")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,9 +33,10 @@ grow_vertical = 2
 script = ExtResource("1_k38h5")
 probName = NodePath("ContexteLabel")
 probText = NodePath("ProbText")
-choiceNames = [NodePath("Choice1"), NodePath("Choice2"), NodePath("Choice3")]
-choiceTexts = [NodePath("ChoiceTexte1"), NodePath("ChoiceTexte2"), NodePath("ChoiceTexte3")]
-choiceCosts = [NodePath("CostChoice1"), NodePath("CostChoice2"), NodePath("CostChoice3")]
+choiceButtons = [NodePath("ChoicesContainer2/Choice1Cont/Choice1"), NodePath("ChoicesContainer2/Choice2Cont/Choice2"), NodePath("ChoicesContainer2/Choice3Cont/Choice3")]
+choiceTexts = [NodePath("ChoicesContainer2/Choice1Cont/ChoiceTexte1"), NodePath("ChoicesContainer2/Choice2Cont/ChoiceTexte2"), NodePath("ChoicesContainer2/Choice3Cont/ChoiceTexte3")]
+choiceCosts = [NodePath("ChoicesContainer2/Choice1Cont/CostChoice1"), NodePath("ChoicesContainer2/Choice2Cont/CostChoice2"), NodePath("ChoicesContainer2/Choice3Cont/CostChoice3")]
+choiceNames = [NodePath("ChoicesContainer2/Choice1Cont/Choice1/Label"), NodePath("ChoicesContainer2/Choice2Cont/Choice2/Label"), NodePath("ChoicesContainer2/Choice3Cont/Choice3/Label")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -36,155 +50,138 @@ color = Color(0.219501, 0.219501, 0.219501, 1)
 [node name="ContexteLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.259
-anchor_top = 0.125
-anchor_right = 0.674
-anchor_bottom = 0.234
-offset_left = 0.959961
-offset_right = 0.559937
-offset_bottom = 0.599976
+anchor_left = 0.265
+anchor_top = 0.021
+anchor_right = 0.68
+anchor_bottom = 0.131
+offset_left = 0.599976
+offset_top = 0.399998
+offset_right = 0.199951
+offset_bottom = -0.600021
 text = "Blabla c la merde"
 label_settings = SubResource("LabelSettings_6u2fv")
+horizontal_alignment = 1
 
 [node name="ProbText" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.246
-anchor_right = 0.688
-anchor_bottom = 0.356
-offset_left = -1.0
-offset_top = 0.399994
-offset_right = 0.719971
-offset_bottom = -0.600037
+anchor_left = 0.322
+anchor_top = 0.144
+anchor_right = 0.604
+anchor_bottom = 0.253
+offset_left = 0.679932
+offset_top = -0.400009
+offset_right = 0.759888
+offset_bottom = 0.199951
 text = "il se passe ca et ca"
-label_settings = SubResource("LabelSettings_6u2fv")
+label_settings = SubResource("LabelSettings_g7fgq")
+horizontal_alignment = 1
 
-[node name="CostChoice1" type="Label" parent="."]
+[node name="ChoicesContainer2" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.094
-anchor_top = 0.532
-anchor_right = 0.262
-anchor_bottom = 0.587
-offset_left = 0.359985
-offset_top = -0.200012
-offset_right = 0.279907
-offset_bottom = -0.200012
+anchor_left = 0.048
+anchor_top = 0.474
+anchor_right = 0.922
+anchor_bottom = 0.678
+offset_left = 0.119995
+offset_top = 0.599915
+offset_right = 247.68
+offset_bottom = 36.2
+scale = Vector2(0.9, 0.9)
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Choice1Cont" type="VBoxContainer" parent="ChoicesContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="CostChoice1" type="Label" parent="ChoicesContainer2/Choice1Cont"]
+layout_mode = 2
 text = "This Item : x X"
 label_settings = SubResource("LabelSettings_1lhqx")
 
-[node name="CostChoice2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.405
-anchor_top = 0.53
-anchor_right = 0.573
-anchor_bottom = 0.585
-offset_left = 1.19995
-offset_top = -6.10352e-05
-offset_right = 1.12
-offset_bottom = -6.10352e-05
-text = "This Item : x X"
-label_settings = SubResource("LabelSettings_1lhqx")
+[node name="Choice1" type="TextureButton" parent="ChoicesContainer2/Choice1Cont"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_g5576")
 
-[node name="CostChoice3" type="Label" parent="."]
+[node name="Label" type="Label" parent="ChoicesContainer2/Choice1Cont/Choice1"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.717
-anchor_top = 0.544
-anchor_right = 0.885
-anchor_bottom = 0.599
-offset_left = -0.52002
-offset_top = -0.400024
-offset_right = -0.600098
-offset_bottom = -0.400085
-text = "This Item : x X"
-label_settings = SubResource("LabelSettings_1lhqx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Je fait ca"
+label_settings = SubResource("LabelSettings_3luym")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
-[node name="Choice1" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.039
-anchor_top = 0.516
-anchor_right = 0.324
-anchor_bottom = 0.631
-offset_left = -4.84
-offset_top = 206.4
-offset_right = -6.44
-offset_bottom = 205.4
-theme_override_font_sizes/font_size = 128
-theme_override_styles/focus = SubResource("StyleBoxEmpty_v2nxr")
-text = "Moi faire ca"
-
-[node name="Choice2" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.348
-anchor_top = 0.522
-anchor_right = 0.633
-anchor_bottom = 0.637
-offset_left = -4.88007
-offset_top = 206.8
-offset_right = -6.47998
-offset_bottom = 205.8
-theme_override_font_sizes/font_size = 128
-theme_override_styles/focus = SubResource("StyleBoxEmpty_v2nxr")
-text = "Moi faire ca"
-
-[node name="Choice3" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.666
-anchor_top = 0.524
-anchor_right = 0.95
-anchor_bottom = 0.639
-offset_left = -5.95996
-offset_top = 206.6
-offset_right = -5.0
-offset_bottom = 205.6
-theme_override_font_sizes/font_size = 128
-theme_override_styles/focus = SubResource("StyleBoxEmpty_v2nxr")
-text = "Moi faire ca"
-
-[node name="ChoiceTexte1" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.029
-anchor_top = 0.802
-anchor_right = 0.317
-anchor_bottom = 0.906
-offset_left = -1.24001
-offset_top = -0.200073
-offset_right = -0.743896
-offset_bottom = -0.665039
+[node name="ChoiceTexte1" type="Label" parent="ChoicesContainer2/Choice1Cont"]
+layout_mode = 2
+size_flags_horizontal = 0
 text = "C ca et ca et ca pck ca"
 label_settings = SubResource("LabelSettings_1lhqx")
 
-[node name="ChoiceTexte2" type="Label" parent="."]
+[node name="Choice2Cont" type="VBoxContainer" parent="ChoicesContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="CostChoice2" type="Label" parent="ChoicesContainer2/Choice2Cont"]
+layout_mode = 2
+text = "This Item : x X"
+label_settings = SubResource("LabelSettings_1lhqx")
+
+[node name="Choice2" type="TextureButton" parent="ChoicesContainer2/Choice2Cont"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_g5576")
+
+[node name="Label" type="Label" parent="ChoicesContainer2/Choice2Cont/Choice2"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.351
-anchor_top = 0.802
-anchor_right = 0.639
-anchor_bottom = 0.906
-offset_left = -0.560059
-offset_top = -0.200073
-offset_right = -0.0639648
-offset_bottom = -0.665039
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Je fait ca"
+label_settings = SubResource("LabelSettings_3luym")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ChoiceTexte2" type="Label" parent="ChoicesContainer2/Choice2Cont"]
+layout_mode = 2
 text = "C ca et ca et ca pck ca"
 label_settings = SubResource("LabelSettings_1lhqx")
 
-[node name="ChoiceTexte3" type="Label" parent="."]
+[node name="Choice3Cont" type="VBoxContainer" parent="ChoicesContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="CostChoice3" type="Label" parent="ChoicesContainer2/Choice3Cont"]
+layout_mode = 2
+text = "This Item : x X"
+label_settings = SubResource("LabelSettings_1lhqx")
+
+[node name="Choice3" type="TextureButton" parent="ChoicesContainer2/Choice3Cont"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_g5576")
+
+[node name="Label" type="Label" parent="ChoicesContainer2/Choice3Cont/Choice3"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.651
-anchor_top = 0.796
-anchor_right = 0.939
-anchor_bottom = 0.899
-offset_left = -0.560059
-offset_top = -0.600098
-offset_right = -0.0639648
-offset_bottom = 0.534912
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Je fait ca"
+label_settings = SubResource("LabelSettings_3luym")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="ChoiceTexte3" type="Label" parent="ChoicesContainer2/Choice3Cont"]
+layout_mode = 2
 text = "C ca et ca et ca pck ca"
 label_settings = SubResource("LabelSettings_1lhqx")

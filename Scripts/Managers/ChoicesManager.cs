@@ -47,10 +47,9 @@ namespace Com.IsartDigital.Hackaton
 			int lNumChoice = probRes.allChoices.Length;
 			int lNumChanges;
 			string lChoiceCost;
-			int lIndex;
             for (int i = 0; i < lNumChoice; i++)
             {
-				lIndex = i;
+				int lIndex = i;
 				pScreen.choiceNames[i].Text = probRes.allChoices[i].name;
 				pScreen.choiceTexts[i].Text = probRes.allChoices[i].text;
 				lNumChanges = probRes.allChoices[i].typesChanges.Count;
@@ -63,14 +62,19 @@ namespace Com.IsartDigital.Hackaton
                 }
                 pScreen.choiceCosts[i].Text = lChoiceCost;
 
-				pScreen.choiceNames[lIndex].Pressed += () => ButtonPressed(probRes.allChoices[lIndex]);
+				pScreen.choiceButtons[lIndex].Pressed += () => ButtonPressed(probRes.allChoices[lIndex]);
             }
         }
 
 		private void ButtonPressed(ChoicesRessource pChoice)
 		{
-			GD.Print(pChoice.amoutChanges[0], " ", pChoice.typesChanges[0]);
-		}
+			int lLength = pChoice.typesChanges.Count;
+			for (int i = 0;i < lLength;i++)
+			{
+				GetManager<GameManager>().UpdateStat(pChoice.typesChanges[i], -pChoice.amoutChanges[i]);
+			}
+            GetManager<GameManager>().PrintAllStats();
+        }
 
 		// ----- Destructor ----- \\
 

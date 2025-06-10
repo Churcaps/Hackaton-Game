@@ -15,9 +15,10 @@ namespace Com.IsartDigital.Hackaton
 
 		[Export] public Label probName;
 		[Export] public Label probText;
-		[Export] public Button[] choiceNames;
+		[Export] public TextureButton[] choiceButtons;
 		[Export] public Label[] choiceTexts;
 		[Export] public Label[] choiceCosts;
+		[Export] public Label[] choiceNames;
 
         // ----- Others ----- \\
 

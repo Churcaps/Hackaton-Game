@@ -35,7 +35,11 @@ namespace Com.IsartDigital.Hackaton
 
 		protected override void Init()
 		{
-			//menuContainer.AddChild(choiceScreenScene.Instantiate());
+            allItems.Add(StatType.Money, 0);
+			allItems.Add(StatType.Comfort, 0);
+			allItems.Add(StatType.Social, 0);
+            PrintAllStats();
+            menuContainer.AddChild(choiceScreenScene.Instantiate());
 		}
 
 		public override void _Process(double pDelta)
@@ -47,25 +51,35 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- My Functions ----- \\
 
+		public void PrintAllStats()
+		{
+			foreach (StatType lStat in allItems.Keys)
+			{
+				GD.Print(lStat, " : x", allItems[lStat]);
+			}
+			GD.Print();
+		}
+
 		public void UpdateStat(StatType pStat, int pAmout)
 		{
+			if (!allItems.ContainsKey(pStat)) return;
 			allItems[pStat] += pAmout;
 			switch (pStat)
 			{
 				case StatType.Comfort:
-                    allItems[pStat] = Mathf.Clamp(allItems[pStat] + pAmout, minComfortLevel, maxComfortLevel);
+                    allItems[pStat] = Mathf.Clamp(allItems[pStat], minComfortLevel, maxComfortLevel);
 					break;
 				case StatType.Social:
-                    allItems[pStat] = Mathf.Clamp(allItems[pStat] + pAmout, minContactLebel, maxContactLevel);
+                    allItems[pStat] = Mathf.Clamp(allItems[pStat], minContactLebel, maxContactLevel);
 					break;
 				case StatType.Money:
-                    allItems[pStat] = Mathf.Clamp(allItems[pStat] + pAmout, minMoneyLevel, maxContactLevel);
+                    allItems[pStat] = Mathf.Clamp(allItems[pStat], minMoneyLevel, maxContactLevel);
 					break;
 				default:
 					if (allItems[pStat] <= 0) allItems.Remove(pStat);
 					break;
 			}
-		}
+        }
 
 		// ----- Destructor ----- \\
 
