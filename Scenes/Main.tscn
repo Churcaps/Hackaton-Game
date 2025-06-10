@@ -6,6 +6,17 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="Managers" type="Node2D" parent="."]
+
+[node name="GameManager" type="Node2D" parent="Managers" node_paths=PackedStringArray("menuContainer")]
+script = ExtResource("2_so8hn")
+menuContainer = NodePath("../../UI/Menu")
+
+[node name="ChoicesManager" type="Node2D" parent="Managers" node_paths=PackedStringArray("inGameScreen")]
+script = ExtResource("3_vf3j2")
+inGameScreen = NodePath("../../UI/Menu/InGame")
+initPriority = 1
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Menu" type="Control" parent="UI"]
@@ -29,15 +40,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="Managers" type="Node2D" parent="."]
-
-[node name="GameManager" type="Node2D" parent="Managers" node_paths=PackedStringArray("menuContainer")]
-script = ExtResource("2_so8hn")
-menuContainer = NodePath("../../UI/Menu")
-
-[node name="ChoicesManager" type="Node2D" parent="Managers"]
-script = ExtResource("3_vf3j2")
-initPriority = 1
 
 [node name="GameContainer" type="Node2D" parent="."]

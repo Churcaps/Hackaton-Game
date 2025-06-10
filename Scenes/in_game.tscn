@@ -1,8 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://clb352hc0p2kl"]
+[gd_scene load_steps=16 format=3 uid="uid://clb352hc0p2kl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/InGame.cs" id="1_t226q"]
-[ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="2_tj4er"]
-[ext_resource type="Script" path="res://Scripts/Managers/ChoicesManager.cs" id="3_tspvd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukoup"]
 font_size = 166
@@ -294,13 +292,3 @@ offset_left = 32.0
 offset_top = 12.0
 offset_right = 136.0
 offset_bottom = 106.0
-
-[node name="Managers" type="Node2D" parent="."]
-
-[node name="GameManager" type="Node2D" parent="Managers"]
-script = ExtResource("2_tj4er")
-
-[node name="ChoicesManager" type="Node2D" parent="Managers"]
-scale = Vector2(0.995385, 1)
-script = ExtResource("3_tspvd")
-initPriority = 1

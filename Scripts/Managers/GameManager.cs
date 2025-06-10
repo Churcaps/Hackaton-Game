@@ -20,9 +20,9 @@ namespace Com.IsartDigital.Hackaton
 
 		// Gameplay
 		public string cityName;
-		private int minComfortLevel = 0, maxComfortLevel = 10;
-		private int minContactLebel = 0, maxContactLevel = 10;
-		private int minMoneyLevel = 0, maxMoneyLevel = 10;
+		private static int minComfortLevel = 0, maxComfortLevel = 10;
+		private static int minContactLebel = 0, maxContactLevel = 10;
+		private static int minMoneyLevel = 0, maxMoneyLevel = 10;
 
 		public static Dictionary<StatType, int> allItems = new Dictionary<StatType, int>();
 
@@ -62,9 +62,13 @@ namespace Com.IsartDigital.Hackaton
 			GD.Print();
 		}
 
-		public void UpdateStat(StatType pStat, int pAmout)
+		public static void UpdateStat(StatType pStat, int pAmout)
 		{
-			if (!allItems.ContainsKey(pStat)) return;
+			if (!allItems.ContainsKey(pStat))
+			{
+				allItems.Add(pStat, pAmout);
+				return;
+			}
 			allItems[pStat] += pAmout;
 			switch (pStat)
 			{

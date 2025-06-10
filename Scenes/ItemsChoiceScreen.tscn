@@ -1,8 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://btvdsbluxokdi"]
+[gd_scene load_steps=21 format=3 uid="uid://btvdsbluxokdi"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ItemsChoiceScreen.cs" id="1_yieeo"]
+[ext_resource type="Texture2D" uid="uid://bt8j7palmo565" path="res://Assets/Characters/T_Character_Noble.png" id="2_eon51"]
+[ext_resource type="PackedScene" uid="uid://b6g43eep4scsy" path="res://Scenes/Main.tscn" id="2_kbg8k"]
+[ext_resource type="Texture2D" uid="uid://cjv2y0jfhciga" path="res://Assets/Characters/T_Character_OldWomen.png" id="3_w6a52"]
 
-[node name="ItemsChoiceScreen" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_tmwyf"]
+font_size = 128
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0vwm"]
+texture = ExtResource("2_eon51")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_64pgu"]
+texture = ExtResource("3_w6a52")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3d48"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27u51"]
+texture = ExtResource("2_eon51")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucd3f"]
+texture = ExtResource("3_w6a52")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wpv40"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fo45n"]
+texture = ExtResource("2_eon51")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8amhu"]
+texture = ExtResource("3_w6a52")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgmdu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43brn"]
+texture = ExtResource("2_eon51")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a87dx"]
+texture = ExtResource("3_w6a52")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qeaq0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qaf5a"]
+texture = ExtResource("2_eon51")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ywvip"]
+texture = ExtResource("3_w6a52")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy04b"]
+
+[node name="ItemsChoiceScreen" type="Control" node_paths=PackedStringArray("nextButton", "itemsButtons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +56,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yieeo")
+inGameScene = ExtResource("2_kbg8k")
+nextButton = NodePath("NextButton")
+itemsButtons = [NodePath("VBoxContainer/HBoxContainer/Clothing"), NodePath("VBoxContainer/HBoxContainer/Tent"), NodePath("VBoxContainer/HBoxContainer/Food"), NodePath("VBoxContainer/HBoxContainer2/HealthKit"), NodePath("VBoxContainer/HBoxContainer2/Water")]
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -21,7 +70,105 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.212981, 0.149284, 3.60981e-08, 1)
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.218
+anchor_top = 0.098
+anchor_right = 0.789
+anchor_bottom = 0.207
+offset_left = 0.919983
+offset_top = 0.199997
+offset_right = 1.15991
+offset_bottom = 0.799988
+text = "Choisissez vos 3 objets :"
+label_settings = SubResource("LabelSettings_tmwyf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22
+anchor_top = 0.263
+anchor_right = 0.809
+anchor_bottom = 0.891
+offset_left = 0.799988
+offset_top = 0.199982
+offset_right = 0.959961
+offset_bottom = -0.600098
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Clothing" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_h0vwm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_h0vwm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_64pgu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_h0vwm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e3d48")
+toggle_mode = true
+
+[node name="Tent" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_27u51")
+theme_override_styles/hover = SubResource("StyleBoxTexture_27u51")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ucd3f")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_27u51")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wpv40")
+toggle_mode = true
+
+[node name="Food" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_fo45n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fo45n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8amhu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fo45n")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jgmdu")
+toggle_mode = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HealthKit" type="Button" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_43brn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_43brn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a87dx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_43brn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qeaq0")
+toggle_mode = true
+
+[node name="Water" type="Button" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_qaf5a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qaf5a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ywvip")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qaf5a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jy04b")
+toggle_mode = true
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.777
+anchor_top = 0.854
+anchor_right = 0.961
+anchor_bottom = 0.941
+offset_left = -0.119995
+offset_top = -0.400024
+offset_right = 0.839844
+offset_bottom = 0.399902
+theme_override_font_sizes/font_size = 96
+text = "Continuer"

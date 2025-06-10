@@ -18,6 +18,8 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Nodes ----- \\
 
+		[Export] InGame inGameScreen;
+
 		// ----- Others ----- \\
 
 		// ---------- FUNCTIONS ---------- \\
@@ -72,7 +74,7 @@ namespace Com.IsartDigital.Hackaton
 			int lLength = pChoice.typesChanges.Count;
 			for (int i = 0; i < lLength; i++)
 			{
-				GetManager<GameManager>().UpdateStat(pChoice.typesChanges[i], -pChoice.amoutChanges[i]);
+				GameManager.UpdateStat(pChoice.typesChanges[i], -pChoice.amoutChanges[i]);
 			}
 
 			ShowResult(pChoice);
@@ -89,10 +91,10 @@ namespace Com.IsartDigital.Hackaton
 				resultColorRect2.GetChild<Label>(1).Text += "\n" + pChoice.resultAmount[i].ToString() + " " + pChoice.resultType[i].ToString();
 			}
 
-			Tween lTWeen = CreateTween();
-			GetParent<Node2D>().GetParent<Control>().GetChild<TextureButton>(3).Visible = true;
-			lTWeen.TweenProperty(GetParent<Node2D>().GetParent<Control>().GetChild<TextureButton>(3), "modulate", Colors.White, 0.5f);
-		}
+            Tween lTWeen = CreateTween();
+            GetParent<Node2D>().GetParent<Node2D>().GetChild<CanvasLayer>(1).GetChild<Control>(0).GetChild<Control>(0).GetChild<TextureButton>(3).Visible = true;
+            lTWeen.TweenProperty(GetParent<Node2D>().GetParent<Node2D>().GetChild<CanvasLayer>(1).GetChild<Control>(0).GetChild<Control>(0).GetChild<TextureButton>(3), "modulate", Colors.White, 0.5f);
+        }
 
 		// ----- Destructor ----- \\
 

@@ -10,7 +10,7 @@ public partial class CharacterSelection : Control
 	[Export] public TextureButton closeButton, playButton;
 	[Export] public Label characterInfo;
 	[Export] public Button skipButton;
-	[Export] private PackedScene inGameScene;
+	[Export] private PackedScene itemsChoiceScreenScene;
 
 	private int currentCharacterCount = 0;
 
@@ -67,8 +67,11 @@ public partial class CharacterSelection : Control
 		lTween.TweenProperty(this, "modulate", Colors.Black, 0.8f);
 		lTween.Finished += () =>
 		{
-			GetTree().ChangeSceneToPacked(inGameScene);
-		};
+			AddChild(itemsChoiceScreenScene.Instantiate());
+			Tween lTween2 = CreateTween().SetTrans(Tween.TransitionType.Quart).SetEase(Tween.EaseType.Out);
+            lTween2.TweenProperty(this, "modulate", Colors.White, 0.8f);
+        };
+
 		Dictionary<StatType, int> lStats = charactersStats[characterSelected];
 		GameManager.SetBaseStats(lStats[StatType.Argent], lStats[StatType.Confort], lStats[StatType.Social]);
 	}
