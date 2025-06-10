@@ -1,6 +1,8 @@
 using Godot;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Reflection;
 
 // Author : Auguste Paccapelo
 
@@ -15,6 +17,9 @@ namespace Com.IsartDigital.Hackaton
 		private const string PROB_PATH = "res://Assets/Ressource/Problemes/Event1.tres";
 		private ProblemRessource probRes = GD.Load<ProblemRessource>(PROB_PATH);
 		public ColorRect resultColorRect2;
+		public ColorRect phoneImage;
+
+		private static int contact;
 
 		// ----- Nodes ----- \\
 
@@ -44,6 +49,16 @@ namespace Com.IsartDigital.Hackaton
 
 		public void SetChoiceScreen(ChoiceScreen pScreen)
 		{
+			if (contact >= 1)
+			{
+				phoneImage.GetChild<VBoxContainer>(3).GetChild<TextureButton>(0).Visible = true;
+			}
+
+			if (contact == 2)
+			{
+				phoneImage.GetChild<VBoxContainer>(3).GetChild<TextureButton>(1).Visible = true;
+			}
+
 			pScreen.probName.Text = probRes.name;
             pScreen.probText.Text = probRes.text;
 
@@ -80,6 +95,11 @@ namespace Com.IsartDigital.Hackaton
 			ShowResult(pChoice);
 		}
 
+		public static string GetDisplayName<T>(T lEnvironmentEnum)
+        {
+            return lEnvironmentEnum.GetType().GetMember(lEnvironmentEnum.ToString()).First().GetCustomAttribute<DisplayAttribute>().Name;
+        }
+
 		private void ShowResult(ChoicesRessource pChoice)
 		{
 			resultColorRect2.Visible = true;
@@ -88,7 +108,19 @@ namespace Com.IsartDigital.Hackaton
 
 			for (int i = 0; i < pChoice.resultAmount.Count(); i++)
 			{
-				resultColorRect2.GetChild<Label>(1).Text += "\n" + pChoice.resultAmount[i].ToString() + " " + pChoice.resultType[i].ToString();
+				if (GetDisplayName<Com.IsartDigital.Hackaton.StatType>(pChoice.resultType[i]) == "Contact (Philippe)")
+				{
+					phoneImage.GetChild<VBoxContainer>(3).GetChild<TextureButton>(0).Visible = true;
+					contact += 1;
+				}
+
+				if (GetDisplayName<Com.IsartDigital.Hackaton.StatType>(pChoice.resultType[i]) == "Contact (Geneviève)")
+				{
+					phoneImage.GetChild<VBoxContainer>(3).GetChild<TextureButton>(1).Visible = true;
+					contact += 1;
+				}
+
+				resultColorRect2.GetChild<Label>(1).Text += "\n" + pChoice.resultAmount[i].ToString() + " " + GetDisplayName<Com.IsartDigital.Hackaton.StatType>(pChoice.resultType[i]);
 			}
 
             Tween lTWeen = CreateTween();

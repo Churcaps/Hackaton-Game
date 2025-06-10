@@ -10,9 +10,12 @@ public partial class InGame : Control
 	[Export] private ColorRect livreImage, phoneImage;
 	[Export] private Label cityString;
 
+	private ChoicesManager choicesManager;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Manager.GetManager<ChoicesManager>().phoneImage = phoneImage;
 		book.Pressed += OpenBook;
 		phone.Pressed += OpenPhone;
 		next.Pressed += NextPhase;
@@ -29,7 +32,9 @@ public partial class InGame : Control
 
 	private void NextPhase()
 	{
-		GetTree().ReloadCurrentScene();
+		Tween lTween = GetTree().CreateTween().SetTrans(Tween.TransitionType.Quart).SetEase(Tween.EaseType.Out);
+		lTween.TweenProperty(this, "modulate", Colors.Black, 0.5f);
+		lTween.Finished += () => GetTree().ReloadCurrentScene();
 	}
 
 	private void CloseBook()

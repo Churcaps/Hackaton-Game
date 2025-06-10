@@ -246,6 +246,7 @@ grow_vertical = 2
 theme_override_constants/separation = 170
 
 [node name="TextureButton" type="TextureButton" parent="pphone/VBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_q6d35")
 ignore_texture_size = true
@@ -272,6 +273,7 @@ offset_right = 136.0
 offset_bottom = 106.0
 
 [node name="TextureButton2" type="TextureButton" parent="pphone/VBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_guii4")
 ignore_texture_size = true
