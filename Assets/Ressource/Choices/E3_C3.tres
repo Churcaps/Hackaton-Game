@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://c3h3hmnf448n5"]
+
+[ext_resource type="Script" path="res://Scripts/Tool/ChoicesRessource.cs" id="1_5qbn0"]
+
+[resource]
+script = ExtResource("1_5qbn0")
+name = "CHOIX 2"
+text = "Héberger une famille"
+typesChanges = Array[int]([])
+amoutChanges = PackedInt32Array()
+resultString = "Vous profitez de la rencontre avec les bénévoles de la croix rouge pour vous enquérir de la situation : plus de 15 milles déplacés dans la journée sur la région, dont plusieurs centaines sont censées être hébergées dans le gymnase..."
+resultType = Array[int]([0, 1])
+resultAmount = PackedInt32Array(-1, 1)
