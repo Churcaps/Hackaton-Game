@@ -115,6 +115,7 @@ texture_normal = SubResource("GradientTexture2D_rhas8")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
+z_index = 5
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,6 +164,7 @@ label_settings = SubResource("LabelSettings_lduvr")
 
 [node name="pphone" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
+z_index = 5
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -277,9 +279,8 @@ offset_bottom = 106.0
 
 [node name="Managers" type="Node2D" parent="."]
 
-[node name="GameManager" type="Node2D" parent="Managers" node_paths=PackedStringArray("menuContainer")]
+[node name="GameManager" type="Node2D" parent="Managers"]
 script = ExtResource("2_tj4er")
-menuContainer = NodePath("")
 
 [node name="ChoicesManager" type="Node2D" parent="Managers"]
 script = ExtResource("3_tspvd")
