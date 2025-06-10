@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="ProblemRessource" load_steps=5 format=3 uid="uid://b28mc38pssd07"]
+[gd_resource type="Resource" script_class="ProblemRessource" load_steps=6 format=3 uid="uid://b28mc38pssd07"]
 
-[ext_resource type="Resource" uid="uid://c2st2jeya4bff" path="res://Assets/Ressource/Choices/E1_C1.tres" id="1_h3jvm"]
-[ext_resource type="Resource" uid="uid://ck6asgkocxjhi" path="res://Assets/Ressource/Choices/E1_C2.tres" id="2_s8elb"]
-[ext_resource type="Resource" uid="uid://corpb7iu34ivw" path="res://Assets/Ressource/Choices/E1_C3.tres" id="3_60wuo"]
+[ext_resource type="Resource" uid="uid://cctawbq16le8q" path="res://Assets/Ressource/Choices/E2_C1.tres" id="1_ilnmx"]
+[ext_resource type="Resource" uid="uid://kroaa0sq6f06" path="res://Assets/Ressource/Choices/E2_C2.tres" id="2_5yvux"]
+[ext_resource type="Resource" uid="uid://cgafjm3g76505" path="res://Assets/Ressource/Choices/E2_C3.tres" id="3_h02qk"]
 [ext_resource type="Script" path="res://Scripts/Tool/ProblemRessource.cs" id="4_mi2re"]
+[ext_resource type="Resource" uid="uid://t8hd7a5ukvum" path="res://Assets/Ressource/Choices/E2_C4.tres" id="4_ydapk"]
 
 [resource]
 script = ExtResource("4_mi2re")
 name = ""
 text = "Vague de chaleur, distribution d’eau potable, tu apprends en allant récupérer des bouteilles d’eau au supermarché que ta voisine, une personne âgée, n’a plus de climatisation"
-allChoices = Array[Object]([ExtResource("1_h3jvm"), ExtResource("2_s8elb"), ExtResource("3_60wuo")])
+allChoices = Array[Object]([ExtResource("1_ilnmx"), ExtResource("2_5yvux"), ExtResource("3_h02qk"), ExtResource("4_ydapk")])

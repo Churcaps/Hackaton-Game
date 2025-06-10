@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://kroaa0sq6f06"]
+
+[ext_resource type="Script" path="res://Scripts/Tool/ChoicesRessource.cs" id="1_r6imx"]
+
+[resource]
+script = ExtResource("1_r6imx")
+name = "CHOIX 2"
+text = "Faire tourner la climatisation et inviter Geneviève à en profiter"
+typesChanges = Array[int]([2])
+amoutChanges = PackedInt32Array(1)
+resultString = "Alors que vous marchez sur la plage, vous êtes pris de nausées et faites un malaise, vous vous réveillez dans un post de secours de la croix rouge"
+resultType = Array[int]([0, 9])
+resultAmount = PackedInt32Array(-1, 1)

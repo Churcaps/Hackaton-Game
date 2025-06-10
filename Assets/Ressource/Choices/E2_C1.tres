@@ -8,6 +8,6 @@ name = "CHOIX 1"
 text = "Profiter du soleil à la plage"
 typesChanges = Array[int]([])
 amoutChanges = PackedInt32Array()
-resultString = "Tous les vêtements, draps, literie et meubles de Philippe ayant été contaminé par l’inondation, il vous est reconnaissant de lui avoir donné des vêtements chauds. Cependant, votre logement sens le moisi…"
+resultString = "Alors que vous marchez sur la plage, vous êtes pris de nausées et faites un malaise, vous vous réveillez dans un post de secours de la croix rouge"
 resultType = Array[int]([0])
 resultAmount = PackedInt32Array(-2)

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProblemRessource" load_steps=6 format=3 uid="uid://3u5m8j34jqnj"]
+
+[ext_resource type="Resource" uid="uid://bq2ve81mlu87o" path="res://Assets/Ressource/Choices/E3_C1.tres" id="1_4u6s2"]
+[ext_resource type="Resource" uid="uid://c3h3hmnf448n5" path="res://Assets/Ressource/Choices/E3_C3.tres" id="3_54r7r"]
+[ext_resource type="Resource" uid="uid://cnf412tk7ggkg" path="res://Assets/Ressource/Choices/E5_C3.tres" id="3_nipal"]
+[ext_resource type="Script" path="res://Scripts/Tool/ProblemRessource.cs" id="4_0a8cw"]
+[ext_resource type="Resource" uid="uid://b68bu3t5x0ett" path="res://Assets/Ressource/Choices/E3_C4.tres" id="4_qm74j"]
+
+[resource]
+script = ExtResource("4_0a8cw")
+name = ""
+text = "Incendies ravage les abords de la ville, beaucoup de gens se retrouvent sans foyers."
+allChoices = Array[Object]([ExtResource("1_4u6s2"), ExtResource("3_54r7r"), ExtResource("3_nipal"), ExtResource("4_qm74j")])

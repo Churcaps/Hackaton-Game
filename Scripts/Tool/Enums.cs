@@ -11,7 +11,7 @@ namespace Com.IsartDigital.Hackaton
         [Display(Name ="Argent")] Argent,
         [Display(Name ="Tente")] Tent,
         [Display(Name ="Vêtement")] Cloting,
-        [Display(Name ="Nourriture")] Food,
+        [Display(Name ="Conserve")] Food,
         [Display(Name ="Kit de soins")] HealthKit,
         [Display(Name ="Réserve d'eau")] Water,
         [Display(Name ="Contact (Philippe)")] Contact1,

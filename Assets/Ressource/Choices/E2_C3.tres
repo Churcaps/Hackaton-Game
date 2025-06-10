@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://cgafjm3g76505"]
+
+[ext_resource type="Script" path="res://Scripts/Tool/ChoicesRessource.cs" id="1_30pbh"]
+
+[resource]
+script = ExtResource("1_30pbh")
+name = "CHOIX 3"
+text = "Faire des réserves d’eau"
+typesChanges = Array[int]([])
+amoutChanges = PackedInt32Array()
+resultString = "Alors que vous marchez sur la plage, vous êtes pris de nausées et faites un malaise, vous vous réveillez dans un post de secours de la croix rouge"
+resultType = Array[int]([7])
+resultAmount = PackedInt32Array(1)

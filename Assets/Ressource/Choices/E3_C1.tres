@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://bq2ve81mlu87o"]
+
+[ext_resource type="Script" path="res://Scripts/Tool/ChoicesRessource.cs" id="1_o6qut"]
+
+[resource]
+script = ExtResource("1_o6qut")
+name = "CHOIX 1"
+text = "Donner des conserves à la croix rouge pour qu’elles soient  redistribués dans un centre d’hébergement"
+typesChanges = Array[int]([5])
+amoutChanges = PackedInt32Array(1)
+resultString = "Vous profitez de la rencontre avec les bénévoles de la croix rouge pour vous enquérir de la situation : plus de 15 milles déplacés dans la journée sur la région, dont plusieurs centaines sont censées être hébergées dans le gymnase..."
+resultType = Array[int]([1])
+resultAmount = PackedInt32Array(1)

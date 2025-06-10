@@ -1,9 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://btvdsbluxokdi"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ItemsChoiceScreen.cs" id="1_yieeo"]
+[ext_resource type="PackedScene" uid="uid://umjofpgqnlu8" path="res://Scenes/Carte.tscn" id="2_c7n7a"]
 [ext_resource type="Texture2D" uid="uid://bt8j7palmo565" path="res://Assets/Characters/T_Character_Noble.png" id="2_eon51"]
-[ext_resource type="PackedScene" uid="uid://b6g43eep4scsy" path="res://Scenes/Main.tscn" id="2_kbg8k"]
-[ext_resource type="Texture2D" uid="uid://dmqdkw68rgkrp" path="res://Assets/Textures/Icons/Clothing.png" id="3_7pr40"]
 [ext_resource type="Texture2D" uid="uid://cjv2y0jfhciga" path="res://Assets/Characters/T_Character_OldWomen.png" id="3_w6a52"]
 [ext_resource type="Texture2D" uid="uid://b18ly0ywwxbk1" path="res://Assets/Textures/Icons/ClothingSelected.png" id="4_meqva"]
 [ext_resource type="Texture2D" uid="uid://bws0tiajy7fk3" path="res://Assets/Textures/Icons/WaterBottle.png" id="5_k3qm2"]
@@ -62,7 +61,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yieeo")
-inGameScene = ExtResource("2_kbg8k")
+inGameScene = ExtResource("2_c7n7a")
 nextButton = NodePath("NextButton")
 itemsButtons = [NodePath("VBoxContainer/HBoxContainer/Clothing"), NodePath("VBoxContainer/HBoxContainer/Tent"), NodePath("VBoxContainer/HBoxContainer/Food"), NodePath("VBoxContainer/HBoxContainer2/HealthKit"), NodePath("VBoxContainer/HBoxContainer2/Water")]
 
