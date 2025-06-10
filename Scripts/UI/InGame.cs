@@ -95,14 +95,11 @@ public partial class InGame : Control
 
     private void ShowObjects()
     {
-        // Nettoyer les anciens objets
         foreach (Node lChild in bookRessourcesCont.GetChildren())
         {
             lChild.QueueFree();
         }
-		GameManager.allItems.Add(StatType.Tent, 1);
-		GameManager.allItems[StatType.Water] = 2;
-        // Filtrer les items à afficher
+		
         List<StatType> displayItems = GameManager.allItems.Keys
             .Where(item => item != StatType.Confort && item != StatType.Social && item != StatType.Argent)
             .ToList();
