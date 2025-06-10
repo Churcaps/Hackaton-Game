@@ -161,9 +161,8 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 
 [node name="Managers" type="Node2D" parent="."]
 
-[node name="GameManager" type="Node2D" parent="Managers" node_paths=PackedStringArray("menuContainer")]
+[node name="GameManager" type="Node2D" parent="Managers"]
 script = ExtResource("3_pnu1d")
-menuContainer = NodePath("")
 
 [node name="ChoicesManager" type="Node2D" parent="Managers"]
 script = ExtResource("4_6d1eg")
