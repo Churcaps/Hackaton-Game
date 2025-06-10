@@ -257,6 +257,7 @@ texture_normal = SubResource("GradientTexture2D_guii4")
 ignore_texture_size = true
 
 [node name="Label2" type="Label" parent="pphone/VBoxContainer/TextureButton2"]
+layout_mode = 0
 offset_top = 4.0
 offset_right = 718.0
 offset_bottom = 122.0
@@ -266,6 +267,7 @@ horizontal_alignment = 2
 uppercase = true
 
 [node name="ColorRect" type="ColorRect" parent="pphone/VBoxContainer/TextureButton2/Label2"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 12.0
 offset_right = 136.0
