@@ -126,6 +126,7 @@ namespace Com.IsartDigital.Hackaton
             Tween lTWeen = CreateTween();
             GetParent<Node2D>().GetParent<Node2D>().GetChild<CanvasLayer>(1).GetChild<Control>(0).GetChild<Control>(0).GetChild<TextureButton>(3).Visible = true;
             lTWeen.TweenProperty(GetParent<Node2D>().GetParent<Node2D>().GetChild<CanvasLayer>(1).GetChild<Control>(0).GetChild<Control>(0).GetChild<TextureButton>(3), "modulate", Colors.White, 0.5f);
+			GetManager<GameManager>().PrintAllStats();
         }
 
 		// ----- Destructor ----- \\
