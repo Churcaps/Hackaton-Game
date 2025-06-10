@@ -9,5 +9,5 @@ text = "Donner des vêtements chauds au voisin touché"
 typesChanges = Array[int]([4])
 amoutChanges = PackedInt32Array(1)
 resultString = "Tous les vêtements, draps, literie et meubles de Philippe ayant été contaminé par l’inondation, il vous est reconnaissant de lui avoir donné des vêtements chauds. Cependant, votre logement sens le moisi…"
-resultType = Array[int]([10, 0])
+resultType = Array[int]([8, 0])
 resultAmount = PackedInt32Array(1, -1)
