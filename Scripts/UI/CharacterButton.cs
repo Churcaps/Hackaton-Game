@@ -56,6 +56,19 @@ namespace Com.IsartDigital.ProjectName
 						GetParent<CharacterSelection>().canShowText = true;
 						GetParent<CharacterSelection>().characterInfo.Visible = true;
 
+						switch (i)
+						{
+							case 0:
+								GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Rich;
+                                break;
+							case 1:
+                                GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.OldLady;
+                                break;
+							case 2:
+                                GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Student;
+                                break;
+						}
+
 						continue;
 					}
 

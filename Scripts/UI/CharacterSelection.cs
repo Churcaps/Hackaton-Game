@@ -1,3 +1,5 @@
+//using System.Collections.Generic;
+using Com.IsartDigital.Hackaton;
 using Com.IsartDigital.ProjectName;
 using Godot;
 using Godot.Collections;
@@ -18,6 +20,15 @@ public partial class CharacterSelection : Control
 	private Timer characterSelectTimer;
 	private Vector2 playSTartPos;
 	public Vector2 spawnPlayPos = new Vector2(1073, 1182);
+
+	private Dictionary<CharactersEnum, Dictionary<StatType, int>> charactersStats = new Dictionary<CharactersEnum, Dictionary<StatType, int>>()
+	{
+		{CharactersEnum.OldLady, new Dictionary<StatType, int>() { {StatType.Money, 6 }, {StatType.Social, 5 }, {StatType.Comfort, 2 } } },
+        {CharactersEnum.Rich, new Dictionary<StatType, int>() { {StatType.Money, 8 }, {StatType.Social, 1 }, {StatType.Comfort, 6 } } },
+        {CharactersEnum.Student, new Dictionary<StatType, int>() { {StatType.Money, 1 }, {StatType.Social, 8 }, {StatType.Comfort, 6 } } }
+    };
+
+	public CharactersEnum characterSelected;
 
 	public override void _Ready()
 	{
@@ -58,6 +69,8 @@ public partial class CharacterSelection : Control
 		{
 			GetTree().ChangeSceneToPacked(inGameScene);
 		};
+		Dictionary<StatType, int> lStats = charactersStats[characterSelected];
+		GameManager.SetBaseStats(lStats[StatType.Money], lStats[StatType.Comfort], lStats[StatType.Social]);
 	}
 
 	private void ReturnCharacterSelection()

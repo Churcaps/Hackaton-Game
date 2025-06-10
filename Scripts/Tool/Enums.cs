@@ -16,4 +16,11 @@ namespace Com.IsartDigital.Hackaton
         Tent,
         Contact
     }
+
+    public enum CharactersEnum
+    {
+        OldLady,
+        Student,
+        Rich
+    }
 }
