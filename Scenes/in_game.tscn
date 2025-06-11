@@ -55,7 +55,7 @@ width = 734
 height = 124
 fill_from = Vector2(0, 0.566567)
 
-[node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "next", "livreImage", "phoneImage", "cityString", "bookTitleScoreLabel", "bookScoreLabel", "bookTitleObjectsLabel", "bookRessourcesCont", "bookObjPos", "ArgentCont", "ComfortCont", "SocialCont", "ARgentMark", "comfortMark", "SocialMark")]
+[node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "next", "livreImage", "phoneImage", "cityString", "bookRessourcesCont", "bookObjPos", "ArgentCont", "ComfortCont", "SocialCont", "ARgentMark", "comfortMark", "SocialMark")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,9 +69,6 @@ next = NodePath("next")
 livreImage = NodePath("Book2")
 phoneImage = NodePath("pphone")
 cityString = NodePath("Label")
-bookTitleScoreLabel = NodePath("")
-bookScoreLabel = NodePath("")
-bookTitleObjectsLabel = NodePath("")
 bookRessourcesCont = NodePath("Book2/ObjCont2")
 bookObjPos = NodePath("Book2/ObjContPos")
 foodScene = ExtResource("2_ci02v")
