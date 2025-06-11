@@ -59,6 +59,7 @@ namespace Com.IsartDigital.ProjectName
 
 						GetParent<CharacterSelection>().canShowText = true;
 						GetParent<CharacterSelection>().characterInfo.Visible = true;
+						GetParent<CharacterSelection>().statsHolder.Visible = true;
 
 						switch (i)
 						{

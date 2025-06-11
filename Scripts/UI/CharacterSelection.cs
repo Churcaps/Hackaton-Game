@@ -14,7 +14,11 @@ public partial class CharacterSelection : Control
 	[Export] public Button skipButton;
 	[Export] private PackedScene itemsChoiceScreenScene;
 
-	private int currentCharacterCount = 0;
+	[Export] public Control statsHolder;
+    [Export] private Control ArgentCont, ComfortCont, SocialCont;
+    [Export] private ColorRect ARgentMark, comfortMark, SocialMark;
+
+    private int currentCharacterCount = 0;
 
 	private float timeDelta = 0.8f;
 	public bool canShowText;
@@ -122,6 +126,7 @@ public partial class CharacterSelection : Control
 
 			canShowText = false;
 			characterInfo.Visible = false;
+			statsHolder.Hide();
 			currentCharacterCount = 0;
 
 			for (int i = 0; i < charactersButton.Count; i++)
@@ -194,12 +199,20 @@ public partial class CharacterSelection : Control
 
 	public void LoadStats()
 	{
-		Dictionary<StatType, int> lStats = charactersStats[characterSelected];
+		/*Dictionary<StatType, int> lStats = charactersStats[characterSelected];
 		string lText = "";
 		foreach (StatType lStat in lStats.Keys)
 		{
 			lText += lStat.ToString() + " : " + lStats[lStat].ToString() + "\n";
 		}
-		characterInfo.Text = lText;
-	}
+		characterInfo.Text = lText;*/
+
+		Dictionary<StatType, int> lStats = charactersStats[characterSelected];
+        ARgentMark.GlobalPosition = ArgentCont.GetChild<Control>(lStats[StatType.Argent]).GlobalPosition
+            - new Vector2(0, ARgentMark.PivotOffset.Y);
+        comfortMark.GlobalPosition = ComfortCont.GetChild<Control>(lStats[StatType.Confort]).GlobalPosition
+            - new Vector2(0, comfortMark.PivotOffset.Y);
+        SocialMark.GlobalPosition = SocialCont.GetChild<Control>(lStats[StatType.Social]).GlobalPosition
+            - new Vector2(0, SocialMark.PivotOffset.Y);
+    }
 }

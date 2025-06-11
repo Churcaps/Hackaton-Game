@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b84hbn2ung4ex"]
+[gd_scene load_steps=21 format=3 uid="uid://b84hbn2ung4ex"]
 
 [ext_resource type="Script" path="res://Scripts/UI/CharacterSelection.cs" id="1_g3i66"]
 [ext_resource type="PackedScene" uid="uid://btvdsbluxokdi" path="res://Scenes/ItemsChoiceScreen.tscn" id="2_26kll"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dm0w4wnwgmpwe" path="res://Assets/bg/T_UI_BookClose2.png" id="11_njkld"]
 [ext_resource type="Texture2D" uid="uid://cf7mcfuv1wgjd" path="res://Assets/Carte/T_UI_Etudiabnt.png" id="11_xdc1h"]
 [ext_resource type="Texture2D" uid="uid://cml8gyowbwfrt" path="res://Assets/bg/T_UI_Book_CharacterFrame2.png" id="12_w2xfu"]
+[ext_resource type="Texture2D" uid="uid://ccw0w8ca3pcss" path="res://Assets/bg/statsGoodFinished.png" id="13_3iut1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmc00"]
 
@@ -32,7 +33,7 @@ shadow_offset = Vector2(-0.035, 7.49)
 [sub_resource type="LabelSettings" id="LabelSettings_u3dk8"]
 font_size = 186
 
-[node name="CharacterSelection" type="Control" node_paths=PackedStringArray("charactersButton", "closeButton", "playButton", "characterInfo", "skipButton")]
+[node name="CharacterSelection" type="Control" node_paths=PackedStringArray("charactersButton", "closeButton", "playButton", "characterInfo", "skipButton", "statsHolder", "ArgentCont", "ComfortCont", "SocialCont", "ARgentMark", "comfortMark", "SocialMark")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,6 +50,13 @@ playButton = NodePath("Button")
 characterInfo = NodePath("Label")
 skipButton = NodePath("PanelContainer")
 itemsChoiceScreenScene = ExtResource("2_26kll")
+statsHolder = NodePath("StatsHolder")
+ArgentCont = NodePath("StatsHolder/ArgentCont")
+ComfortCont = NodePath("StatsHolder/ComfortCont")
+SocialCont = NodePath("StatsHolder/SocialCont")
+ARgentMark = NodePath("StatsHolder/ArgentMark")
+comfortMark = NodePath("StatsHolder/ComfortStat")
+SocialMark = NodePath("StatsHolder/SocialStat")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.48492, 0.48492, 0.48492, 1)
@@ -161,11 +169,437 @@ offset_right = 0.23999
 offset_bottom = 0.799927
 grow_horizontal = 0
 grow_vertical = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "
 label_settings = SubResource("LabelSettings_r84wd")
 vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
+
+[node name="StatsHolder" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_left = 0.516
+anchor_top = 0.327
+anchor_right = 0.907
+anchor_bottom = 0.548
+offset_left = 1.03992
+offset_top = 0.799988
+offset_right = 0.079834
+offset_bottom = 0.199951
+
+[node name="TextureRect" type="TextureRect" parent="StatsHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_3iut1")
+
+[node name="ArgentCont" type="Control" parent="StatsHolder"]
+layout_mode = 1
+anchor_left = 0.198
+anchor_top = 0.238
+anchor_right = 0.886
+anchor_bottom = 0.343
+offset_left = -1.52588e-05
+offset_top = -0.0139999
+offset_right = -6.10352e-05
+offset_bottom = -0.07901
+
+[node name="Control" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.028
+anchor_top = 0.5
+anchor_right = 0.028
+anchor_bottom = 0.5
+offset_left = 0.207999
+offset_top = -1.0
+offset_right = 40.208
+offset_bottom = 39.0
+
+[node name="Control2" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.115
+anchor_top = 0.55
+anchor_right = 0.115
+anchor_bottom = 0.55
+offset_left = 0.139999
+offset_right = 40.14
+offset_bottom = 40.0
+
+[node name="Control3" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.195
+anchor_top = 0.5
+anchor_right = 0.195
+anchor_bottom = 0.5
+offset_left = 0.0199966
+offset_right = 40.02
+offset_bottom = 40.0
+
+[node name="Control4" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.309
+anchor_top = 0.525
+anchor_right = 0.309
+anchor_bottom = 0.525
+offset_left = -0.276001
+offset_right = 39.724
+offset_bottom = 40.0
+
+[node name="Control5" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.411
+anchor_top = 0.5
+anchor_right = 0.411
+anchor_bottom = 0.5
+offset_left = 0.195999
+offset_right = 40.196
+offset_bottom = 40.0
+
+[node name="Control6" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.505
+anchor_top = 0.5
+anchor_right = 0.505
+anchor_bottom = 0.5
+offset_left = 0.179993
+offset_right = 40.18
+offset_bottom = 40.0
+
+[node name="Control7" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.59
+anchor_top = 0.5
+anchor_right = 0.59
+anchor_bottom = 0.5
+offset_left = 0.23999
+offset_top = -1.0
+offset_right = 40.24
+offset_bottom = 39.0
+
+[node name="Control8" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.676
+anchor_top = 0.5
+anchor_right = 0.676
+anchor_bottom = 0.5
+offset_left = -0.264038
+offset_top = -3.0
+offset_right = 39.736
+offset_bottom = 37.0
+
+[node name="Control9" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.77
+anchor_top = 0.5
+anchor_right = 0.77
+anchor_bottom = 0.5
+offset_left = -0.280029
+offset_right = 39.72
+offset_bottom = 40.0
+
+[node name="Control10" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.867
+anchor_top = 0.5
+anchor_right = 0.867
+anchor_bottom = 0.5
+offset_left = 0.0119629
+offset_right = 40.012
+offset_bottom = 40.0
+
+[node name="Control11" type="Control" parent="StatsHolder/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.963
+anchor_top = 0.5
+anchor_right = 0.963
+anchor_bottom = 0.5
+offset_left = -0.132019
+offset_right = 39.868
+offset_bottom = 40.0
+
+[node name="ComfortCont" type="Control" parent="StatsHolder"]
+layout_mode = 1
+anchor_left = 0.207
+anchor_top = 0.473
+anchor_right = 0.895
+anchor_bottom = 0.561
+offset_left = -1.52588e-05
+offset_top = 0.0309906
+offset_right = -6.10352e-05
+offset_bottom = -0.03302
+
+[node name="Control" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.028
+anchor_top = 0.5
+anchor_right = 0.028
+anchor_bottom = 0.5
+offset_left = 0.207999
+offset_top = -1.0
+offset_right = 40.208
+offset_bottom = 39.0
+
+[node name="Control2" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.115
+anchor_top = 0.55
+anchor_right = 0.115
+anchor_bottom = 0.55
+offset_left = 0.139999
+offset_right = 40.14
+offset_bottom = 40.0
+
+[node name="Control3" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.195
+anchor_top = 0.5
+anchor_right = 0.195
+anchor_bottom = 0.5
+offset_left = 0.0199966
+offset_right = 40.02
+offset_bottom = 40.0
+
+[node name="Control4" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.309
+anchor_top = 0.525
+anchor_right = 0.309
+anchor_bottom = 0.525
+offset_left = -0.276001
+offset_right = 39.724
+offset_bottom = 40.0
+
+[node name="Control5" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.411
+anchor_top = 0.5
+anchor_right = 0.411
+anchor_bottom = 0.5
+offset_left = 0.195999
+offset_right = 40.196
+offset_bottom = 40.0
+
+[node name="Control6" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.505
+anchor_top = 0.5
+anchor_right = 0.505
+anchor_bottom = 0.5
+offset_left = 0.179993
+offset_right = 40.18
+offset_bottom = 40.0
+
+[node name="Control7" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.59
+anchor_top = 0.475
+anchor_right = 0.59
+anchor_bottom = 0.475
+offset_left = 0.23999
+offset_right = 40.24
+offset_bottom = 40.0
+
+[node name="Control8" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.676
+anchor_top = 0.425
+anchor_right = 0.676
+anchor_bottom = 0.425
+offset_left = -0.264038
+offset_right = 39.736
+offset_bottom = 40.0
+
+[node name="Control9" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.77
+anchor_top = 0.5
+anchor_right = 0.77
+anchor_bottom = 0.5
+offset_left = -0.280029
+offset_right = 39.72
+offset_bottom = 40.0
+
+[node name="Control10" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.867
+anchor_top = 0.5
+anchor_right = 0.867
+anchor_bottom = 0.5
+offset_left = 0.0119629
+offset_right = 40.012
+offset_bottom = 40.0
+
+[node name="Control11" type="Control" parent="StatsHolder/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.963
+anchor_top = 0.5
+anchor_right = 0.963
+anchor_bottom = 0.5
+offset_left = -0.132019
+offset_right = 39.868
+offset_bottom = 40.0
+
+[node name="SocialCont" type="Control" parent="StatsHolder"]
+layout_mode = 1
+anchor_left = 0.207
+anchor_top = 0.688
+anchor_right = 0.893
+anchor_bottom = 0.779
+offset_left = -1.52588e-05
+offset_top = 0.135986
+offset_right = -6.10352e-05
+offset_bottom = 0.01297
+
+[node name="Control" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.028
+anchor_top = 0.475
+anchor_right = 0.028
+anchor_bottom = 0.475
+offset_left = 0.207999
+offset_right = 40.208
+offset_bottom = 40.0
+
+[node name="Control2" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.115
+anchor_top = 0.55
+anchor_right = 0.115
+anchor_bottom = 0.55
+offset_left = 0.139999
+offset_right = 40.14
+offset_bottom = 40.0
+
+[node name="Control3" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.195
+anchor_top = 0.5
+anchor_right = 0.195
+anchor_bottom = 0.5
+offset_left = 0.0199966
+offset_right = 40.02
+offset_bottom = 40.0
+
+[node name="Control4" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.309
+anchor_top = 0.525
+anchor_right = 0.309
+anchor_bottom = 0.525
+offset_left = -0.276001
+offset_right = 39.724
+offset_bottom = 40.0
+
+[node name="Control5" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.411
+anchor_top = 0.5
+anchor_right = 0.411
+anchor_bottom = 0.5
+offset_left = 0.195999
+offset_right = 40.196
+offset_bottom = 40.0
+
+[node name="Control6" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.505
+anchor_top = 0.5
+anchor_right = 0.505
+anchor_bottom = 0.5
+offset_left = 0.179993
+offset_right = 40.18
+offset_bottom = 40.0
+
+[node name="Control7" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.59
+anchor_top = 0.475
+anchor_right = 0.59
+anchor_bottom = 0.475
+offset_left = 0.23999
+offset_right = 40.24
+offset_bottom = 40.0
+
+[node name="Control8" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.676
+anchor_top = 0.425
+anchor_right = 0.676
+anchor_bottom = 0.425
+offset_left = -0.264038
+offset_right = 39.736
+offset_bottom = 40.0
+
+[node name="Control9" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.77
+anchor_top = 0.5
+anchor_right = 0.77
+anchor_bottom = 0.5
+offset_left = -0.280029
+offset_right = 39.72
+offset_bottom = 40.0
+
+[node name="Control10" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.867
+anchor_top = 0.5
+anchor_right = 0.867
+anchor_bottom = 0.5
+offset_left = 0.0119629
+offset_right = 40.012
+offset_bottom = 40.0
+
+[node name="Control11" type="Control" parent="StatsHolder/SocialCont"]
+layout_mode = 1
+anchor_left = 0.963
+anchor_top = 0.5
+anchor_right = 0.963
+anchor_bottom = 0.5
+offset_left = -0.132019
+offset_right = 39.868
+offset_bottom = 40.0
+
+[node name="ArgentMark" type="ColorRect" parent="StatsHolder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.206
+anchor_top = 0.224
+anchor_right = 0.216
+anchor_bottom = 0.36
+offset_left = -1.52588e-05
+offset_top = -0.0720062
+offset_bottom = -0.0800018
+pivot_offset = Vector2(5, 24)
+color = Color(0.968623, 0.424785, 0.400841, 1)
+
+[node name="ComfortStat" type="ColorRect" parent="StatsHolder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.214
+anchor_top = 0.448
+anchor_right = 0.224
+anchor_bottom = 0.584
+offset_left = -1.52588e-05
+offset_top = -0.144012
+offset_bottom = -0.152023
+pivot_offset = Vector2(5, 24)
+color = Color(0.968623, 0.424785, 0.400841, 1)
+
+[node name="SocialStat" type="ColorRect" parent="StatsHolder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.215
+anchor_top = 0.666
+anchor_right = 0.225
+anchor_bottom = 0.802
+offset_top = -0.0980072
+offset_right = -1.52588e-05
+offset_bottom = -0.106018
+pivot_offset = Vector2(5, 24)
+color = Color(0.968623, 0.424785, 0.400841, 1)
 
 [node name="Button" type="TextureButton" parent="."]
 visible = false

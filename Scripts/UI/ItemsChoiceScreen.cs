@@ -16,7 +16,7 @@ namespace Com.IsartDigital.Hackaton
 
         // ----- Nodes ----- \\
 
-        [Export] private Button nextButton;
+        [Export] private BaseButton nextButton;
 		[Export] private BaseButton[] itemsButtons;
 
 		// ----- Others ----- \\
