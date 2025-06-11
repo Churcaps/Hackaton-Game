@@ -24,4 +24,12 @@ namespace Com.IsartDigital.Hackaton
         Student,
         Rich
     }
+
+    public enum Cities
+    {
+        STRASBOURG,
+        FREJUS,
+        LAROCHELLE,
+        NULL
+    }
 }
