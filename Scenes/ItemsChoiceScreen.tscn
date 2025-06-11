@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/ItemsChoiceScreen.cs" id="1_yieeo"]
 [ext_resource type="PackedScene" uid="uid://umjofpgqnlu8" path="res://Scenes/Carte.tscn" id="2_eefan"]
-[ext_resource type="Texture2D" uid="uid://bx6c7sjnvwuhb" path="res://Assets/Characters/T_Character_Noble.png" id="2_eon51"]
+[ext_resource type="Texture2D" uid="uid://5so12f17atxg" path="res://Assets/Characters/T_Character_Noble.png" id="2_eon51"]
 [ext_resource type="Texture2D" uid="uid://cxy6yqfjqlp4g" path="res://Assets/Textures/Icons/Clothing.png" id="3_7pr40"]
 [ext_resource type="Texture2D" uid="uid://bk5s50saiki43" path="res://Assets/bg/T_UI_EtudiantSalon.jpg" id="3_qeld5"]
-[ext_resource type="Texture2D" uid="uid://boagslhlij0e4" path="res://Assets/Characters/T_Character_OldWomen.png" id="3_w6a52"]
+[ext_resource type="Texture2D" uid="uid://0slec711xddk" path="res://Assets/Characters/T_Character_OldWomen.png" id="3_w6a52"]
 [ext_resource type="Texture2D" uid="uid://7eiha1buvjed" path="res://Assets/Textures/Icons/ClothingSelected.png" id="4_meqva"]
 [ext_resource type="Texture2D" uid="uid://bsps3typhkh5g" path="res://Assets/Textures/Icons/WaterBottle.png" id="5_k3qm2"]
 [ext_resource type="Texture2D" uid="uid://nqe7ac0pfc2y" path="res://Assets/Textures/Icons/WaterBottleSelected.png" id="6_d3t8v"]

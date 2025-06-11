@@ -1,16 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://b84hbn2ung4ex"]
+[gd_scene load_steps=20 format=3 uid="uid://b84hbn2ung4ex"]
 
 [ext_resource type="Script" path="res://Scripts/UI/CharacterSelection.cs" id="1_g3i66"]
-[ext_resource type="Texture2D" uid="uid://bx6c7sjnvwuhb" path="res://Assets/Characters/T_Character_Noble.png" id="1_gaf6x"]
 [ext_resource type="PackedScene" uid="uid://btvdsbluxokdi" path="res://Scenes/ItemsChoiceScreen.tscn" id="2_26kll"]
-[ext_resource type="Texture2D" uid="uid://boagslhlij0e4" path="res://Assets/Characters/T_Character_OldWomen.png" id="2_k8j58"]
 [ext_resource type="Script" path="res://Scripts/UI/CharacterButton.cs" id="3_jx04y"]
-[ext_resource type="Texture2D" uid="uid://dfdp1uaa4x5k8" path="res://Assets/Characters/T_Character_Student.png" id="3_xisx6"]
 [ext_resource type="Texture2D" uid="uid://rwgohp31wrwh" path="res://Assets/bg/T_UI_Riche.jpg" id="5_p2jcm"]
 [ext_resource type="Texture2D" uid="uid://c5tsrjgpln7yq" path="res://Assets/bg/T_UI_Mamie.jpg" id="7_8pvu0"]
+[ext_resource type="Texture2D" uid="uid://b7urqpucnemls" path="res://Assets/Carte/T_Ui_Paris.jpg" id="7_hha7d"]
+[ext_resource type="Texture2D" uid="uid://cor60y52hdu57" path="res://Assets/Carte/T_UI_Riche.png" id="8_vdmm1"]
 [ext_resource type="Texture2D" uid="uid://brsda1lq1ttlm" path="res://Assets/bg/T_UI_Background_Etudiant.jpg" id="9_2jxlf"]
 [ext_resource type="Texture2D" uid="uid://bk5s50saiki43" path="res://Assets/bg/T_UI_EtudiantSalon.jpg" id="10_ncvdi"]
+[ext_resource type="Texture2D" uid="uid://5n3nwpt1khln" path="res://Assets/Carte/T_UI_Mamaiie.png" id="10_u8pmq"]
 [ext_resource type="Texture2D" uid="uid://q6wn4gglulnf" path="res://Assets/bg/T_UI_BookClose2.png" id="11_njkld"]
+[ext_resource type="Texture2D" uid="uid://bkh8dn1fob7nu" path="res://Assets/Carte/T_UI_Etudiabnt.png" id="11_xdc1h"]
 [ext_resource type="Texture2D" uid="uid://dj1m8swdyqn3j" path="res://Assets/bg/T_UI_Book_CharacterFrame2.png" id="12_w2xfu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmc00"]
@@ -61,14 +62,15 @@ mouse_filter = 2
 texture = ExtResource("9_2jxlf")
 stretch_mode = 6
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
+modulate = Color(0.551358, 0.551358, 0.551358, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.273142, 0.273142, 0.273142, 1)
+texture = ExtResource("7_hha7d")
 
 [node name="Character 1" type="TextureButton" parent="."]
 layout_mode = 1
@@ -78,7 +80,7 @@ anchor_bottom = 1.0
 offset_right = -0.960083
 grow_vertical = 2
 pivot_offset = Vector2(500, 800)
-texture_normal = ExtResource("1_gaf6x")
+texture_normal = ExtResource("8_vdmm1")
 stretch_mode = 5
 script = ExtResource("3_jx04y")
 myBackground = ExtResource("5_p2jcm")
@@ -94,7 +96,7 @@ offset_right = 0.799805
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(500, 800)
-texture_normal = ExtResource("2_k8j58")
+texture_normal = ExtResource("10_u8pmq")
 stretch_mode = 5
 script = ExtResource("3_jx04y")
 myBackground = ExtResource("7_8pvu0")
@@ -109,7 +111,7 @@ offset_left = 0.959961
 grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(500, 800)
-texture_normal = ExtResource("3_xisx6")
+texture_normal = ExtResource("11_xdc1h")
 stretch_mode = 5
 script = ExtResource("3_jx04y")
 myBackground = ExtResource("10_ncvdi")
@@ -163,6 +165,7 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 label_settings = SubResource("LabelSettings_r84wd")
 vertical_alignment = 1
 autowrap_mode = 3
+uppercase = true
 
 [node name="Button" type="TextureButton" parent="."]
 visible = false
