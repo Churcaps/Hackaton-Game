@@ -1,19 +1,20 @@
-[gd_scene load_steps=25 format=3 uid="uid://clb352hc0p2kl"]
+[gd_scene load_steps=26 format=3 uid="uid://clb352hc0p2kl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/InGame.cs" id="1_t226q"]
 [ext_resource type="PackedScene" uid="uid://b0clwveh7h10c" path="res://Scenes/FoodTexturerect.tscn" id="2_ci02v"]
 [ext_resource type="PackedScene" uid="uid://beg7hkf2lo6qp" path="res://Scenes/WaterBottleTexturerect.tscn" id="3_e74oc"]
 [ext_resource type="PackedScene" uid="uid://d1flswopg03m1" path="res://Scenes/ClothingTexturerect.tscn" id="4_rwxhn"]
+[ext_resource type="PackedScene" uid="uid://c5slrskpxn336" path="res://Scenes/HealthKitTexturerect.tscn" id="5_ainhx"]
 [ext_resource type="PackedScene" uid="uid://cvoito2rb60oi" path="res://Scenes/TentTextureRect.tscn" id="5_u5f2a"]
-[ext_resource type="Texture2D" uid="uid://dcgo77ia6o7fu" path="res://Assets/Fréjus.jpg" id="6_5lkme"]
-[ext_resource type="Texture2D" uid="uid://c7ygwa6an7adh" path="res://Assets/bg/BookClose.png" id="6_d7cgj"]
-[ext_resource type="Texture2D" uid="uid://b7uhxfm84x0gq" path="res://Assets/Textures/Icons/TelBouton.png" id="6_hoafa"]
-[ext_resource type="Texture2D" uid="uid://2231qx8vs643" path="res://Assets/images.png" id="6_ubu1g"]
-[ext_resource type="Texture2D" uid="uid://bxrqtv6kbscvr" path="res://Assets/bg/T_UI_Book.png" id="6_unlon"]
-[ext_resource type="Texture2D" uid="uid://sxshucoy858i" path="res://Assets/Textures/Icons/ButtonContinue.png" id="7_axkkt"]
-[ext_resource type="Texture2D" uid="uid://dfqun4ax8cuah" path="res://Assets/la rochelle.jpg" id="8_g70jw"]
-[ext_resource type="Texture2D" uid="uid://5g0b1fj2221l" path="res://Assets/T_UI_Bahaha.png" id="13_47v21"]
-[ext_resource type="Texture2D" uid="uid://drb03h5d1am84" path="res://Assets/6522516.png" id="14_07jvn"]
+[ext_resource type="Texture2D" uid="uid://y7lexwk27m14" path="res://Assets/Fréjus.jpg" id="6_5lkme"]
+[ext_resource type="Texture2D" uid="uid://ci73gofgyp77w" path="res://Assets/bg/BookClose.png" id="6_d7cgj"]
+[ext_resource type="Texture2D" uid="uid://bncagxaewxoo6" path="res://Assets/Textures/Icons/TelBouton.png" id="6_hoafa"]
+[ext_resource type="Texture2D" uid="uid://bhbsjfidtdu1s" path="res://Assets/images.png" id="6_ubu1g"]
+[ext_resource type="Texture2D" uid="uid://dfifqdviodw68" path="res://Assets/bg/T_UI_Book.png" id="6_unlon"]
+[ext_resource type="Texture2D" uid="uid://c1ldpljeskt7y" path="res://Assets/Textures/Icons/ButtonContinue.png" id="7_axkkt"]
+[ext_resource type="Texture2D" uid="uid://dlssw7cqn4ikt" path="res://Assets/la rochelle.jpg" id="8_g70jw"]
+[ext_resource type="Texture2D" uid="uid://bucaw7ir1p7j2" path="res://Assets/T_UI_Bahaha.png" id="13_47v21"]
+[ext_resource type="Texture2D" uid="uid://dgqjbded2hmpy" path="res://Assets/6522516.png" id="14_07jvn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukoup"]
 font_size = 166
@@ -73,6 +74,7 @@ bookObjPos = NodePath("Book2/ObjContPos")
 foodScene = ExtResource("2_ci02v")
 waterScene = ExtResource("3_e74oc")
 clothingScene = ExtResource("4_rwxhn")
+HealthKitScene = ExtResource("5_ainhx")
 TentScene = ExtResource("5_u5f2a")
 ArgentCont = NodePath("Book2/ArgentCont")
 ComfortCont = NodePath("Book2/ComfortCont")
