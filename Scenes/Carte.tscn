@@ -26,7 +26,7 @@ font_size = 64
 outline_size = 20
 outline_color = Color(0.556889, 0.412968, 6.73831e-07, 1)
 
-[node name="Carte" type="Control" node_paths=PackedStringArray("mapButtons", "textStrasbourg", "textRochelle", "textFrejus")]
+[node name="Carte" type="Control" node_paths=PackedStringArray("mapButtons", "textStrasbourg", "textRochelle", "textFrejus", "colorStras", "colorRoche", "colorFrej")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,6 +40,9 @@ inGameScene = ExtResource("2_rw2ev")
 textStrasbourg = NodePath("France/Strasbourg/Text")
 textRochelle = NodePath("France/Rochelle/Text")
 textFrejus = NodePath("France/Frejus/Text")
+colorStras = NodePath("France/Strasbourg/ColorRect")
+colorRoche = NodePath("France/Rochelle/ColorRect")
+colorFrej = NodePath("France/Frejus/ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -134,6 +137,20 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 
+[node name="ColorRect" type="ColorRect" parent="France/Strasbourg"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -8.949
+anchor_top = 1.607
+anchor_right = 1.508
+anchor_bottom = 4.852
+offset_left = -0.0100708
+offset_top = -0.0269089
+offset_right = 0.028183
+offset_bottom = 0.0282898
+color = Color(0.374139, 0.374139, 0.374139, 1)
+
 [node name="Text" type="Label" parent="France/Strasbourg"]
 visible = false
 layout_mode = 1
@@ -144,8 +161,8 @@ anchor_right = 2.034
 anchor_bottom = 4.623
 offset_left = -0.00695801
 offset_top = -0.029007
-offset_right = -0.00601196
-offset_bottom = -0.00302124
+offset_right = -0.00598907
+offset_bottom = 243.611
 text = "ici c'est Strasbroug pour faire machin."
 label_settings = SubResource("LabelSettings_r00ax")
 autowrap_mode = 2
@@ -193,18 +210,32 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 
+[node name="ColorRect" type="ColorRect" parent="France/Frejus"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -11.475
+anchor_top = -1.656
+anchor_right = -1.017
+anchor_bottom = 1.59
+offset_left = 0.0236206
+offset_top = 0.0158081
+offset_right = 0.0028801
+offset_bottom = 0.0100708
+color = Color(0.374139, 0.374139, 0.374139, 1)
+
 [node name="Text" type="Label" parent="France/Frejus"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -10.712
-anchor_top = -1.557
-anchor_right = -0.627
-anchor_bottom = 1.377
-offset_left = 0.00805664
-offset_top = -0.022995
-offset_right = -0.00699615
-offset_bottom = 0.00299072
+anchor_left = -11.271
+anchor_top = -1.475
+anchor_right = -1.186
+anchor_bottom = 1.459
+offset_left = -0.0123291
+offset_top = -0.0252304
+offset_right = -0.02742
+offset_bottom = 0.00112152
 text = "ici c'est Frejus pour faire machin."
 label_settings = SubResource("LabelSettings_r00ax")
 autowrap_mode = 2
@@ -251,6 +282,20 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0l0f0")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
+
+[node name="ColorRect" type="ColorRect" parent="France/Rochelle"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.746
+anchor_top = 1.59
+anchor_right = 9.712
+anchor_bottom = 4.836
+offset_left = 0.0140533
+offset_top = 0.0100555
+offset_right = -0.00665283
+offset_bottom = 0.00424194
+color = Color(0.374139, 0.374139, 0.374139, 1)
 
 [node name="Text" type="Label" parent="France/Rochelle"]
 visible = false

@@ -10,6 +10,7 @@ public partial class CarteSystem : Control
 	[Export] private PackedScene inGameScene;
 	[Export] private Label textInfo, textStats;
 	[Export] private Label textStrasbourg, textRochelle, textFrejus;
+	[Export] private ColorRect colorStras, colorRoche, colorFrej;
 
 	private Cities currentCitySelected;
 	private Label currentLabelToShow;
@@ -72,16 +73,20 @@ public partial class CarteSystem : Control
 	private void HideText(Cities pCity)
 	{
         Label lLabel = null;
+		ColorRect lColor = null;
         switch (pCity)
         {
             case Cities.STRASBOURG:
-                lLabel = textStrasbourg;
+				lLabel = textStrasbourg;
+				lColor = colorStras;
                 break;
             case Cities.FREJUS:
                 lLabel = textFrejus;
+				lColor = colorFrej;
                 break;
             case Cities.LAROCHELLE:
                 lLabel = textRochelle;
+				lColor = colorRoche;
                 break;
             case Cities.NULL:
                 lLabel = null;
@@ -89,22 +94,27 @@ public partial class CarteSystem : Control
         }
 
 		lLabel.Hide();
+		lColor.Hide();
 		currentLabelToShow = null;
     }
 
 	private void ShowText(Cities pCity)
 	{
 		Label lLabel = null;
+		ColorRect lColor = null;
 		switch (pCity)
 		{
 			case Cities.STRASBOURG:
 				lLabel = textStrasbourg;
+				lColor = colorStras;
 				break;
 			case Cities.FREJUS:
 				lLabel = textFrejus;
+				lColor = colorFrej;
 				break;
 			case Cities.LAROCHELLE:
 				lLabel = textRochelle;
+				lColor = colorRoche;
 				break;
 			case Cities.NULL:
 				lLabel = null;
@@ -112,11 +122,12 @@ public partial class CarteSystem : Control
 		}
 
 		lLabel.Show();
-        numTotCharac = lLabel.GetTotalCharacterCount();
-        lLabel.VisibleCharacters = 0;
-		currentLabelToShow = lLabel;
-		elapseTime = 0;
-	}
+		lColor.Show();
+        currentLabelToShow = lLabel;
+        /*numTotCharac = lLabel.GetTotalCharacterCount();
+		lLabel.VisibleCharacters = 0;
+		elapseTime = 0;*/
+    }
 
 	private void StartGame(int pIndex)
 	{
@@ -136,7 +147,7 @@ public partial class CarteSystem : Control
 
 		base._Process(pDelta);
 
-		if (currentLabelToShow == null) return;
+		/*if (currentLabelToShow == null) return;
 		if (currentLabelToShow.VisibleCharacters >= numTotCharac) return;
 
 		elapseTime += lDelta;
@@ -144,6 +155,6 @@ public partial class CarteSystem : Control
 		{
 			elapseTime = 0;
 			currentLabelToShow.VisibleCharacters++;
-		}
+		}*/
 	}
 }
