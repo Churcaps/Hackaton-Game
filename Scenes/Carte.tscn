@@ -22,7 +22,7 @@ font_size = 71
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw1l6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r00ax"]
-font_size = 64
+font_size = 32
 outline_size = 20
 outline_color = Color(0.556889, 0.412968, 6.73831e-07, 1)
 
@@ -144,26 +144,28 @@ anchors_preset = -1
 anchor_left = -8.949
 anchor_top = 1.607
 anchor_right = 1.508
-anchor_bottom = 4.852
+anchor_bottom = 5.672
 offset_left = -0.0100708
-offset_top = -0.0269089
+offset_top = -0.0269012
 offset_right = 0.028183
-offset_bottom = 0.0282898
+offset_bottom = 0.0083313
+pivot_offset = Vector2(308, 99)
 color = Color(0.374139, 0.374139, 0.374139, 1)
 
 [node name="Text" type="Label" parent="France/Strasbourg"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -8.627
-anchor_top = 1.689
-anchor_right = 2.034
-anchor_bottom = 4.623
-offset_left = -0.00695801
-offset_top = -0.029007
-offset_right = -0.00598907
-offset_bottom = 243.611
-text = "ici c'est Strasbroug pour faire machin."
+anchor_left = -8.78
+anchor_top = 1.705
+anchor_right = 1.678
+anchor_bottom = 5.59
+offset_left = 0.0189819
+offset_top = -0.00489807
+offset_right = -0.00180054
+offset_bottom = 0.0103455
+pivot_offset = Vector2(314, 89)
+text = "Votre groupe d’amis du lycée s’est retrouvé à Strasbourg, l’un deux accepte de vous héberger, mais vous allez vivre à deux dans un petit appartement…"
 label_settings = SubResource("LabelSettings_r00ax")
 autowrap_mode = 2
 
@@ -214,29 +216,32 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -11.475
-anchor_top = -1.656
-anchor_right = -1.017
-anchor_bottom = 1.59
-offset_left = 0.0236206
-offset_top = 0.0158081
-offset_right = 0.0028801
-offset_bottom = 0.0100708
+anchor_left = -11.983
+anchor_top = -2.836
+anchor_right = -1.068
+anchor_bottom = 1.377
+offset_left = -0.00439453
+offset_top = -0.0043335
+offset_right = 0.0118752
+offset_bottom = 0.0031662
+pivot_offset = Vector2(308, 99)
 color = Color(0.374139, 0.374139, 0.374139, 1)
 
 [node name="Text" type="Label" parent="France/Frejus"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -11.271
-anchor_top = -1.475
-anchor_right = -1.186
-anchor_bottom = 1.459
-offset_left = -0.0123291
-offset_top = -0.0252304
-offset_right = -0.02742
-offset_bottom = 0.00112152
-text = "ici c'est Frejus pour faire machin."
+anchor_left = -11.932
+anchor_top = -2.82
+anchor_right = -1.102
+anchor_bottom = 1.361
+offset_left = -0.0134277
+offset_top = 0.0196686
+offset_right = 0.017868
+offset_bottom = -0.0208359
+pivot_offset = Vector2(297, 89)
+text = "Chez votre mère, vous ne vous entendiez pas très bien avant votre déménagement à Paris, mais vous pouvez espérer qu’elle couvre une partie de vos dépenses…
+"
 label_settings = SubResource("LabelSettings_r00ax")
 autowrap_mode = 2
 
@@ -290,26 +295,29 @@ anchors_preset = -1
 anchor_left = -0.746
 anchor_top = 1.59
 anchor_right = 9.712
-anchor_bottom = 4.836
-offset_left = 0.0140533
-offset_top = 0.0100555
-offset_right = -0.00665283
-offset_bottom = 0.00424194
+anchor_bottom = 4.098
+offset_left = 0.0139885
+offset_top = 0.00999451
+offset_right = -0.00787354
+offset_bottom = 0.0220032
+pivot_offset = Vector2(308, 99)
 color = Color(0.374139, 0.374139, 0.374139, 1)
 
 [node name="Text" type="Label" parent="France/Rochelle"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.508
-anchor_top = 1.639
-anchor_right = 10.508
-anchor_bottom = 4.574
-offset_left = -0.0279999
-offset_top = 0.0209961
-offset_right = 0.0279541
-offset_bottom = -0.0140076
-text = "ici c'est La Rochelle pour faire machin."
+anchor_left = -0.661
+anchor_top = 1.59
+anchor_right = 9.763
+anchor_bottom = 4.082
+offset_left = -0.00094986
+offset_top = 0.0100555
+offset_right = -0.0168457
+offset_bottom = -0.00195313
+pivot_offset = Vector2(307, 98)
+text = "Votre grand-mère possède une maison à La Rochelle, mais vous n’y connaissez personne…
+"
 label_settings = SubResource("LabelSettings_r00ax")
 autowrap_mode = 2
 

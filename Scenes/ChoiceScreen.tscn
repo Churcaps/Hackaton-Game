@@ -29,7 +29,7 @@ font_size = 56
 [sub_resource type="LabelSettings" id="LabelSettings_g4kmw"]
 font_size = 56
 
-[node name="ChoiceScreen" type="Control" node_paths=PackedStringArray("probName", "probText", "choiceButtons", "choiceTexts", "choiceCosts", "choiceNames", "resultColorRect")]
+[node name="ChoiceScreen" type="Control" node_paths=PackedStringArray("probName", "probText", "choiceButtons", "choiceTexts", "choiceCosts", "choiceNames", "resultColorRect", "choicesContainers")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,6 +48,7 @@ choiceTexts = [NodePath("ChoicesContainer2/Choice1Cont/ChoiceTexte1"), NodePath(
 choiceCosts = [NodePath("ChoicesContainer2/Choice1Cont/CostChoice1"), NodePath("ChoicesContainer2/Choice2Cont/CostChoice2"), NodePath("ChoicesContainer2/Choice3Cont/CostChoice3"), NodePath("ChoicesContainer2/Choice4Cont/CostChoice3")]
 choiceNames = [NodePath("ChoicesContainer2/Choice1Cont/Choice1/Label"), NodePath("ChoicesContainer2/Choice2Cont/Choice2/Label"), NodePath("ChoicesContainer2/Choice3Cont/Choice3/Label"), NodePath("ChoicesContainer2/Choice4Cont/Choice3/Label")]
 resultColorRect = NodePath("ColorRect2")
+choicesContainers = [NodePath("ChoicesContainer2/Choice1Cont"), NodePath("ChoicesContainer2/Choice2Cont"), NodePath("ChoicesContainer2/Choice3Cont"), NodePath("ChoicesContainer2/Choice4Cont")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
