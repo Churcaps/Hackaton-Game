@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://clb352hc0p2kl"]
+[gd_scene load_steps=20 format=3 uid="uid://clb352hc0p2kl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/InGame.cs" id="1_t226q"]
 [ext_resource type="PackedScene" uid="uid://b0clwveh7h10c" path="res://Scenes/FoodTexturerect.tscn" id="2_ci02v"]
@@ -8,18 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://ci73gofgyp77w" path="res://Assets/bg/BookClose.png" id="6_d7cgj"]
 [ext_resource type="Texture2D" uid="uid://bncagxaewxoo6" path="res://Assets/Textures/Icons/TelBouton.png" id="6_hoafa"]
 [ext_resource type="Texture2D" uid="uid://dfifqdviodw68" path="res://Assets/bg/T_UI_Book.png" id="6_unlon"]
+[ext_resource type="Texture2D" uid="uid://c1ldpljeskt7y" path="res://Assets/Textures/Icons/ButtonContinue.png" id="7_axkkt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukoup"]
 font_size = 166
-
-[sub_resource type="Gradient" id="Gradient_7b8wc"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vrol5"]
-gradient = SubResource("Gradient_7b8wc")
-width = 169
-height = 184
-fill_from = Vector2(0.342447, 0.747009)
-fill_to = Vector2(0.643949, 0.364103)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6dj5"]
 
@@ -124,19 +116,20 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="next" type="TextureButton" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.917
-anchor_top = 0.859
-anchor_right = 0.984
-anchor_bottom = 0.974
-offset_left = -0.52002
-offset_top = 0.599976
-offset_right = 0.959961
+anchor_left = 0.87
+anchor_top = 0.799
+anchor_right = 1.035
+anchor_bottom = 1.079
+offset_left = -1.2002
+offset_top = -0.400024
+offset_right = -0.600098
 offset_bottom = 0.599976
-texture_normal = SubResource("GradientTexture2D_vrol5")
+texture_normal = ExtResource("7_axkkt")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Phone2" type="TextureButton" parent="."]
 layout_mode = 1
