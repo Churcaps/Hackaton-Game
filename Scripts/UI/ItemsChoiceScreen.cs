@@ -21,7 +21,7 @@ namespace Com.IsartDigital.Hackaton
 
 		// ----- Others ----- \\
 
-		private List<Button> buttonsPressed = new List<Button>();
+		private List<BaseButton> buttonsPressed = new List<BaseButton>();
 
 		private Dictionary<string, StatType> allItems = new Dictionary<string, StatType>()
 		{
@@ -41,7 +41,7 @@ namespace Com.IsartDigital.Hackaton
 
 			GetChild<TextureRect>(0).Texture = ChoicesManager.backgroundCharacterSelected;
 			nextButton.Pressed += ButtonNextPressed;
-			foreach (Button lButton in itemsButtons)
+			foreach (BaseButton lButton in itemsButtons)
 			{
 				lButton.Toggled += (bool pState) => ItemsButtonPressed(pState, lButton);
             }
@@ -59,7 +59,7 @@ namespace Com.IsartDigital.Hackaton
 		private void ButtonNextPressed()
 		{
             nextButton.Pressed -= ButtonNextPressed;
-			foreach (Button lButton in itemsButtons)
+			foreach (BaseButton lButton in itemsButtons)
 			{
 				if (lButton.ButtonPressed) GameManager.UpdateStat(allItems[lButton.Name], 1);
 			}
@@ -71,7 +71,7 @@ namespace Com.IsartDigital.Hackaton
 			};
         }
 
-		private void ItemsButtonPressed(bool pState, Button lButton)
+		private void ItemsButtonPressed(bool pState, BaseButton lButton)
 		{
 			if (pState) buttonsPressed.Add(lButton);
 			else buttonsPressed.Remove(lButton);
@@ -81,7 +81,7 @@ namespace Com.IsartDigital.Hackaton
 
 		private void ToggleDisableButtons(bool pState)
 		{
-			foreach (Button lButton in itemsButtons)
+			foreach (BaseButton lButton in itemsButtons)
 			{
 				if (buttonsPressed.Contains(lButton)) continue;
 				lButton.Disabled = pState;
