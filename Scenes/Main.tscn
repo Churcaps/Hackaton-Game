@@ -30,6 +30,10 @@ mouse_filter = 2
 [node name="InGame" parent="UI/Menu" instance=ExtResource("1_a07bw")]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
+foodScene = null
+waterScene = null
+clothingScene = null
+TentScene = null
 
 [node name="HUD" type="Control" parent="UI"]
 layout_mode = 3

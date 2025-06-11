@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://beg7hkf2lo6qp"]
 
-[ext_resource type="Texture2D" uid="uid://bws0tiajy7fk3" path="res://Assets/Textures/Icons/WaterBottle.png" id="1_mptbj"]
+[ext_resource type="Texture2D" uid="uid://bsps3typhkh5g" path="res://Assets/Textures/Icons/WaterBottle.png" id="1_mptbj"]
 
 [node name="Control" type="TextureRect"]
 custom_minimum_size = Vector2(100, 250)

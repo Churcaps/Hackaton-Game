@@ -1,15 +1,16 @@
-[gd_scene load_steps=27 format=3 uid="uid://btvdsbluxokdi"]
+[gd_scene load_steps=28 format=3 uid="uid://btvdsbluxokdi"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ItemsChoiceScreen.cs" id="1_yieeo"]
 [ext_resource type="PackedScene" uid="uid://umjofpgqnlu8" path="res://Scenes/Carte.tscn" id="2_eefan"]
-[ext_resource type="Texture2D" uid="uid://u7nnb1gtr7hl" path="res://Assets/Characters/T_Character_Noble.png" id="2_eon51"]
-[ext_resource type="Texture2D" uid="uid://dmqdkw68rgkrp" path="res://Assets/Textures/Icons/Clothing.png" id="3_7pr40"]
-[ext_resource type="Texture2D" uid="uid://bd8q4nwf21sfb" path="res://Assets/Characters/T_Character_OldWomen.png" id="3_w6a52"]
-[ext_resource type="Texture2D" uid="uid://b18ly0ywwxbk1" path="res://Assets/Textures/Icons/ClothingSelected.png" id="4_meqva"]
-[ext_resource type="Texture2D" uid="uid://bws0tiajy7fk3" path="res://Assets/Textures/Icons/WaterBottle.png" id="5_k3qm2"]
-[ext_resource type="Texture2D" uid="uid://cqvylut0qpvf8" path="res://Assets/Textures/Icons/WaterBottleSelected.png" id="6_d3t8v"]
-[ext_resource type="Texture2D" uid="uid://dpwviiwr7bmom" path="res://Assets/Textures/Icons/Food.png" id="7_5a63k"]
-[ext_resource type="Texture2D" uid="uid://cv5wtatlpliu1" path="res://Assets/Textures/Icons/FoodSelected.png" id="8_jovs7"]
+[ext_resource type="Texture2D" uid="uid://bx6c7sjnvwuhb" path="res://Assets/Characters/T_Character_Noble.png" id="2_eon51"]
+[ext_resource type="Texture2D" uid="uid://cxy6yqfjqlp4g" path="res://Assets/Textures/Icons/Clothing.png" id="3_7pr40"]
+[ext_resource type="Texture2D" uid="uid://bk5s50saiki43" path="res://Assets/bg/T_UI_EtudiantSalon.jpg" id="3_qeld5"]
+[ext_resource type="Texture2D" uid="uid://boagslhlij0e4" path="res://Assets/Characters/T_Character_OldWomen.png" id="3_w6a52"]
+[ext_resource type="Texture2D" uid="uid://7eiha1buvjed" path="res://Assets/Textures/Icons/ClothingSelected.png" id="4_meqva"]
+[ext_resource type="Texture2D" uid="uid://bsps3typhkh5g" path="res://Assets/Textures/Icons/WaterBottle.png" id="5_k3qm2"]
+[ext_resource type="Texture2D" uid="uid://nqe7ac0pfc2y" path="res://Assets/Textures/Icons/WaterBottleSelected.png" id="6_d3t8v"]
+[ext_resource type="Texture2D" uid="uid://db7ek0sjsqtj1" path="res://Assets/Textures/Icons/Food.png" id="7_5a63k"]
+[ext_resource type="Texture2D" uid="uid://cu4545u5dxxai" path="res://Assets/Textures/Icons/FoodSelected.png" id="8_jovs7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmwyf"]
 font_size = 128
@@ -66,7 +67,8 @@ inGameScene = ExtResource("2_eefan")
 nextButton = NodePath("NextButton")
 itemsButtons = [NodePath("VBoxContainer/HBoxContainer/Clothing"), NodePath("VBoxContainer/HBoxContainer/Tent"), NodePath("VBoxContainer/HBoxContainer/Food"), NodePath("VBoxContainer/HBoxContainer2/HealthKit"), NodePath("VBoxContainer/HBoxContainer2/Water")]
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.48492, 0.48492, 0.48492, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,7 +76,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.212981, 0.149284, 3.60981e-08, 1)
+texture = ExtResource("3_qeld5")
+stretch_mode = 6
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

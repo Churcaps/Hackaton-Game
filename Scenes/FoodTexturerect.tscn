@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0clwveh7h10c"]
 
-[ext_resource type="Texture2D" uid="uid://dpwviiwr7bmom" path="res://Assets/Textures/Icons/Food.png" id="1_3ijdh"]
+[ext_resource type="Texture2D" uid="uid://db7ek0sjsqtj1" path="res://Assets/Textures/Icons/Food.png" id="1_3ijdh"]
 
 [node name="TextureRect" type="TextureRect"]
 custom_minimum_size = Vector2(187, 250)
