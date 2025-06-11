@@ -6,7 +6,7 @@
 script = ExtResource("1_30pbh")
 name = "CHOIX 3"
 text = "Faire des réserves d’eau"
-typesChanges = Array[int]([])
+typesChanges = null
 amoutChanges = PackedInt32Array()
 resultString = "Alors que vous marchez sur la plage, vous êtes pris de nausées et faites un malaise, vous vous réveillez dans un post de secours de la croix rouge"
 resultType = Array[int]([7])

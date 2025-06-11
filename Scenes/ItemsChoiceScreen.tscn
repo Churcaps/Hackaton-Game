@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://btvdsbluxokdi"]
+[gd_scene load_steps=32 format=3 uid="uid://btvdsbluxokdi"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ItemsChoiceScreen.cs" id="1_yieeo"]
 [ext_resource type="PackedScene" uid="uid://umjofpgqnlu8" path="res://Scenes/Carte.tscn" id="2_eefan"]
@@ -11,9 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://nqe7ac0pfc2y" path="res://Assets/Textures/Icons/WaterBottleSelected.png" id="6_d3t8v"]
 [ext_resource type="Texture2D" uid="uid://db7ek0sjsqtj1" path="res://Assets/Textures/Icons/Food.png" id="7_5a63k"]
 [ext_resource type="Texture2D" uid="uid://cu4545u5dxxai" path="res://Assets/Textures/Icons/FoodSelected.png" id="8_jovs7"]
+[ext_resource type="Texture2D" uid="uid://dj1m8swdyqn3j" path="res://Assets/bg/T_UI_Book_CharacterFrame2.png" id="12_dmd57"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmwyf"]
 font_size = 128
+shadow_size = 51
+shadow_color = Color(0, 0, 0, 0.690196)
+shadow_offset = Vector2(7.37, 9.14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0vwm"]
 texture = ExtResource("3_7pr40")
@@ -55,6 +59,13 @@ texture = ExtResource("6_d3t8v")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy04b"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_llg2o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ks6pa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtvob"]
+font_size = 61
+
 [node name="ItemsChoiceScreen" type="Control" node_paths=PackedStringArray("nextButton", "itemsButtons")]
 layout_mode = 3
 anchors_preset = 15
@@ -68,7 +79,7 @@ nextButton = NodePath("NextButton")
 itemsButtons = [NodePath("VBoxContainer/HBoxContainer/Clothing"), NodePath("VBoxContainer/HBoxContainer/Tent"), NodePath("VBoxContainer/HBoxContainer/Food"), NodePath("VBoxContainer/HBoxContainer2/HealthKit"), NodePath("VBoxContainer/HBoxContainer2/Water")]
 
 [node name="Background" type="TextureRect" parent="."]
-modulate = Color(0.48492, 0.48492, 0.48492, 1)
+modulate = Color(0.362077, 0.362077, 0.362077, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,14 +95,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.218
 anchor_top = 0.098
-anchor_right = 0.789
+anchor_right = 0.859
 anchor_bottom = 0.207
 offset_left = 0.919983
 offset_top = 0.199997
-offset_right = 1.15991
+offset_right = -178.04
 offset_bottom = 0.799988
 text = "Choisissez vos 3 objets :"
 label_settings = SubResource("LabelSettings_tmwyf")
+uppercase = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -171,13 +183,51 @@ toggle_mode = true
 [node name="NextButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.777
-anchor_top = 0.854
-anchor_right = 0.961
-anchor_bottom = 0.941
-offset_left = -0.119995
-offset_top = -0.400024
-offset_right = 0.839844
-offset_bottom = 0.399902
+anchor_left = 0.779
+anchor_top = 0.842
+anchor_right = 0.963
+anchor_bottom = 0.924
+offset_left = -0.240112
+offset_top = -0.200073
+offset_right = 0.719727
+offset_bottom = 0.599976
 theme_override_font_sizes/font_size = 96
-text = "Continuer"
+theme_override_styles/normal = SubResource("StyleBoxTexture_llg2o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ks6pa")
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NextButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.047
+anchor_top = -0.394
+anchor_right = 1.129
+anchor_bottom = 1.727
+offset_left = 0.184002
+offset_top = 0.00800323
+offset_right = 0.111938
+offset_bottom = 0.0359802
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_dmd57")
+patch_margin_left = 290
+patch_margin_top = 45
+patch_margin_right = 285
+patch_margin_bottom = 235
+
+[node name="Label" type="Label" parent="NextButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.133
+anchor_right = 0.886
+anchor_bottom = 1.0
+offset_left = 0.224136
+offset_top = 3.00012
+offset_right = -0.191772
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONTINUER"
+label_settings = SubResource("LabelSettings_rtvob")
+horizontal_alignment = 1
+vertical_alignment = 1

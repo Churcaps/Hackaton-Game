@@ -15,7 +15,8 @@ namespace Com.IsartDigital.Hackaton
         [Display(Name ="Kit de soins")] HealthKit,
         [Display(Name ="Réserve d'eau")] Water,
         [Display(Name ="Contact (Philippe)")] Contact1,
-        [Display(Name ="Contact (Geneviève)")] Contact2
+        [Display(Name ="Contact (Geneviève)")] Contact2,
+        [Display(Name =" ")] Empty
     }
 
     public enum CharactersEnum

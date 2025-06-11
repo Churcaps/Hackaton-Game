@@ -1,27 +1,31 @@
 [gd_scene load_steps=10 format=3 uid="uid://dxp4ssrjdk4d"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ChoiceScreen.cs" id="1_k38h5"]
+[ext_resource type="Texture2D" uid="uid://cepakt8243so" path="res://Assets/bg/T_UI_Book2.png" id="2_cy67m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6u2fv"]
 font_size = 128
 
 [sub_resource type="LabelSettings" id="LabelSettings_g7fgq"]
-font_size = 70
+font_size = 60
+font_color = Color(0.980392, 0.8, 0.74902, 1)
+outline_size = 40
+outline_color = Color(0.653434, 0.389693, 0.256037, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_1lhqx"]
-font_size = 48
+[sub_resource type="LabelSettings" id="LabelSettings_ffn3v"]
+font_size = 40
+font_color = Color(0.64061, 0.258936, 0.152485, 1)
+outline_size = 5
+outline_color = Color(0.73135, 0.305979, 0.187746, 1)
 
 [sub_resource type="Gradient" id="Gradient_ur6tx"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.054902, 0.054902, 0.054902, 0.615686)
+colors = PackedColorArray(0.980392, 0.8, 0.74902, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_g5576"]
 gradient = SubResource("Gradient_ur6tx")
-width = 600
-height = 128
-
-[sub_resource type="LabelSettings" id="LabelSettings_3luym"]
-font_size = 64
+width = 470
+height = 203
 
 [sub_resource type="LabelSettings" id="LabelSettings_enrpm"]
 font_size = 56
@@ -43,21 +47,28 @@ grow_vertical = 2
 script = ExtResource("1_k38h5")
 probName = NodePath("ContexteLabel")
 probText = NodePath("ProbText")
-choiceButtons = [NodePath("ChoicesContainer2/Choice1Cont/Choice1"), NodePath("ChoicesContainer2/Choice2Cont/Choice2"), NodePath("ChoicesContainer2/Choice3Cont/Choice3"), NodePath("ChoicesContainer2/Choice4Cont/Choice3")]
-choiceTexts = [NodePath("ChoicesContainer2/Choice1Cont/ChoiceTexte1"), NodePath("ChoicesContainer2/Choice2Cont/ChoiceTexte2"), NodePath("ChoicesContainer2/Choice3Cont/ChoiceTexte3"), NodePath("ChoicesContainer2/Choice4Cont/ChoiceTexte3")]
-choiceCosts = [NodePath("ChoicesContainer2/Choice1Cont/CostChoice1"), NodePath("ChoicesContainer2/Choice2Cont/CostChoice2"), NodePath("ChoicesContainer2/Choice3Cont/CostChoice3"), NodePath("ChoicesContainer2/Choice4Cont/CostChoice3")]
-choiceNames = [NodePath("ChoicesContainer2/Choice1Cont/Choice1/Label"), NodePath("ChoicesContainer2/Choice2Cont/Choice2/Label"), NodePath("ChoicesContainer2/Choice3Cont/Choice3/Label"), NodePath("ChoicesContainer2/Choice4Cont/Choice3/Label")]
+choiceButtons = [NodePath("ChoicesContainer2/VBoxContainer/Choice1Cont/Choice1"), NodePath("ChoicesContainer2/VBoxContainer2/Choice2Cont/Choice2"), NodePath("ChoicesContainer2/VBoxContainer/Choice3Cont/Choice3"), NodePath("ChoicesContainer2/VBoxContainer2/Choice4Cont/Choice3")]
+choiceTexts = [NodePath("ChoicesContainer2/VBoxContainer/Choice1Cont/ChoiceTexte1"), NodePath("ChoicesContainer2/VBoxContainer2/Choice2Cont/ChoiceTexte2"), NodePath("ChoicesContainer2/VBoxContainer/Choice3Cont/ChoiceTexte3"), NodePath("ChoicesContainer2/VBoxContainer2/Choice4Cont/ChoiceTexte3")]
+choiceCosts = [NodePath("ChoicesContainer2/VBoxContainer/Choice1Cont/CostChoice1"), NodePath("ChoicesContainer2/VBoxContainer2/Choice2Cont/CostChoice2"), NodePath("ChoicesContainer2/VBoxContainer/Choice3Cont/CostChoice3"), NodePath("ChoicesContainer2/VBoxContainer2/Choice4Cont/CostChoice3")]
+choiceNames = [NodePath("ChoicesContainer2/VBoxContainer/Choice1Cont/Choice1/Label"), NodePath("ChoicesContainer2/VBoxContainer2/Choice2Cont/Choice2/Label"), NodePath("ChoicesContainer2/VBoxContainer/Choice3Cont/Choice3/Label"), NodePath("ChoicesContainer2/VBoxContainer2/Choice4Cont/Choice3/Label")]
 resultColorRect = NodePath("ColorRect2")
-choicesContainers = [NodePath("ChoicesContainer2/Choice1Cont"), NodePath("ChoicesContainer2/Choice2Cont"), NodePath("ChoicesContainer2/Choice3Cont"), NodePath("ChoicesContainer2/Choice4Cont")]
+choicesContainers = [NodePath("ChoicesContainer2/VBoxContainer/Choice1Cont"), NodePath("ChoicesContainer2/VBoxContainer2/Choice2Cont"), NodePath("ChoicesContainer2/VBoxContainer/Choice3Cont"), NodePath("ChoicesContainer2/VBoxContainer2/Choice4Cont")]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.039
+anchor_top = -0.02
+anchor_right = 1.039
+anchor_bottom = 1.02
+offset_left = -0.489998
+offset_top = 0.400002
+offset_right = 0.48999
+offset_bottom = -0.400146
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.20871, 0.20871, 0.20871, 1)
+texture = ExtResource("2_cy67m")
+expand_mode = 1
 
 [node name="ContexteLabel" type="Label" parent="."]
 visible = false
@@ -78,14 +89,14 @@ horizontal_alignment = 1
 [node name="ProbText" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.012
-anchor_top = 0.045
-anchor_right = 0.991
-anchor_bottom = 0.408
-offset_left = -0.0799999
-offset_top = -16.9
-offset_right = -0.190186
-offset_bottom = 0.23996
+anchor_left = 0.062
+anchor_top = 0.133
+anchor_right = 0.444
+anchor_bottom = 0.88
+offset_left = -0.580002
+offset_top = -0.259995
+offset_right = 0.039917
+offset_bottom = 0.399902
 text = "Des inondations record dans la ville suite à des précipitations dignes du Déluge, vous n’êtes pas épargné"
 label_settings = SubResource("LabelSettings_g7fgq")
 horizontal_alignment = 1
@@ -95,148 +106,160 @@ autowrap_mode = 3
 [node name="ChoicesContainer2" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.011
-anchor_top = 0.461
-anchor_right = 0.987
-anchor_bottom = 0.699
-offset_left = -0.990005
-offset_top = 0.580017
-offset_right = 509.17
-offset_bottom = 72.22
+anchor_left = 0.54
+anchor_top = 0.089
+anchor_right = 0.919
+anchor_bottom = 0.884
+offset_left = -0.600098
+offset_top = -0.580002
+offset_right = 197.29
+offset_bottom = 249.52
 scale = Vector2(0.8, 0.8)
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Choice1Cont" type="VBoxContainer" parent="ChoicesContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ChoicesContainer2"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 150
 
-[node name="CostChoice1" type="Label" parent="ChoicesContainer2/Choice1Cont"]
+[node name="Choice1Cont" type="VBoxContainer" parent="ChoicesContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="CostChoice1" type="Label" parent="ChoicesContainer2/VBoxContainer/Choice1Cont"]
 layout_mode = 2
 text = "This Item : x X"
-label_settings = SubResource("LabelSettings_1lhqx")
+label_settings = SubResource("LabelSettings_ffn3v")
 
-[node name="Choice1" type="TextureButton" parent="ChoicesContainer2/Choice1Cont"]
+[node name="Choice1" type="TextureButton" parent="ChoicesContainer2/VBoxContainer/Choice1Cont"]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_g5576")
 
-[node name="Label" type="Label" parent="ChoicesContainer2/Choice1Cont/Choice1"]
+[node name="Label" type="Label" parent="ChoicesContainer2/VBoxContainer/Choice1Cont/Choice1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Je fait ca"
-label_settings = SubResource("LabelSettings_3luym")
+theme_override_constants/line_spacing = 0
+text = "CHOIX 1 (CONTACT)"
+label_settings = SubResource("LabelSettings_g7fgq")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 1
-
-[node name="ChoiceTexte1" type="Label" parent="ChoicesContainer2/Choice1Cont"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "C ca et ca et ca pck ca"
-label_settings = SubResource("LabelSettings_1lhqx")
 autowrap_mode = 2
 
-[node name="Choice2Cont" type="VBoxContainer" parent="ChoicesContainer2"]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="CostChoice2" type="Label" parent="ChoicesContainer2/Choice2Cont"]
-layout_mode = 2
-text = "This Item : x X"
-label_settings = SubResource("LabelSettings_1lhqx")
-
-[node name="Choice2" type="TextureButton" parent="ChoicesContainer2/Choice2Cont"]
-layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_g5576")
-
-[node name="Label" type="Label" parent="ChoicesContainer2/Choice2Cont/Choice2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Je fait ca"
-label_settings = SubResource("LabelSettings_3luym")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
-
-[node name="ChoiceTexte2" type="Label" parent="ChoicesContainer2/Choice2Cont"]
+[node name="ChoiceTexte1" type="Label" parent="ChoicesContainer2/VBoxContainer/Choice1Cont"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "C ca et ca et ca pck ca"
-label_settings = SubResource("LabelSettings_1lhqx")
+text = "frjukiuhrf fhifrjohjrfo fjrjfhojfrijijfjf fjfjff, fjrfjrhf"
+label_settings = SubResource("LabelSettings_ffn3v")
 autowrap_mode = 2
 
-[node name="Choice3Cont" type="VBoxContainer" parent="ChoicesContainer2"]
+[node name="Choice3Cont" type="VBoxContainer" parent="ChoicesContainer2/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 25
 
-[node name="CostChoice3" type="Label" parent="ChoicesContainer2/Choice3Cont"]
+[node name="CostChoice3" type="Label" parent="ChoicesContainer2/VBoxContainer/Choice3Cont"]
 layout_mode = 2
 text = "This Item : x X"
-label_settings = SubResource("LabelSettings_1lhqx")
+label_settings = SubResource("LabelSettings_ffn3v")
 
-[node name="Choice3" type="TextureButton" parent="ChoicesContainer2/Choice3Cont"]
+[node name="Choice3" type="TextureButton" parent="ChoicesContainer2/VBoxContainer/Choice3Cont"]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_g5576")
 
-[node name="Label" type="Label" parent="ChoicesContainer2/Choice3Cont/Choice3"]
+[node name="Label" type="Label" parent="ChoicesContainer2/VBoxContainer/Choice3Cont/Choice3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Je fait ca"
-label_settings = SubResource("LabelSettings_3luym")
+theme_override_constants/line_spacing = 0
+text = "CHOIX 1 (CONTACT)"
+label_settings = SubResource("LabelSettings_g7fgq")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 1
-
-[node name="ChoiceTexte3" type="Label" parent="ChoicesContainer2/Choice3Cont"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "C ca et ca et ca pck ca"
-label_settings = SubResource("LabelSettings_1lhqx")
 autowrap_mode = 2
 
-[node name="Choice4Cont" type="VBoxContainer" parent="ChoicesContainer2"]
+[node name="ChoiceTexte3" type="Label" parent="ChoicesContainer2/VBoxContainer/Choice3Cont"]
 layout_mode = 2
-theme_override_constants/separation = 50
+size_flags_vertical = 3
+text = "frjukiuhrf fhifrjohjrfo fjrjfhojfrijijfjf fjfjff, fjrfjrhf"
+label_settings = SubResource("LabelSettings_ffn3v")
+autowrap_mode = 2
 
-[node name="CostChoice3" type="Label" parent="ChoicesContainer2/Choice4Cont"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="ChoicesContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 150
+
+[node name="Choice2Cont" type="VBoxContainer" parent="ChoicesContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="CostChoice2" type="Label" parent="ChoicesContainer2/VBoxContainer2/Choice2Cont"]
 layout_mode = 2
 text = "This Item : x X"
-label_settings = SubResource("LabelSettings_1lhqx")
+label_settings = SubResource("LabelSettings_ffn3v")
 
-[node name="Choice3" type="TextureButton" parent="ChoicesContainer2/Choice4Cont"]
+[node name="Choice2" type="TextureButton" parent="ChoicesContainer2/VBoxContainer2/Choice2Cont"]
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_g5576")
 
-[node name="Label" type="Label" parent="ChoicesContainer2/Choice4Cont/Choice3"]
+[node name="Label" type="Label" parent="ChoicesContainer2/VBoxContainer2/Choice2Cont/Choice2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Je fait ca"
-label_settings = SubResource("LabelSettings_3luym")
+theme_override_constants/line_spacing = 0
+text = "CHOIX 1 (CONTACT)"
+label_settings = SubResource("LabelSettings_g7fgq")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 2
 
-[node name="ChoiceTexte3" type="Label" parent="ChoicesContainer2/Choice4Cont"]
+[node name="ChoiceTexte2" type="Label" parent="ChoicesContainer2/VBoxContainer2/Choice2Cont"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "C ca et ca et ca pck ca"
-label_settings = SubResource("LabelSettings_1lhqx")
+text = "frjukiuhrf fhifrjohjrfo fjrjfhojfrijijfjf fjfjff, fjrfjrhf"
+label_settings = SubResource("LabelSettings_ffn3v")
+autowrap_mode = 2
+
+[node name="Choice4Cont" type="VBoxContainer" parent="ChoicesContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="CostChoice3" type="Label" parent="ChoicesContainer2/VBoxContainer2/Choice4Cont"]
+layout_mode = 2
+text = "This Item : x X"
+label_settings = SubResource("LabelSettings_ffn3v")
+
+[node name="Choice3" type="TextureButton" parent="ChoicesContainer2/VBoxContainer2/Choice4Cont"]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_g5576")
+
+[node name="Label" type="Label" parent="ChoicesContainer2/VBoxContainer2/Choice4Cont/Choice3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+text = "CHOIX 1 (CONTACT)"
+label_settings = SubResource("LabelSettings_g7fgq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ChoiceTexte3" type="Label" parent="ChoicesContainer2/VBoxContainer2/Choice4Cont"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "frjukiuhrf fhifrjohjrfo fjrjfhojfrijijfjf fjfjff, fjrfjrhf"
+label_settings = SubResource("LabelSettings_ffn3v")
 autowrap_mode = 2
 
 [node name="ColorRect2" type="ColorRect" parent="."]

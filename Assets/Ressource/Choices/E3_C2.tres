@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_0p866")
 name = "CHOIX 2"
-text = "Héberger une famille"
+text = "Héberger une famille‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎           "
 typesChanges = Array[int]([])
 amoutChanges = PackedInt32Array()
 resultString = "Vous profitez de la rencontre avec les bénévoles de la croix rouge pour vous enquérir de la situation : plus de 15 milles déplacés dans la journée sur la région, dont plusieurs centaines sont censées être hébergées dans le gymnase..."
