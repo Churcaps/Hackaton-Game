@@ -117,8 +117,8 @@ public partial class CharacterSelection : Control
 
 			Tween lTween2 = GetTree().CreateTween().SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.Out).SetParallel();
 
-			GetChild<ColorRect>(1).Visible = true;
-			lTween2.TweenProperty(GetChild<ColorRect>(1), "modulate", Colors.White, 0.8f);
+			GetChild<TextureRect>(1).Visible = true;
+			lTween2.TweenProperty(GetChild<TextureRect>(1), "modulate", new Color(0.551f, 0.551f, 0.551f, 1f), 0.8f);
 
 			canShowText = false;
 			characterInfo.Visible = false;

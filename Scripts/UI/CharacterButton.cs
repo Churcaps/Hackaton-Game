@@ -88,8 +88,8 @@ namespace Com.IsartDigital.ProjectName
 
 				GetParent<Control>().GetChild<TextureRect>(0).Texture = myBackground;
 				Tween lTween3 = GetTree().CreateTween().SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.Out).SetParallel();
-				lTween3.TweenProperty(GetParent<Control>().GetChild<ColorRect>(1), "modulate", Colors.Transparent, 0.8f);
-				lTween3.Finished += () => GetParent<Control>().GetChild<ColorRect>(1).Visible = false;
+				lTween3.TweenProperty(GetParent<Control>().GetChild<TextureRect>(1), "modulate", Colors.Transparent, 0.8f);
+				lTween3.Finished += () => GetParent<Control>().GetChild<TextureRect>(1).Visible = false;
 
 
 				characterSelectTimer.Start();
