@@ -9,9 +9,12 @@ namespace Com.IsartDigital.ProjectName
 	{
 		public Vector2 characterPos;
 
-		private bool currentlyAnimateButtonPressed;
+		[Export] private Texture2D myBackground;
+
+		public bool currentlyAnimateButtonPressed;
 		private Timer characterSelectTimer;
-		
+		private Timer myTimer;
+
 		public override void _Ready()
 		{
 			characterPos = Position;
@@ -24,6 +27,12 @@ namespace Com.IsartDigital.ProjectName
 			AddChild(characterSelectTimer);
 
 			characterSelectTimer.Timeout += () => currentlyAnimateButtonPressed = false;
+
+			myTimer = new Timer();
+			myTimer.WaitTime = 0.01f;
+			myTimer.OneShot = true;
+			AddChild(myTimer);
+			myTimer.Timeout += startAnim;
 		}
 
 		public override void _Process(double pDelta)
@@ -37,14 +46,9 @@ namespace Com.IsartDigital.ProjectName
 
 		}
 
-		private void PlayButtonPress()
+		private void startAnim()
 		{
-			if (!currentlyAnimateButtonPressed)
-			{
-				GetParent<CharacterSelection>().skipButton.Visible = true;
-				currentlyAnimateButtonPressed = true;
-
-				for (int i = 0; i < GetParent<CharacterSelection>().charactersButton.Count; i++)
+			for (int i = 0; i < GetParent<CharacterSelection>().charactersButton.Count; i++)
 				{
 					if (GetParent<CharacterSelection>().charactersButton[i] == this)
 					{
@@ -60,13 +64,13 @@ namespace Com.IsartDigital.ProjectName
 						{
 							case 0:
 								GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Rich;
-                                break;
+								break;
 							case 1:
-                                GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.OldLady;
-                                break;
+								GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.OldLady;
+								break;
 							case 2:
-                                GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Student;
-                                break;
+								GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Student;
+								break;
 						}
 						GetParent<CharacterSelection>().LoadStats();
 						continue;
@@ -82,7 +86,25 @@ namespace Com.IsartDigital.ProjectName
 					lTween2.TweenProperty(GetParent<CharacterSelection>().playButton, "position", GetParent<CharacterSelection>().spawnPlayPos, 0.5f);
 				}
 
+				GetParent<Control>().GetChild<TextureRect>(0).Texture = myBackground;
+				Tween lTween3 = GetTree().CreateTween().SetTrans(Tween.TransitionType.Quad).SetEase(Tween.EaseType.Out).SetParallel();
+				lTween3.TweenProperty(GetParent<Control>().GetChild<ColorRect>(1), "modulate", Colors.Transparent, 0.8f);
+				lTween3.Finished += () => GetParent<Control>().GetChild<ColorRect>(1).Visible = false;
+
+
 				characterSelectTimer.Start();
+		}
+
+		private void PlayButtonPress()
+		{
+			if (!currentlyAnimateButtonPressed)
+			{
+				GetParent<CharacterSelection>().stoptween();
+				GetParent<CharacterSelection>().bahahah = true;
+				GetParent<CharacterSelection>().skipButton.Visible = true;
+				currentlyAnimateButtonPressed = true;
+
+				myTimer.Start();
 			}
 		}
 			

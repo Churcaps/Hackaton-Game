@@ -119,40 +119,43 @@ public partial class InGame : Control
                     break;
 
                 StatType currentItem = displayItems[index];
+				GD.Print(TentScene);	
                 PackedScene scene = null;
 
                 switch (currentItem)
                 {
                     case StatType.Tent:
-                        scene = TentScene;
+                        scene = GD.Load<PackedScene>("res://Scenes/TentTextureRect.tscn");
                         break;
                     case StatType.Cloting:
-                        scene = clothingScene;
+                        scene = GD.Load<PackedScene>("res://Scenes/ClothingTexturerect.tscn");;
                         break;
                     case StatType.Food:
-                        scene = foodScene;
+                        scene = GD.Load<PackedScene>("res://Scenes/FoodTexturerect.tscn");;
                         break;
                     case StatType.HealthKit:
                         scene = HealthKitScene;
                         break;
                     case StatType.Water:
-                        scene = waterScene;
+                        scene = GD.Load<PackedScene>("res://Scenes/WaterBottleTexturerect.tscn");;
                         break;
                     default:
                         break;
                 }
 
+				
+
                 if (scene != null)
-                {
-                    lHBoxCont.AddChild(scene.Instantiate());
-                    Label lLabel = new Label();
-                    lLabel.Text = " x " + GameManager.allItems[currentItem].ToString();
+				{
+					lHBoxCont.AddChild(scene.Instantiate());
+					Label lLabel = new Label();
+					lLabel.Text = " x " + GameManager.allItems[currentItem].ToString();
 					LabelSettings lLabelSet = new LabelSettings();
 					lLabelSet.FontSize = 96;
 					lLabelSet.FontColor = Colors.Black;
 					lLabel.LabelSettings = lLabelSet;
-                    lHBoxCont.AddChild(lLabel);
-                }
+					lHBoxCont.AddChild(lLabel);
+				}
             }
 
             bookRessourcesCont.AddChild(lHBoxCont);

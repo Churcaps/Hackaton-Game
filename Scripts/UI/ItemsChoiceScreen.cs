@@ -39,6 +39,7 @@ namespace Com.IsartDigital.Hackaton
 		{
 			base._Ready();
 
+			GetChild<TextureRect>(0).Texture = ChoicesManager.backgroundCharacterSelected;
 			nextButton.Pressed += ButtonNextPressed;
 			foreach (Button lButton in itemsButtons)
 			{

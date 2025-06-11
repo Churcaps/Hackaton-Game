@@ -22,6 +22,8 @@ namespace Com.IsartDigital.Hackaton
 		public ColorRect resultColorRect2;
 		public ColorRect phoneImage;
 
+		public static Texture2D backgroundCharacterSelected;
+
 		bool hasContact;
 
 		private static int currenttEvent = 0;
