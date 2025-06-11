@@ -1,16 +1,18 @@
-[gd_scene load_steps=28 format=3 uid="uid://btvdsbluxokdi"]
+[gd_scene load_steps=24 format=3 uid="uid://btvdsbluxokdi"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ItemsChoiceScreen.cs" id="1_yieeo"]
 [ext_resource type="PackedScene" uid="uid://umjofpgqnlu8" path="res://Scenes/Carte.tscn" id="2_eefan"]
-[ext_resource type="Texture2D" uid="uid://u7nnb1gtr7hl" path="res://Assets/Characters/T_Character_Noble.png" id="2_eon51"]
 [ext_resource type="Texture2D" uid="uid://dmqdkw68rgkrp" path="res://Assets/Textures/Icons/Clothing.png" id="3_7pr40"]
 [ext_resource type="Texture2D" uid="uid://bavr1vbsyradb" path="res://Assets/bg/T_UI_EtudiantSalon.jpg" id="3_qeld5"]
-[ext_resource type="Texture2D" uid="uid://bd8q4nwf21sfb" path="res://Assets/Characters/T_Character_OldWomen.png" id="3_w6a52"]
 [ext_resource type="Texture2D" uid="uid://b18ly0ywwxbk1" path="res://Assets/Textures/Icons/ClothingSelected.png" id="4_meqva"]
 [ext_resource type="Texture2D" uid="uid://bws0tiajy7fk3" path="res://Assets/Textures/Icons/WaterBottle.png" id="5_k3qm2"]
+[ext_resource type="Texture2D" uid="uid://jmya3w05uer2" path="res://Assets/Textures/Icons/TentIcon.png" id="6_bpmw7"]
 [ext_resource type="Texture2D" uid="uid://cqvylut0qpvf8" path="res://Assets/Textures/Icons/WaterBottleSelected.png" id="6_d3t8v"]
 [ext_resource type="Texture2D" uid="uid://dpwviiwr7bmom" path="res://Assets/Textures/Icons/Food.png" id="7_5a63k"]
+[ext_resource type="Texture2D" uid="uid://blvv6rku30mg" path="res://Assets/Textures/Icons/TentSelected.png" id="7_bolgm"]
 [ext_resource type="Texture2D" uid="uid://cv5wtatlpliu1" path="res://Assets/Textures/Icons/FoodSelected.png" id="8_jovs7"]
+[ext_resource type="Texture2D" uid="uid://yhc86yyyvuyb" path="res://Assets/Textures/Icons/kit-de-soins.png" id="10_705jl"]
+[ext_resource type="Texture2D" uid="uid://bwt673svij2xk" path="res://Assets/Textures/Icons/HealthSelected.png" id="11_j71ci"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tmwyf"]
 font_size = 128
@@ -23,14 +25,6 @@ texture = ExtResource("4_meqva")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3d48"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27u51"]
-texture = ExtResource("2_eon51")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucd3f"]
-texture = ExtResource("3_w6a52")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wpv40"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fo45n"]
 texture = ExtResource("7_5a63k")
 
@@ -38,14 +32,6 @@ texture = ExtResource("7_5a63k")
 texture = ExtResource("8_jovs7")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgmdu"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43brn"]
-texture = ExtResource("2_eon51")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a87dx"]
-texture = ExtResource("3_w6a52")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qeaq0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qaf5a"]
 texture = ExtResource("5_k3qm2")
@@ -120,16 +106,15 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_h0vwm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e3d48")
 toggle_mode = true
 
-[node name="Tent" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Tent" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_27u51")
-theme_override_styles/hover = SubResource("StyleBoxTexture_27u51")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_ucd3f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_27u51")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wpv40")
 toggle_mode = true
+texture_normal = ExtResource("6_bpmw7")
+texture_pressed = ExtResource("7_bolgm")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Food" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(375, 500)
@@ -146,16 +131,15 @@ toggle_mode = true
 layout_mode = 2
 alignment = 1
 
-[node name="HealthKit" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="HealthKit" type="TextureButton" parent="VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_43brn")
-theme_override_styles/hover = SubResource("StyleBoxTexture_43brn")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_a87dx")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_43brn")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qeaq0")
 toggle_mode = true
+texture_normal = ExtResource("10_705jl")
+texture_pressed = ExtResource("11_j71ci")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Water" type="Button" parent="VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(200, 500)
