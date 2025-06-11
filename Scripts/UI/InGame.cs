@@ -2,6 +2,7 @@ using Com.IsartDigital.Hackaton;
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
@@ -13,8 +14,12 @@ public partial class InGame : Control
 	[Export] private ColorRect livreImage, phoneImage;
 	[Export] private Label cityString;
 	[Export] private Label bookTitleScoreLabel, bookScoreLabel, bookTitleObjectsLabel;
-	[Export] private VBoxContainer bookRessourcesCont;
+	[Export] private Control bookRessourcesCont;
+	[Export] private Control bookObjPos;
 	[Export] private PackedScene foodScene, waterScene, clothingScene, HealthKitScene, TentScene;
+
+	[Export] private Control ArgentCont, ComfortCont, SocialCont;
+	[Export] private ColorRect ARgentMark, comfortMark, SocialMark;
 
 	private ChoicesManager choicesManager;
 
@@ -86,12 +91,19 @@ public partial class InGame : Control
 
 	private void ShowScore()
 	{
-		string lScoreText = "";
+		/*string lScoreText = "";
 		lScoreText += StatType.Argent + " : " + GameManager.allItems[StatType.Argent];
 		lScoreText += ", " + StatType.Confort + " : " + GameManager.allItems[StatType.Confort];
 		lScoreText += ", " + StatType.Social + " : " + GameManager.allItems[StatType.Social];
-		bookScoreLabel.Text = lScoreText;
-	}
+		bookScoreLabel.Text = lScoreText;*/
+
+		ARgentMark.GlobalPosition = ArgentCont.GetChild<Control>(GameManager.allItems[StatType.Argent]).GlobalPosition
+			- new Vector2(0, ARgentMark.PivotOffset.Y);
+        comfortMark.GlobalPosition = ComfortCont.GetChild<Control>(GameManager.allItems[StatType.Confort]).GlobalPosition
+            - new Vector2(0, comfortMark.PivotOffset.Y);
+        SocialMark.GlobalPosition = SocialCont.GetChild<Control>(GameManager.allItems[StatType.Social]).GlobalPosition
+            - new Vector2(0, SocialMark.PivotOffset.Y);
+    }
 
     private void ShowObjects()
     {
@@ -106,11 +118,12 @@ public partial class InGame : Control
 
         int totalItems = displayItems.Count;
         int numRows = Mathf.CeilToInt((float)totalItems / maxItemPerRow);
+		int bookObjcurrentPos = 0;
 
         for (int i = 0; i < numRows; i++)
         {
-            HBoxContainer lHBoxCont = new HBoxContainer();
-			lHBoxCont.Alignment = BoxContainer.AlignmentMode.Center;
+            /*HBoxContainer lHBoxCont = new HBoxContainer();
+			lHBoxCont.Alignment = BoxContainer.AlignmentMode.Begin;*/
 
             for (int j = 0; j < maxItemPerRow; j++)
             {
@@ -119,7 +132,6 @@ public partial class InGame : Control
                     break;
 
                 StatType currentItem = displayItems[index];
-				GD.Print(TentScene);	
                 PackedScene scene = null;
 
                 switch (currentItem)
@@ -147,18 +159,27 @@ public partial class InGame : Control
 
                 if (scene != null)
 				{
-					lHBoxCont.AddChild(scene.Instantiate());
+					//lHBoxCont.AddChild(scene.Instantiate());
 					Label lLabel = new Label();
 					lLabel.Text = " x " + GameManager.allItems[currentItem].ToString();
 					LabelSettings lLabelSet = new LabelSettings();
-					lLabelSet.FontSize = 96;
+					lLabelSet.FontSize = 32;
 					lLabelSet.FontColor = Colors.Black;
 					lLabel.LabelSettings = lLabelSet;
-					lHBoxCont.AddChild(lLabel);
-				}
+					TextureRect lTexture = scene.Instantiate<TextureRect>();
+					bookRessourcesCont.AddChild(lTexture);
+					lTexture.GlobalPosition = bookObjPos.GetChild<Control>(bookObjcurrentPos).GlobalPosition;
+					
+					bookRessourcesCont.AddChild(lLabel);
+					lLabel.GlobalPosition = bookObjPos.GetChild<Control>(bookObjcurrentPos).GlobalPosition
+						+ new Vector2(lTexture.Size.X, lTexture.Size.Y * 0.5f);
+
+                    bookObjcurrentPos++;
+                    //lHBoxCont.AddChild(lLabel);
+                }
             }
 
-            bookRessourcesCont.AddChild(lHBoxCont);
+            //bookRessourcesCont.AddChild(lHBoxCont);
         }
     }
 

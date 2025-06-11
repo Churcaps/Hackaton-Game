@@ -87,19 +87,23 @@ public partial class CharacterSelection : Control
 
 		Dictionary<StatType, int> lStats = charactersStats[characterSelected];
 		GameManager.SetBaseStats(lStats[StatType.Argent], lStats[StatType.Confort], lStats[StatType.Social]);
+		
 		switch (characterSelected)
 		{
 			case CharactersEnum.OldLady:
-				ChoicesManager.backgroundCharacterSelected = charactersBackgrounds[1];
-				break;
+                //ChoicesManager.backgroundCharacterSelected = charactersBackgrounds[1];
+                ChoicesManager.backgroundCharacterSelected = GD.Load<Texture2D>("res://Assets/bg/T_UI_Mamie.jpg");
+                break;
 
 			case CharactersEnum.Rich:
-				ChoicesManager.backgroundCharacterSelected = charactersBackgrounds[0];
-				break;
+                //ChoicesManager.backgroundCharacterSelected = charactersBackgrounds[0];
+                ChoicesManager.backgroundCharacterSelected = GD.Load<Texture2D>("res://Assets/bg/T_UI_Riche.jpg");
+                break;
 
 			case CharactersEnum.Student:
-				ChoicesManager.backgroundCharacterSelected = charactersBackgrounds[2];
-				break;
+                //ChoicesManager.backgroundCharacterSelected = charactersBackgrounds[2];
+                ChoicesManager.backgroundCharacterSelected = GD.Load<Texture2D>("res://Assets/bg/T_UI_EtudiantSalon.jpg");
+                break;
 		}
 	}
 

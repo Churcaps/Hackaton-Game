@@ -1,14 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0clwveh7h10c"]
 
-[ext_resource type="Texture2D" uid="uid://db7ek0sjsqtj1" path="res://Assets/Textures/Icons/Food.png" id="1_3ijdh"]
+[ext_resource type="Texture2D" uid="uid://dpwviiwr7bmom" path="res://Assets/Textures/Icons/Food.png" id="1_3ijdh"]
 
 [node name="TextureRect" type="TextureRect"]
-custom_minimum_size = Vector2(187, 250)
+custom_minimum_size = Vector2(120, 160)
 anchors_preset = -1
-anchor_right = 0.073
-anchor_bottom = 0.156
-offset_right = 0.11998
-offset_bottom = 0.399994
+anchor_right = 0.047
+anchor_bottom = 0.1
+offset_right = -0.320007
 texture = ExtResource("1_3ijdh")
 expand_mode = 1
 stretch_mode = 4
