@@ -6,8 +6,8 @@
 script = ExtResource("1_r6imx")
 name = "CHOIX 2"
 text = "Faire tourner la climatisation et inviter Geneviève à en profiter"
-typesChanges = Array[int]([2])
-amoutChanges = PackedInt32Array(1)
+typesChanges = null
+amoutChanges = PackedInt32Array()
 resultString = "Alors que vous marchez sur la plage, vous êtes pris de nausées et faites un malaise, vous vous réveillez dans un post de secours de la croix rouge"
 resultType = Array[int]([0, 9])
 resultAmount = PackedInt32Array(-1, 1)

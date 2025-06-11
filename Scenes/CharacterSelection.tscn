@@ -1,15 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://b84hbn2ung4ex"]
+[gd_scene load_steps=19 format=3 uid="uid://b84hbn2ung4ex"]
 
 [ext_resource type="Script" path="res://Scripts/UI/CharacterSelection.cs" id="1_g3i66"]
-[ext_resource type="Texture2D" uid="uid://u7nnb1gtr7hl" path="res://Assets/Characters/T_Character_Noble.png" id="1_gaf6x"]
+[ext_resource type="Texture2D" uid="uid://bx6c7sjnvwuhb" path="res://Assets/Characters/T_Character_Noble.png" id="1_gaf6x"]
 [ext_resource type="PackedScene" uid="uid://btvdsbluxokdi" path="res://Scenes/ItemsChoiceScreen.tscn" id="2_26kll"]
-[ext_resource type="Texture2D" uid="uid://bd8q4nwf21sfb" path="res://Assets/Characters/T_Character_OldWomen.png" id="2_k8j58"]
+[ext_resource type="Texture2D" uid="uid://boagslhlij0e4" path="res://Assets/Characters/T_Character_OldWomen.png" id="2_k8j58"]
 [ext_resource type="Script" path="res://Scripts/UI/CharacterButton.cs" id="3_jx04y"]
-[ext_resource type="Texture2D" uid="uid://bvdrtadjl2b32" path="res://Assets/Characters/T_Character_Student.png" id="3_xisx6"]
-[ext_resource type="Texture2D" uid="uid://c5tnwunqrone3" path="res://Assets/bg/T_UI_Riche.jpg" id="5_p2jcm"]
-[ext_resource type="Texture2D" uid="uid://dxloluwotuir0" path="res://Assets/bg/T_UI_Mamie.jpg" id="7_8pvu0"]
-[ext_resource type="Texture2D" uid="uid://00x2bp3aolns" path="res://Assets/bg/T_UI_Background_Etudiant.jpg" id="9_2jxlf"]
-[ext_resource type="Texture2D" uid="uid://bavr1vbsyradb" path="res://Assets/bg/T_UI_EtudiantSalon.jpg" id="10_ncvdi"]
+[ext_resource type="Texture2D" uid="uid://dfdp1uaa4x5k8" path="res://Assets/Characters/T_Character_Student.png" id="3_xisx6"]
+[ext_resource type="Texture2D" uid="uid://rwgohp31wrwh" path="res://Assets/bg/T_UI_Riche.jpg" id="5_p2jcm"]
+[ext_resource type="Texture2D" uid="uid://c5tsrjgpln7yq" path="res://Assets/bg/T_UI_Mamie.jpg" id="7_8pvu0"]
+[ext_resource type="Texture2D" uid="uid://brsda1lq1ttlm" path="res://Assets/bg/T_UI_Background_Etudiant.jpg" id="9_2jxlf"]
+[ext_resource type="Texture2D" uid="uid://bk5s50saiki43" path="res://Assets/bg/T_UI_EtudiantSalon.jpg" id="10_ncvdi"]
+[ext_resource type="Texture2D" uid="uid://q6wn4gglulnf" path="res://Assets/bg/T_UI_BookClose2.png" id="11_njkld"]
+[ext_resource type="Texture2D" uid="uid://dj1m8swdyqn3j" path="res://Assets/bg/T_UI_Book_CharacterFrame2.png" id="12_w2xfu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmc00"]
 
@@ -19,13 +21,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hx7hx"]
 
-[sub_resource type="Gradient" id="Gradient_r7p23"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_y21ec"]
-gradient = SubResource("Gradient_r7p23")
-width = 269
-height = 274
-
 [sub_resource type="LabelSettings" id="LabelSettings_r84wd"]
 font_size = 100
 outline_color = Color(0.556889, 0.412968, 6.73831e-07, 1)
@@ -33,15 +28,8 @@ shadow_size = 26
 shadow_color = Color(0, 0, 0, 0.568627)
 shadow_offset = Vector2(-0.035, 7.49)
 
-[sub_resource type="Gradient" id="Gradient_hm534"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vndq3"]
-gradient = SubResource("Gradient_hm534")
-width = 1314
-height = 279
-
 [sub_resource type="LabelSettings" id="LabelSettings_u3dk8"]
-font_size = 111
+font_size = 186
 
 [node name="CharacterSelection" type="Control" node_paths=PackedStringArray("charactersButton", "closeButton", "playButton", "characterInfo", "skipButton")]
 layout_mode = 3
@@ -56,7 +44,7 @@ script = ExtResource("1_g3i66")
 charactersButton = [NodePath("Character 1"), NodePath("Character 2"), NodePath("Character 3")]
 charactersBackgrounds = [ExtResource("5_p2jcm"), ExtResource("7_8pvu0"), ExtResource("10_ncvdi")]
 closeButton = NodePath("TextureButton")
-playButton = NodePath("TextureButton2")
+playButton = NodePath("Button")
 characterInfo = NodePath("Label")
 skipButton = NodePath("PanelContainer")
 itemsChoiceScreenScene = ExtResource("2_26kll")
@@ -144,30 +132,31 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.925
-anchor_top = 0.037
-anchor_right = 0.972
-anchor_bottom = 0.114
-offset_left = -0.000244141
-offset_top = -0.200001
-offset_right = 0.679932
-offset_bottom = -0.400009
-texture_normal = SubResource("GradientTexture2D_y21ec")
+anchor_left = 0.904
+anchor_top = 0.011
+anchor_right = 0.989
+anchor_bottom = 0.149
+offset_left = -0.240234
+offset_top = 0.399998
+offset_right = -0.840088
+offset_bottom = 0.599991
+texture_normal = ExtResource("11_njkld")
 ignore_texture_size = true
 stretch_mode = 0
+flip_h = true
 
 [node name="Label" type="Label" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.416
-anchor_top = 0.084
+anchor_left = 0.444
+anchor_top = 0.071
 anchor_right = 0.946
-anchor_bottom = 0.939
-offset_left = 1.04004
-offset_top = 0.599991
+anchor_bottom = 0.782
+offset_left = -0.640137
+offset_top = 21.4
 offset_right = 0.23999
-offset_bottom = -0.400146
+offset_bottom = 0.799927
 grow_horizontal = 0
 grow_vertical = 2
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "
@@ -175,30 +164,44 @@ label_settings = SubResource("LabelSettings_r84wd")
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.42
-anchor_top = 1.131
-anchor_right = 0.933
-anchor_bottom = 1.306
-offset_left = -0.200073
-offset_top = 0.399902
-offset_right = 0.52002
-offset_bottom = -0.600098
-pivot_offset = Vector2(657, 139)
-texture_normal = SubResource("GradientTexture2D_vndq3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1064.0
+offset_top = 1864.0
+offset_right = -368.0
+offset_bottom = 535.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="TextureButton2"]
+[node name="TextureButton2" type="NinePatchRect" parent="Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "COMMENCER LA SURVIE"
+pivot_offset = Vector2(657, 139)
+texture = ExtResource("12_w2xfu")
+patch_margin_left = 515
+patch_margin_top = 210
+patch_margin_right = 520
+patch_margin_bottom = 240
+
+[node name="Label" type="Label" parent="Button/TextureButton2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.991
+anchor_bottom = 0.884
+offset_right = -0.434082
+offset_bottom = 0.140015
+grow_horizontal = 2
+grow_vertical = 2
+text = "PARTIR"
 label_settings = SubResource("LabelSettings_u3dk8")
 horizontal_alignment = 1
 vertical_alignment = 1
