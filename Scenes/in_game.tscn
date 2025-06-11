@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://beg7hkf2lo6qp" path="res://Scenes/WaterBottleTexturerect.tscn" id="3_e74oc"]
 [ext_resource type="PackedScene" uid="uid://d1flswopg03m1" path="res://Scenes/ClothingTexturerect.tscn" id="4_rwxhn"]
 [ext_resource type="PackedScene" uid="uid://cvoito2rb60oi" path="res://Scenes/TentTextureRect.tscn" id="5_u5f2a"]
+[ext_resource type="Texture2D" uid="uid://ci73gofgyp77w" path="res://Assets/bg/BookClose.png" id="6_d7cgj"]
+[ext_resource type="Texture2D" uid="uid://bncagxaewxoo6" path="res://Assets/Textures/Icons/TelBouton.png" id="6_hoafa"]
 [ext_resource type="Texture2D" uid="uid://dfifqdviodw68" path="res://Assets/bg/T_UI_Book.png" id="6_unlon"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukoup"]
@@ -12,26 +14,12 @@ font_size = 166
 
 [sub_resource type="Gradient" id="Gradient_7b8wc"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_va1ph"]
-gradient = SubResource("Gradient_7b8wc")
-width = 169
-height = 184
-fill_from = Vector2(0.59556, 0.671795)
-fill_to = Vector2(0.0670005, 0.0324786)
-
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vrol5"]
 gradient = SubResource("Gradient_7b8wc")
 width = 169
 height = 184
 fill_from = Vector2(0.342447, 0.747009)
 fill_to = Vector2(0.643949, 0.364103)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rhas8"]
-gradient = SubResource("Gradient_7b8wc")
-width = 169
-height = 184
-fill_from = Vector2(0.614171, 0.545299)
-fill_to = Vector2(0, 0.531624)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6dj5"]
 
@@ -132,9 +120,11 @@ anchor_right = 0.092
 anchor_bottom = 0.972
 offset_left = -1.0
 offset_top = -0.200073
-offset_right = 0.47998
-offset_bottom = -0.200073
-texture_normal = SubResource("GradientTexture2D_va1ph")
+offset_right = 0.479965
+offset_bottom = -0.200195
+texture_normal = ExtResource("6_d7cgj")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="next" type="TextureButton" parent="."]
 visible = false
@@ -156,12 +146,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.025
 anchor_top = 0.709
-anchor_right = 0.093
-anchor_bottom = 0.824
+anchor_right = 0.098
+anchor_bottom = 0.826
 offset_top = -0.400024
-offset_right = -1.08
-offset_bottom = -0.400146
-texture_normal = SubResource("GradientTexture2D_rhas8")
+offset_right = -0.880005
+offset_bottom = 0.399902
+texture_normal = ExtResource("6_hoafa")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Book2" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
