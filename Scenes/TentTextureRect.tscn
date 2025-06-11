@@ -1,13 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://cvoito2rb60oi"]
 
-[ext_resource type="Texture2D" uid="uid://bx6c7sjnvwuhb" path="res://Assets/Characters/T_Character_Noble.png" id="1_80r6i"]
+[ext_resource type="Texture2D" uid="uid://u7nnb1gtr7hl" path="res://Assets/Characters/T_Character_Noble.png" id="1_80r6i"]
 
 [node name="TextureRect" type="TextureRect"]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(125, 125)
 anchors_preset = -1
-anchor_right = 0.078
-anchor_bottom = 0.125
-offset_right = 0.319992
+anchor_right = 0.049
+anchor_bottom = 0.078
+offset_right = -25.44
+offset_bottom = -24.8
 texture = ExtResource("1_80r6i")
 expand_mode = 1
 stretch_mode = 4

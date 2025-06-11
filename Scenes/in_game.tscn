@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://clb352hc0p2kl"]
+[gd_scene load_steps=21 format=3 uid="uid://clb352hc0p2kl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/InGame.cs" id="1_t226q"]
 [ext_resource type="PackedScene" uid="uid://b0clwveh7h10c" path="res://Scenes/FoodTexturerect.tscn" id="2_ci02v"]
 [ext_resource type="PackedScene" uid="uid://beg7hkf2lo6qp" path="res://Scenes/WaterBottleTexturerect.tscn" id="3_e74oc"]
 [ext_resource type="PackedScene" uid="uid://d1flswopg03m1" path="res://Scenes/ClothingTexturerect.tscn" id="4_rwxhn"]
 [ext_resource type="PackedScene" uid="uid://cvoito2rb60oi" path="res://Scenes/TentTextureRect.tscn" id="5_u5f2a"]
+[ext_resource type="Texture2D" uid="uid://dfifqdviodw68" path="res://Assets/bg/T_UI_Book.png" id="6_unlon"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukoup"]
 font_size = 166
@@ -44,18 +45,6 @@ fill_to = Vector2(0, 0.531624)
 font_size = 136
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_n2cwg"]
-font_size = 128
-font_color = Color(0.051971, 0.051971, 0.051971, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_vr4px"]
-font_size = 64
-font_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_kcchu"]
-font_size = 128
-font_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
-
 [sub_resource type="Gradient" id="Gradient_7hjub"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_q6d35"]
@@ -78,7 +67,7 @@ width = 734
 height = 124
 fill_from = Vector2(0, 0.566567)
 
-[node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "next", "livreImage", "phoneImage", "cityString", "bookTitleScoreLabel", "bookScoreLabel", "bookTitleObjectsLabel", "bookRessourcesCont")]
+[node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "next", "livreImage", "phoneImage", "cityString", "bookTitleScoreLabel", "bookScoreLabel", "bookTitleObjectsLabel", "bookRessourcesCont", "bookObjPos", "ArgentCont", "ComfortCont", "SocialCont", "ARgentMark", "comfortMark", "SocialMark")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,14 +81,21 @@ next = NodePath("next")
 livreImage = NodePath("Book2")
 phoneImage = NodePath("pphone")
 cityString = NodePath("Label")
-bookTitleScoreLabel = NodePath("Book2/VBoxContainer/TitleLabel")
-bookScoreLabel = NodePath("Book2/VBoxContainer/ScoreLabel")
-bookTitleObjectsLabel = NodePath("Book2/VBoxContainer/RessourceTitleLabel")
-bookRessourcesCont = NodePath("Book2/VBoxContainer/ObjCont")
+bookTitleScoreLabel = NodePath("")
+bookScoreLabel = NodePath("")
+bookTitleObjectsLabel = NodePath("")
+bookRessourcesCont = NodePath("Book2/ObjCont2")
+bookObjPos = NodePath("Book2/ObjContPos")
 foodScene = ExtResource("2_ci02v")
 waterScene = ExtResource("3_e74oc")
 clothingScene = ExtResource("4_rwxhn")
 TentScene = ExtResource("5_u5f2a")
+ArgentCont = NodePath("Book2/ArgentCont")
+ComfortCont = NodePath("Book2/ComfortCont")
+SocialCont = NodePath("Book2/SocialCont")
+ARgentMark = NodePath("Book2/ArgentMark")
+comfortMark = NodePath("Book2/ComfortStat")
+SocialMark = NodePath("Book2/SocialStat")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -192,68 +188,503 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_sukrb")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_138g7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8vodp")
 
-[node name="ColorRect" type="ColorRect" parent="Book2"]
+[node name="ColorRect" type="TextureRect" parent="Book2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.06
 anchor_top = 0.073
 anchor_right = 0.94
 anchor_bottom = 0.927
-offset_left = 0.399994
-offset_top = 0.199989
-offset_right = -0.400146
-offset_bottom = -0.200073
+offset_left = -304.6
+offset_top = -198.8
+offset_right = 499.6
+offset_bottom = 629.8
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.733005, 0.733005, 0.733005, 1)
+texture = ExtResource("6_unlon")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="Label" type="Label" parent="Book2"]
+[node name="ObjCont" type="VBoxContainer" parent="Book2"]
+layout_mode = 2
+anchor_left = 0.561
+anchor_top = 0.553
+anchor_right = 0.87
+anchor_bottom = 0.674
+offset_left = -1.16016
+offset_top = 0.199951
+offset_right = -0.200195
+offset_bottom = -0.400024
+alignment = 1
+
+[node name="ArgentCont" type="Control" parent="Book2"]
+layout_mode = 1
+anchor_left = 0.581
+anchor_top = 0.712
+anchor_right = 0.801
+anchor_bottom = 0.737
+offset_left = -0.360107
+offset_top = -0.200073
+offset_right = 0.439941
+offset_bottom = -0.200073
+
+[node name="Control" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.028
+anchor_top = 0.5
+anchor_right = 0.028
+anchor_bottom = 0.5
+offset_left = 0.207999
+offset_top = -1.0
+offset_right = 40.208
+offset_bottom = 39.0
+
+[node name="Control2" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.115
+anchor_top = 0.55
+anchor_right = 0.115
+anchor_bottom = 0.55
+offset_left = 0.139999
+offset_right = 40.14
+offset_bottom = 40.0
+
+[node name="Control3" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.195
+anchor_top = 0.5
+anchor_right = 0.195
+anchor_bottom = 0.5
+offset_left = 0.0199966
+offset_right = 40.02
+offset_bottom = 40.0
+
+[node name="Control4" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.309
+anchor_top = 0.525
+anchor_right = 0.309
+anchor_bottom = 0.525
+offset_left = -0.276001
+offset_right = 39.724
+offset_bottom = 40.0
+
+[node name="Control5" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.411
+anchor_top = 0.5
+anchor_right = 0.411
+anchor_bottom = 0.5
+offset_left = 0.195999
+offset_right = 40.196
+offset_bottom = 40.0
+
+[node name="Control6" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.505
+anchor_top = 0.5
+anchor_right = 0.505
+anchor_bottom = 0.5
+offset_left = 0.179993
+offset_right = 40.18
+offset_bottom = 40.0
+
+[node name="Control7" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.59
+anchor_top = 0.5
+anchor_right = 0.59
+anchor_bottom = 0.5
+offset_left = 0.23999
+offset_top = -1.0
+offset_right = 40.24
+offset_bottom = 39.0
+
+[node name="Control8" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.676
+anchor_top = 0.5
+anchor_right = 0.676
+anchor_bottom = 0.5
+offset_left = -0.264038
+offset_top = -3.0
+offset_right = 39.736
+offset_bottom = 37.0
+
+[node name="Control9" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.77
+anchor_top = 0.5
+anchor_right = 0.77
+anchor_bottom = 0.5
+offset_left = -0.280029
+offset_right = 39.72
+offset_bottom = 40.0
+
+[node name="Control10" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.867
+anchor_top = 0.5
+anchor_right = 0.867
+anchor_bottom = 0.5
+offset_left = 0.0119629
+offset_right = 40.012
+offset_bottom = 40.0
+
+[node name="Control11" type="Control" parent="Book2/ArgentCont"]
+layout_mode = 1
+anchor_left = 0.963
+anchor_top = 0.5
+anchor_right = 0.963
+anchor_bottom = 0.5
+offset_left = -0.132019
+offset_right = 39.868
+offset_bottom = 40.0
+
+[node name="ComfortCont" type="Control" parent="Book2"]
+layout_mode = 1
+anchor_left = 0.582
+anchor_top = 0.752
+anchor_right = 0.803
+anchor_bottom = 0.777
+offset_left = 1.07996
+offset_top = -0.200073
+offset_right = -0.680176
+offset_bottom = -0.200073
+
+[node name="Control" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.028
+anchor_top = 0.5
+anchor_right = 0.028
+anchor_bottom = 0.5
+offset_left = 0.207999
+offset_top = -1.0
+offset_right = 40.208
+offset_bottom = 39.0
+
+[node name="Control2" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.115
+anchor_top = 0.55
+anchor_right = 0.115
+anchor_bottom = 0.55
+offset_left = 0.139999
+offset_right = 40.14
+offset_bottom = 40.0
+
+[node name="Control3" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.195
+anchor_top = 0.5
+anchor_right = 0.195
+anchor_bottom = 0.5
+offset_left = 0.0199966
+offset_right = 40.02
+offset_bottom = 40.0
+
+[node name="Control4" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.309
+anchor_top = 0.525
+anchor_right = 0.309
+anchor_bottom = 0.525
+offset_left = -0.276001
+offset_right = 39.724
+offset_bottom = 40.0
+
+[node name="Control5" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.411
+anchor_top = 0.5
+anchor_right = 0.411
+anchor_bottom = 0.5
+offset_left = 0.195999
+offset_right = 40.196
+offset_bottom = 40.0
+
+[node name="Control6" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.505
+anchor_top = 0.5
+anchor_right = 0.505
+anchor_bottom = 0.5
+offset_left = 0.179993
+offset_right = 40.18
+offset_bottom = 40.0
+
+[node name="Control7" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.59
+anchor_top = 0.475
+anchor_right = 0.59
+anchor_bottom = 0.475
+offset_left = 0.23999
+offset_right = 40.24
+offset_bottom = 40.0
+
+[node name="Control8" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.676
+anchor_top = 0.425
+anchor_right = 0.676
+anchor_bottom = 0.425
+offset_left = -0.264038
+offset_right = 39.736
+offset_bottom = 40.0
+
+[node name="Control9" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.77
+anchor_top = 0.5
+anchor_right = 0.77
+anchor_bottom = 0.5
+offset_left = -0.280029
+offset_right = 39.72
+offset_bottom = 40.0
+
+[node name="Control10" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.867
+anchor_top = 0.5
+anchor_right = 0.867
+anchor_bottom = 0.5
+offset_left = 0.0119629
+offset_right = 40.012
+offset_bottom = 40.0
+
+[node name="Control11" type="Control" parent="Book2/ComfortCont"]
+layout_mode = 1
+anchor_left = 0.963
+anchor_top = 0.5
+anchor_right = 0.963
+anchor_bottom = 0.5
+offset_left = -0.132019
+offset_right = 39.868
+offset_bottom = 40.0
+
+[node name="SocialCont" type="Control" parent="Book2"]
+layout_mode = 1
+anchor_left = 0.582
+anchor_top = 0.79
+anchor_right = 0.802
+anchor_bottom = 0.815
+offset_left = -0.920044
+offset_right = -0.120117
+offset_bottom = -0.00012207
+
+[node name="Control" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.028
+anchor_top = 0.475
+anchor_right = 0.028
+anchor_bottom = 0.475
+offset_left = 0.207999
+offset_right = 40.208
+offset_bottom = 40.0
+
+[node name="Control2" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.115
+anchor_top = 0.55
+anchor_right = 0.115
+anchor_bottom = 0.55
+offset_left = 0.139999
+offset_right = 40.14
+offset_bottom = 40.0
+
+[node name="Control3" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.195
+anchor_top = 0.5
+anchor_right = 0.195
+anchor_bottom = 0.5
+offset_left = 0.0199966
+offset_right = 40.02
+offset_bottom = 40.0
+
+[node name="Control4" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.309
+anchor_top = 0.525
+anchor_right = 0.309
+anchor_bottom = 0.525
+offset_left = -0.276001
+offset_right = 39.724
+offset_bottom = 40.0
+
+[node name="Control5" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.411
+anchor_top = 0.5
+anchor_right = 0.411
+anchor_bottom = 0.5
+offset_left = 0.195999
+offset_right = 40.196
+offset_bottom = 40.0
+
+[node name="Control6" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.505
+anchor_top = 0.5
+anchor_right = 0.505
+anchor_bottom = 0.5
+offset_left = 0.179993
+offset_right = 40.18
+offset_bottom = 40.0
+
+[node name="Control7" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.59
+anchor_top = 0.475
+anchor_right = 0.59
+anchor_bottom = 0.475
+offset_left = 0.23999
+offset_right = 40.24
+offset_bottom = 40.0
+
+[node name="Control8" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.676
+anchor_top = 0.425
+anchor_right = 0.676
+anchor_bottom = 0.425
+offset_left = -0.264038
+offset_right = 39.736
+offset_bottom = 40.0
+
+[node name="Control9" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.77
+anchor_top = 0.5
+anchor_right = 0.77
+anchor_bottom = 0.5
+offset_left = -0.280029
+offset_right = 39.72
+offset_bottom = 40.0
+
+[node name="Control10" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.867
+anchor_top = 0.5
+anchor_right = 0.867
+anchor_bottom = 0.5
+offset_left = 0.0119629
+offset_right = 40.012
+offset_bottom = 40.0
+
+[node name="Control11" type="Control" parent="Book2/SocialCont"]
+layout_mode = 1
+anchor_left = 0.963
+anchor_top = 0.5
+anchor_right = 0.963
+anchor_bottom = 0.5
+offset_left = -0.132019
+offset_right = 39.868
+offset_bottom = 40.0
+
+[node name="ArgentMark" type="ColorRect" parent="Book2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.45
-anchor_top = 0.085
+anchor_left = 0.585
+anchor_top = 0.709
+anchor_right = 0.589
+anchor_bottom = 0.739
+offset_left = 0.399902
+offset_top = 0.599976
+offset_right = 0.159912
+offset_bottom = 0.599976
+pivot_offset = Vector2(5, 24)
+color = Color(0.968623, 0.424785, 0.400841, 1)
+
+[node name="ComfortStat" type="ColorRect" parent="Book2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.588
+anchor_top = 0.749
 anchor_right = 0.592
-anchor_bottom = 0.201
-offset_left = -1.0
+anchor_bottom = 0.779
+offset_left = -0.280029
+offset_top = -0.400024
 offset_right = -0.52002
-offset_bottom = 0.399994
-text = "LIVRE"
-label_settings = SubResource("LabelSettings_lduvr")
+offset_bottom = -0.400024
+pivot_offset = Vector2(5, 24)
+color = Color(0.968623, 0.424785, 0.400841, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Book2"]
+[node name="SocialStat" type="ColorRect" parent="Book2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.328
-anchor_top = 0.221
-anchor_right = 0.702
-anchor_bottom = 0.557
-offset_left = -0.680054
-offset_top = 0.399963
-offset_right = 0.879883
-offset_bottom = -266.2
-theme_override_constants/separation = 50
+anchor_left = 0.588
+anchor_top = 0.786
+anchor_right = 0.592
+anchor_bottom = 0.816
+offset_left = -0.280029
+offset_top = 0.400024
+offset_right = -0.52002
+offset_bottom = 0.399902
+pivot_offset = Vector2(5, 24)
+color = Color(0.968623, 0.424785, 0.400841, 1)
 
-[node name="TitleLabel" type="Label" parent="Book2/VBoxContainer"]
-layout_mode = 2
-text = "Votre score :"
-label_settings = SubResource("LabelSettings_n2cwg")
-horizontal_alignment = 1
+[node name="ObjContPos" type="Control" parent="Book2"]
+layout_mode = 1
+anchor_left = 0.541
+anchor_top = 0.554
+anchor_right = 0.873
+anchor_bottom = 0.674
+offset_left = -0.959961
+offset_top = -0.400024
+offset_right = -0.880127
+offset_bottom = 0.599976
 
-[node name="ScoreLabel" type="Label" parent="Book2/VBoxContainer"]
-layout_mode = 2
-text = "Argent : x, Confort : x, Social : x"
-label_settings = SubResource("LabelSettings_vr4px")
-horizontal_alignment = 1
+[node name="Control" type="Control" parent="Book2/ObjContPos"]
+layout_mode = 1
+anchor_left = 0.019
+anchor_top = 0.098
+anchor_right = 0.019
+anchor_bottom = 0.098
+offset_left = -0.150002
+offset_top = 0.0859985
+offset_right = 39.85
+offset_bottom = 40.086
 
-[node name="RessourceTitleLabel" type="Label" parent="Book2/VBoxContainer"]
-layout_mode = 2
-text = "Vos objets :"
-label_settings = SubResource("LabelSettings_kcchu")
-horizontal_alignment = 1
+[node name="Control2" type="Control" parent="Book2/ObjContPos"]
+layout_mode = 1
+anchor_left = 0.285
+anchor_top = 0.098
+anchor_right = 0.285
+anchor_bottom = 0.098
+offset_left = -0.250015
+offset_top = 0.0859985
+offset_right = 39.75
+offset_bottom = 40.086
 
-[node name="ObjCont" type="VBoxContainer" parent="Book2/VBoxContainer"]
-layout_mode = 2
+[node name="Control3" type="Control" parent="Book2/ObjContPos"]
+layout_mode = 1
+anchor_left = 0.535
+anchor_top = 0.088
+anchor_right = 0.535
+anchor_bottom = 0.088
+offset_left = 0.249969
+offset_top = 0.0159988
+offset_right = 40.25
+offset_bottom = 40.016
+
+[node name="Control4" type="Control" parent="Book2/ObjContPos"]
+layout_mode = 1
+anchor_left = 0.788
+anchor_top = 0.093
+anchor_right = 0.788
+anchor_bottom = 0.093
+offset_left = 0.199951
+offset_top = 0.0509987
+offset_right = 40.2
+offset_bottom = 40.051
+
+[node name="ObjCont2" type="Control" parent="Book2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="pphone" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)

@@ -1,15 +1,15 @@
 [gd_scene load_steps=21 format=3 uid="uid://b84hbn2ung4ex"]
 
 [ext_resource type="Script" path="res://Scripts/UI/CharacterSelection.cs" id="1_g3i66"]
-[ext_resource type="Texture2D" uid="uid://bx6c7sjnvwuhb" path="res://Assets/Characters/T_Character_Noble.png" id="1_gaf6x"]
+[ext_resource type="Texture2D" uid="uid://u7nnb1gtr7hl" path="res://Assets/Characters/T_Character_Noble.png" id="1_gaf6x"]
 [ext_resource type="PackedScene" uid="uid://btvdsbluxokdi" path="res://Scenes/ItemsChoiceScreen.tscn" id="2_26kll"]
-[ext_resource type="Texture2D" uid="uid://boagslhlij0e4" path="res://Assets/Characters/T_Character_OldWomen.png" id="2_k8j58"]
+[ext_resource type="Texture2D" uid="uid://bd8q4nwf21sfb" path="res://Assets/Characters/T_Character_OldWomen.png" id="2_k8j58"]
 [ext_resource type="Script" path="res://Scripts/UI/CharacterButton.cs" id="3_jx04y"]
-[ext_resource type="Texture2D" uid="uid://dfdp1uaa4x5k8" path="res://Assets/Characters/T_Character_Student.png" id="3_xisx6"]
-[ext_resource type="Texture2D" uid="uid://rwgohp31wrwh" path="res://Assets/bg/T_UI_Riche.jpg" id="5_p2jcm"]
-[ext_resource type="Texture2D" uid="uid://c5tsrjgpln7yq" path="res://Assets/bg/T_UI_Mamie.jpg" id="7_8pvu0"]
-[ext_resource type="Texture2D" uid="uid://brsda1lq1ttlm" path="res://Assets/bg/T_UI_Background_Etudiant.jpg" id="9_2jxlf"]
-[ext_resource type="Texture2D" uid="uid://bk5s50saiki43" path="res://Assets/bg/T_UI_EtudiantSalon.jpg" id="10_ncvdi"]
+[ext_resource type="Texture2D" uid="uid://bvdrtadjl2b32" path="res://Assets/Characters/T_Character_Student.png" id="3_xisx6"]
+[ext_resource type="Texture2D" uid="uid://c5tnwunqrone3" path="res://Assets/bg/T_UI_Riche.jpg" id="5_p2jcm"]
+[ext_resource type="Texture2D" uid="uid://dxloluwotuir0" path="res://Assets/bg/T_UI_Mamie.jpg" id="7_8pvu0"]
+[ext_resource type="Texture2D" uid="uid://00x2bp3aolns" path="res://Assets/bg/T_UI_Background_Etudiant.jpg" id="9_2jxlf"]
+[ext_resource type="Texture2D" uid="uid://bavr1vbsyradb" path="res://Assets/bg/T_UI_EtudiantSalon.jpg" id="10_ncvdi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmc00"]
 

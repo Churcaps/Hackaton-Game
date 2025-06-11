@@ -1,14 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://beg7hkf2lo6qp"]
 
-[ext_resource type="Texture2D" uid="uid://bsps3typhkh5g" path="res://Assets/Textures/Icons/WaterBottle.png" id="1_mptbj"]
+[ext_resource type="Texture2D" uid="uid://bws0tiajy7fk3" path="res://Assets/Textures/Icons/WaterBottle.png" id="1_mptbj"]
 
 [node name="Control" type="TextureRect"]
-custom_minimum_size = Vector2(100, 250)
+custom_minimum_size = Vector2(75, 150)
 anchors_preset = -1
-anchor_right = 0.039
-anchor_bottom = 0.156
-offset_right = 0.159996
-offset_bottom = 0.399994
+anchor_right = 0.029
+anchor_bottom = 0.094
+offset_right = 0.759995
+offset_bottom = -0.400009
 texture = ExtResource("1_mptbj")
 expand_mode = 1
 stretch_mode = 4
