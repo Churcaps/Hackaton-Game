@@ -161,6 +161,9 @@ namespace Com.IsartDigital.Hackaton
 		private void ShowResult(ChoicesRessource pChoice)
 		{
 			resultColorRect2.Visible = true;
+			Tween lTween = GetTree().CreateTween().SetParallel().SetTrans(Tween.TransitionType.Bounce).SetEase(Tween.EaseType.Out);
+			lTween.TweenProperty(resultColorRect2, "modulate", Colors.White, 0.5f);
+			lTween.TweenProperty(resultColorRect2, "scale", Vector2.One * 1.2f, 0.5f);
 
 			resultColorRect2.GetChild<Label>(0).Text = pChoice.resultString;
 

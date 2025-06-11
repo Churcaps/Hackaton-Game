@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxp4ssrjdk4d"]
+[gd_scene load_steps=11 format=3 uid="uid://dxp4ssrjdk4d"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ChoiceScreen.cs" id="1_k38h5"]
 [ext_resource type="Texture2D" uid="uid://cepakt8243so" path="res://Assets/bg/T_UI_Book2.png" id="2_cy67m"]
-[ext_resource type="Texture2D" uid="uid://d0eo28mk2b27c" path="res://Assets/T_UI_Cadre2.png" id="3_cckfg"]
+[ext_resource type="Texture2D" uid="uid://dwy532cb0lov5" path="res://Assets/Textures/Icons/FrameMieux.png" id="3_rs5hy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6u2fv"]
 font_size = 128
@@ -29,7 +29,13 @@ width = 470
 height = 203
 
 [sub_resource type="LabelSettings" id="LabelSettings_enrpm"]
-font_size = 56
+font_size = 55
+font_color = Color(0.756863, 0.470588, 0.384314, 1)
+outline_size = 40
+outline_color = Color(0.990464, 0.905899, 0.882001, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ldr1x"]
+font_size = 60
 font_color = Color(0.756863, 0.470588, 0.384314, 1)
 outline_size = 40
 outline_color = Color(0.990464, 0.905899, 0.882001, 1)
@@ -265,49 +271,48 @@ autowrap_mode = 2
 
 [node name="ColorRect2" type="TextureRect" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.048
-anchor_top = -0.088
-anchor_right = 1.031
-anchor_bottom = 1.057
-offset_left = 0.32
-offset_top = 0.360001
-offset_right = 0.209961
-offset_bottom = -0.540039
-texture = ExtResource("3_cckfg")
+anchor_left = 0.061
+anchor_top = 0.073
+anchor_right = 0.922
+anchor_bottom = 0.896
+offset_left = -0.489998
+offset_top = -0.0600052
+offset_right = 1.0199
+offset_bottom = -0.119995
+pivot_offset = Vector2(900, 502)
+texture = ExtResource("3_rs5hy")
 
 [node name="Label" type="Label" parent="ColorRect2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.016
-anchor_top = 0.269
-anchor_right = 0.974
-anchor_bottom = 0.86
-offset_left = 136.92
-offset_top = 63.476
-offset_right = -143.37
-offset_bottom = 0.439941
+anchor_left = 0.092
+anchor_top = 0.248
+anchor_right = 0.895
+anchor_bottom = 0.651
+offset_left = 0.307983
+offset_top = 14.008
+offset_right = -0.89502
+offset_bottom = 0.395996
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi "
 label_settings = SubResource("LabelSettings_enrpm")
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="ColorRect2"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.015
-anchor_top = 0.551
+anchor_top = 0.599
 anchor_right = 0.973
-anchor_bottom = 0.807
-offset_left = 0.0599995
-offset_top = -0.388
-offset_right = 0.0919189
-offset_bottom = -0.31604
-text = "
-nhbhghbhjnbbnj"
-label_settings = SubResource("LabelSettings_enrpm")
+anchor_bottom = 0.849
+offset_left = -0.0150013
+offset_top = -0.396057
+offset_right = -0.372925
+offset_bottom = -0.396057
+label_settings = SubResource("LabelSettings_ldr1x")
 horizontal_alignment = 1
 autowrap_mode = 2
