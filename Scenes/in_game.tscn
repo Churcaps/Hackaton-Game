@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://clb352hc0p2kl"]
+[gd_scene load_steps=24 format=3 uid="uid://clb352hc0p2kl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/InGame.cs" id="1_t226q"]
 [ext_resource type="PackedScene" uid="uid://b0clwveh7h10c" path="res://Scenes/FoodTexturerect.tscn" id="2_ci02v"]
 [ext_resource type="PackedScene" uid="uid://beg7hkf2lo6qp" path="res://Scenes/WaterBottleTexturerect.tscn" id="3_e74oc"]
 [ext_resource type="PackedScene" uid="uid://d1flswopg03m1" path="res://Scenes/ClothingTexturerect.tscn" id="4_rwxhn"]
+[ext_resource type="PackedScene" uid="uid://c5slrskpxn336" path="res://Scenes/HealthKitTexturerect.tscn" id="5_4jn5h"]
 [ext_resource type="PackedScene" uid="uid://cvoito2rb60oi" path="res://Scenes/TentTextureRect.tscn" id="5_u5f2a"]
 [ext_resource type="Texture2D" uid="uid://y7lexwk27m14" path="res://Assets/Fréjus.jpg" id="6_5lkme"]
 [ext_resource type="Texture2D" uid="uid://ci73gofgyp77w" path="res://Assets/bg/BookClose.png" id="6_d7cgj"]
@@ -69,6 +70,7 @@ bookObjPos = NodePath("Book2/ObjContPos")
 foodScene = ExtResource("2_ci02v")
 waterScene = ExtResource("3_e74oc")
 clothingScene = ExtResource("4_rwxhn")
+HealthKitScene = ExtResource("5_4jn5h")
 TentScene = ExtResource("5_u5f2a")
 ArgentCont = NodePath("Book2/ArgentCont")
 ComfortCont = NodePath("Book2/ComfortCont")

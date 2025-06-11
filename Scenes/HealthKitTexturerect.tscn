@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://yhc86yyyvuyb" path="res://Assets/Textures/Icons/kit-de-soins.png" id="1_xt8mt"]
 
 [node name="TextureRect" type="TextureRect"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(125, 125)
 anchors_preset = -1
-anchor_right = 0.098
-anchor_bottom = 0.156
-offset_right = -0.880005
-offset_bottom = 0.399994
+anchor_right = 0.049
+anchor_bottom = 0.078
+offset_right = -0.440002
+offset_bottom = 0.199997
 texture = ExtResource("1_xt8mt")
 expand_mode = 1
 stretch_mode = 4
