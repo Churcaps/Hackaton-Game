@@ -148,7 +148,8 @@ public partial class InGame : Control
                     Label lLabel = new Label();
                     lLabel.Text = " x " + GameManager.allItems[currentItem].ToString();
 					LabelSettings lLabelSet = new LabelSettings();
-					lLabelSet.FontSize = 64;
+					lLabelSet.FontSize = 96;
+					lLabelSet.FontColor = Colors.Black;
 					lLabel.LabelSettings = lLabelSet;
                     lHBoxCont.AddChild(lLabel);
                 }

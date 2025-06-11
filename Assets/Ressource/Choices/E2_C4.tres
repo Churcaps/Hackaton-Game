@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://t8hd7a5ukvum"]
+[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://dmnlq1vo6h802"]
 
 [ext_resource type="Script" path="res://Scripts/Tool/ChoicesRessource.cs" id="1_doiew"]
 

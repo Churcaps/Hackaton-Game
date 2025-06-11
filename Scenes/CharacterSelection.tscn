@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://b84hbn2ung4ex"]
 
 [ext_resource type="Script" path="res://Scripts/UI/CharacterSelection.cs" id="1_g3i66"]
-[ext_resource type="Texture2D" uid="uid://ds7xpwu7e56yg" path="res://Assets/Characters/T_Character_Noble.png" id="1_gaf6x"]
+[ext_resource type="Texture2D" uid="uid://u7nnb1gtr7hl" path="res://Assets/Characters/T_Character_Noble.png" id="1_gaf6x"]
 [ext_resource type="PackedScene" uid="uid://btvdsbluxokdi" path="res://Scenes/ItemsChoiceScreen.tscn" id="2_26kll"]
-[ext_resource type="Texture2D" uid="uid://dbgenn4xfrrpc" path="res://Assets/Characters/T_Character_OldWomen.png" id="2_k8j58"]
+[ext_resource type="Texture2D" uid="uid://bd8q4nwf21sfb" path="res://Assets/Characters/T_Character_OldWomen.png" id="2_k8j58"]
 [ext_resource type="Script" path="res://Scripts/UI/CharacterButton.cs" id="3_jx04y"]
-[ext_resource type="Texture2D" uid="uid://xuk5a7nnjrmp" path="res://Assets/Characters/T_Character_Student.png" id="3_xisx6"]
+[ext_resource type="Texture2D" uid="uid://bvdrtadjl2b32" path="res://Assets/Characters/T_Character_Student.png" id="3_xisx6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmc00"]
 
@@ -151,6 +151,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
 label_settings = SubResource("LabelSettings_r84wd")
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="TextureButton2" type="TextureButton" parent="."]

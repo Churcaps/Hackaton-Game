@@ -89,13 +89,13 @@ script = ExtResource("1_t226q")
 book = NodePath("Book")
 phone = NodePath("Phone2")
 next = NodePath("next")
-livreImage = NodePath("ColorRect2")
+livreImage = NodePath("Book2")
 phoneImage = NodePath("pphone")
 cityString = NodePath("Label")
-bookTitleScoreLabel = NodePath("ColorRect2/VBoxContainer/TitleLabel")
-bookScoreLabel = NodePath("ColorRect2/VBoxContainer/ScoreLabel")
-bookTitleObjectsLabel = NodePath("ColorRect2/VBoxContainer/RessourceTitleLabel")
-bookRessourcesCont = NodePath("ColorRect2/VBoxContainer/ObjCont")
+bookTitleScoreLabel = NodePath("Book2/VBoxContainer/TitleLabel")
+bookScoreLabel = NodePath("Book2/VBoxContainer/ScoreLabel")
+bookTitleObjectsLabel = NodePath("Book2/VBoxContainer/RessourceTitleLabel")
+bookRessourcesCont = NodePath("Book2/VBoxContainer/ObjCont")
 foodScene = ExtResource("2_ci02v")
 waterScene = ExtResource("3_e74oc")
 clothingScene = ExtResource("4_rwxhn")
@@ -112,15 +112,15 @@ color = Color(0.821503, 0.635831, 0.485438, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -350.5
-offset_top = -113.5
-offset_right = 350.5
-offset_bottom = 113.5
+anchors_preset = -1
+anchor_left = 0.363
+anchor_top = 0.429
+anchor_right = 0.637
+anchor_bottom = 0.571
+offset_left = 0.219971
+offset_top = 0.0999756
+offset_right = -0.220093
+offset_bottom = -0.100037
 grow_horizontal = 2
 grow_vertical = 2
 text = "IN GAME"
@@ -128,32 +128,46 @@ label_settings = SubResource("LabelSettings_ukoup")
 horizontal_alignment = 1
 
 [node name="Book" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 63.0
-offset_top = 1371.0
-offset_right = 236.0
-offset_bottom = 1555.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.857
+anchor_right = 0.092
+anchor_bottom = 0.972
+offset_left = -1.0
+offset_top = -0.200073
+offset_right = 0.47998
+offset_bottom = -0.200073
 texture_normal = SubResource("GradientTexture2D_va1ph")
 
 [node name="next" type="TextureButton" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 2347.0
-offset_top = 1375.0
-offset_right = 2520.0
-offset_bottom = 1559.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.917
+anchor_top = 0.859
+anchor_right = 0.984
+anchor_bottom = 0.974
+offset_left = -0.52002
+offset_top = 0.599976
+offset_right = 0.959961
+offset_bottom = 0.599976
 texture_normal = SubResource("GradientTexture2D_vrol5")
 
 [node name="Phone2" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 1134.0
-offset_right = 237.0
-offset_bottom = 1318.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.709
+anchor_right = 0.093
+anchor_bottom = 0.824
+offset_top = -0.400024
+offset_right = -1.08
+offset_bottom = -0.400146
 texture_normal = SubResource("GradientTexture2D_rhas8")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="Book2" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_index = 5
 layout_mode = 1
@@ -165,7 +179,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.737255)
 
-[node name="Button" type="Button" parent="ColorRect2"]
+[node name="Button" type="Button" parent="Book2"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -178,32 +192,36 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_sukrb")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_138g7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8vodp")
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+[node name="ColorRect" type="ColorRect" parent="Book2"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1126.0
-offset_top = -683.0
-offset_right = 1126.0
-offset_bottom = 683.0
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.073
+anchor_right = 0.94
+anchor_bottom = 0.927
+offset_left = 0.399994
+offset_top = 0.199989
+offset_right = -0.400146
+offset_bottom = -0.200073
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.733005, 0.733005, 0.733005, 1)
 
-[node name="Label" type="Label" parent="ColorRect2"]
-layout_mode = 0
-offset_left = 1151.0
-offset_top = 136.0
-offset_right = 1515.0
-offset_bottom = 322.0
+[node name="Label" type="Label" parent="Book2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_top = 0.085
+anchor_right = 0.592
+anchor_bottom = 0.201
+offset_left = -1.0
+offset_right = -0.52002
+offset_bottom = 0.399994
 text = "LIVRE"
 label_settings = SubResource("LabelSettings_lduvr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Book2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.328
@@ -216,25 +234,25 @@ offset_right = 0.879883
 offset_bottom = -266.2
 theme_override_constants/separation = 50
 
-[node name="TitleLabel" type="Label" parent="ColorRect2/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="Book2/VBoxContainer"]
 layout_mode = 2
 text = "Votre score :"
 label_settings = SubResource("LabelSettings_n2cwg")
 horizontal_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="ColorRect2/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="Book2/VBoxContainer"]
 layout_mode = 2
 text = "Argent : x, Confort : x, Social : x"
 label_settings = SubResource("LabelSettings_vr4px")
 horizontal_alignment = 1
 
-[node name="RessourceTitleLabel" type="Label" parent="ColorRect2/VBoxContainer"]
+[node name="RessourceTitleLabel" type="Label" parent="Book2/VBoxContainer"]
 layout_mode = 2
 text = "Vos objets :"
 label_settings = SubResource("LabelSettings_kcchu")
 horizontal_alignment = 1
 
-[node name="ObjCont" type="VBoxContainer" parent="ColorRect2/VBoxContainer"]
+[node name="ObjCont" type="VBoxContainer" parent="Book2/VBoxContainer"]
 layout_mode = 2
 
 [node name="pphone" type="ColorRect" parent="."]
@@ -264,26 +282,31 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_8vodp")
 
 [node name="ColorRect" type="ColorRect" parent="pphone"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -404.0
-offset_top = -683.0
-offset_right = 404.0
-offset_bottom = 683.0
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.073
+anchor_right = 0.658
+anchor_bottom = 0.927
+offset_left = 0.47998
+offset_top = 0.199989
+offset_right = -0.480103
+offset_bottom = -0.200073
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 0.556863, 1, 1)
 
 [node name="Label" type="Label" parent="pphone"]
-layout_mode = 0
-offset_left = 887.0
-offset_top = 128.0
-offset_right = 1666.0
-offset_bottom = 314.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.346
+anchor_top = 0.08
+anchor_right = 0.651
+anchor_bottom = 0.196
+offset_left = 1.23999
+offset_top = -1.52588e-05
+offset_right = -0.560059
+offset_bottom = 0.399994
 text = "TELEPHONE"
 label_settings = SubResource("LabelSettings_lduvr")
 horizontal_alignment = 1
@@ -291,15 +314,14 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="pphone"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -363.0
-offset_top = -440.0
-offset_right = 377.0
-offset_bottom = 626.0
+anchors_preset = -1
+anchor_left = 0.358
+anchor_top = 0.225
+anchor_right = 0.647
+anchor_bottom = 0.891
+offset_left = 0.519958
+offset_right = 0.679932
+offset_bottom = 0.399902
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 170

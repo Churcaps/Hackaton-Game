@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://cnf412tk7ggkg"]
+[gd_resource type="Resource" script_class="ChoicesRessource" load_steps=2 format=3 uid="uid://b10ihwwbxk717"]
 
 [ext_resource type="Script" path="res://Scripts/Tool/ChoicesRessource.cs" id="1_m3682"]
 
@@ -9,5 +9,5 @@ text = "Financer l’hébergement de quelqu’un dans un hôtel"
 typesChanges = Array[int]([2])
 amoutChanges = PackedInt32Array(1)
 resultString = "Vous profitez de la rencontre avec les bénévoles de la croix rouge pour vous enquérir de la situation : plus de 15 milles déplacés dans la journée sur la région, dont plusieurs centaines sont censées être hébergées dans le gymnase..."
-resultType = null
+resultType = Array[int]([])
 resultAmount = PackedInt32Array()

@@ -22,7 +22,6 @@ font_size = 71
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw1l6"]
 
 [node name="Carte" type="Control" node_paths=PackedStringArray("mapButtons")]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,105 +56,157 @@ offset_bottom = -0.400024
 color = Color(0.14902, 0.101961, 1, 0.458824)
 
 [node name="TextureRect" type="TextureRect" parent="France"]
-layout_mode = 0
-offset_left = 753.0
-offset_top = 200.0
-offset_right = 812.0
-offset_bottom = 261.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = 0.157
+anchor_right = 0.498
+anchor_bottom = 0.205
+offset_left = -0.0599976
+offset_top = 0.452988
+offset_right = 0.259949
+offset_bottom = 0.444977
 texture = SubResource("GradientTexture1D_upjxu")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="France/TextureRect"]
-layout_mode = 0
-offset_left = -59.0
-offset_top = -111.0
-offset_right = 138.0
-offset_bottom = -14.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0
+anchor_top = -1.82
+anchor_right = 2.339
+anchor_bottom = -0.23
+offset_top = 0.0200043
+offset_right = -0.00100708
+offset_bottom = 0.0300007
 text = "PARIS"
 label_settings = SubResource("LabelSettings_17raa")
 
 [node name="TextureRect2" type="TextureRect" parent="France"]
-layout_mode = 0
-offset_left = 1486.0
-offset_top = 457.0
-offset_right = 1545.0
-offset_bottom = 518.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.912
+anchor_top = 0.36
+anchor_right = 0.948
+anchor_bottom = 0.408
+offset_left = -0.560059
+offset_top = -0.560028
+offset_right = -0.240112
+offset_bottom = -0.568054
 texture = SubResource("GradientTexture1D_upjxu")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="France/TextureRect2"]
-layout_mode = 0
-offset_left = -183.0
-offset_top = -120.0
-offset_right = 280.0
-offset_bottom = -23.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.102
+anchor_top = -1.967
+anchor_right = 4.746
+anchor_bottom = -0.377
+offset_left = 0.0180206
+offset_top = -0.0129929
+offset_right = -0.0140076
+offset_bottom = -0.00300026
 text = "STRASBOURG"
 label_settings = SubResource("LabelSettings_17raa")
 
 [node name="Button" type="Button" parent="France/TextureRect2"]
-layout_mode = 0
-offset_left = -246.0
-offset_top = -151.0
-offset_right = 322.0
-offset_bottom = 125.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.169
+anchor_top = -2.475
+anchor_right = 5.458
+anchor_bottom = 2.049
+offset_left = -0.0289917
+offset_top = -0.0249939
+offset_right = -0.0220032
+offset_bottom = 0.0110016
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0l0f0")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 
 [node name="TextureRect3" type="TextureRect" parent="France"]
-layout_mode = 0
-offset_left = 1107.0
-offset_top = 1174.0
-offset_right = 1166.0
-offset_bottom = 1235.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.679
+anchor_top = 0.924
+anchor_right = 0.715
+anchor_bottom = 0.972
+offset_left = 0.22998
+offset_top = -0.404053
+offset_right = 0.549927
+offset_bottom = -0.412109
 texture = SubResource("GradientTexture1D_upjxu")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="France/TextureRect3"]
-layout_mode = 0
-offset_left = -59.0
-offset_top = -111.0
-offset_right = 138.0
-offset_bottom = -14.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0
+anchor_top = -1.82
+anchor_right = 3.0
+anchor_bottom = -0.23
+offset_top = 0.0200043
+offset_right = -39.0
+offset_bottom = 0.0300007
 text = "FREJUS"
 label_settings = SubResource("LabelSettings_17raa")
 
 [node name="Button" type="Button" parent="France/TextureRect3"]
-layout_mode = 0
-offset_left = -246.0
-offset_top = -151.0
-offset_right = 322.0
-offset_bottom = 125.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.169
+anchor_top = -2.475
+anchor_right = 5.458
+anchor_bottom = 2.049
+offset_left = -0.0289917
+offset_top = -0.0249939
+offset_right = -0.0220032
+offset_bottom = 0.0110016
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0l0f0")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 
 [node name="TextureRect4" type="TextureRect" parent="France"]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 736.0
-offset_right = 119.0
-offset_bottom = 797.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037
+anchor_top = 0.579
+anchor_right = 0.073
+anchor_bottom = 0.627
+offset_left = -0.310001
+offset_top = 0.0909424
+offset_right = 0.00998688
+offset_bottom = 0.0829468
 texture = SubResource("GradientTexture1D_upjxu")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="France/TextureRect4"]
-layout_mode = 0
-offset_left = -197.0
-offset_top = -122.0
-offset_right = 261.0
-offset_bottom = -25.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.339
+anchor_top = -2.0
+anchor_right = 4.424
+anchor_bottom = -0.41
+offset_left = 0.00100708
+offset_right = -0.0160217
+offset_bottom = 0.0100021
 text = "LA ROCHELLE"
 label_settings = SubResource("LabelSettings_17raa")
 
 [node name="Button" type="Button" parent="France/TextureRect4"]
-layout_mode = 0
-offset_left = -246.0
-offset_top = -151.0
-offset_right = 322.0
-offset_bottom = 125.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.169
+anchor_top = -2.475
+anchor_right = 5.458
+anchor_bottom = 2.049
+offset_left = -0.0289917
+offset_top = -0.0249939
+offset_right = -0.0220032
+offset_bottom = 0.0110016
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0l0f0")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")

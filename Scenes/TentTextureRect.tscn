@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cvoito2rb60oi"]
 
-[ext_resource type="Texture2D" uid="uid://ds7xpwu7e56yg" path="res://Assets/Characters/T_Character_Noble.png" id="1_80r6i"]
+[ext_resource type="Texture2D" uid="uid://u7nnb1gtr7hl" path="res://Assets/Characters/T_Character_Noble.png" id="1_80r6i"]
 
 [node name="TextureRect" type="TextureRect"]
 custom_minimum_size = Vector2(200, 200)

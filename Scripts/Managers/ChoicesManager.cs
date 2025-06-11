@@ -208,6 +208,15 @@ namespace Com.IsartDigital.Hackaton
 				lTWeen.TweenProperty(GetParent<Node2D>().GetParent<Node2D>().GetChild<CanvasLayer>(1).GetChild<Control>(0).GetChild<Control>(0).GetChild<TextureButton>(3), "modulate", Colors.White, 0.5f);
 			}
 
+			int lLength = pChoice.resultType.Count;
+			StatType lStat;
+			for (int i = 0; i < lLength; i++)
+			{
+				lStat = pChoice.resultType[i];
+				if (lStat == StatType.Contact1 || lStat == StatType.Contact2) continue;
+				GameManager.UpdateStat(lStat, pChoice.resultAmount[i]);
+			}
+
 			GetManager<GameManager>().PrintAllStats();
         }
 
