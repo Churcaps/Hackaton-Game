@@ -66,7 +66,7 @@ namespace Com.IsartDigital.Hackaton
 		{
 			if (!allItems.ContainsKey(pStat))
 			{
-				allItems.Add(pStat, pAmout);
+				if (pAmout > 0) allItems.Add(pStat, pAmout);
 				return;
 			}
 			allItems[pStat] += pAmout;
@@ -79,7 +79,7 @@ namespace Com.IsartDigital.Hackaton
                     allItems[pStat] = Mathf.Clamp(allItems[pStat], minContactLebel, maxContactLevel);
 					break;
 				case StatType.Argent:
-                    allItems[pStat] = Mathf.Clamp(allItems[pStat], minMoneyLevel, maxContactLevel);
+                    allItems[pStat] = Mathf.Clamp(allItems[pStat], minMoneyLevel, maxMoneyLevel);
 					break;
 				default:
 					if (allItems[pStat] <= 0) allItems.Remove(pStat);
