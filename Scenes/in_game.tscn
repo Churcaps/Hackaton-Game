@@ -6,15 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://d1flswopg03m1" path="res://Scenes/ClothingTexturerect.tscn" id="4_rwxhn"]
 [ext_resource type="PackedScene" uid="uid://c5slrskpxn336" path="res://Scenes/HealthKitTexturerect.tscn" id="5_ainhx"]
 [ext_resource type="PackedScene" uid="uid://cvoito2rb60oi" path="res://Scenes/TentTextureRect.tscn" id="5_u5f2a"]
-[ext_resource type="Texture2D" uid="uid://y7lexwk27m14" path="res://Assets/Fréjus.jpg" id="6_5lkme"]
-[ext_resource type="Texture2D" uid="uid://ci73gofgyp77w" path="res://Assets/bg/BookClose.png" id="6_d7cgj"]
-[ext_resource type="Texture2D" uid="uid://bncagxaewxoo6" path="res://Assets/Textures/Icons/TelBouton.png" id="6_hoafa"]
-[ext_resource type="Texture2D" uid="uid://bhbsjfidtdu1s" path="res://Assets/images.png" id="6_ubu1g"]
-[ext_resource type="Texture2D" uid="uid://dfifqdviodw68" path="res://Assets/bg/T_UI_Book.png" id="6_unlon"]
-[ext_resource type="Texture2D" uid="uid://c1ldpljeskt7y" path="res://Assets/Textures/Icons/ButtonContinue.png" id="7_axkkt"]
-[ext_resource type="Texture2D" uid="uid://dlssw7cqn4ikt" path="res://Assets/la rochelle.jpg" id="8_g70jw"]
-[ext_resource type="Texture2D" uid="uid://bucaw7ir1p7j2" path="res://Assets/T_UI_Bahaha.png" id="13_47v21"]
-[ext_resource type="Texture2D" uid="uid://dgqjbded2hmpy" path="res://Assets/6522516.png" id="14_07jvn"]
+[ext_resource type="Texture2D" uid="uid://dcgo77ia6o7fu" path="res://Assets/Fréjus.jpg" id="6_5lkme"]
+[ext_resource type="Texture2D" uid="uid://c7ygwa6an7adh" path="res://Assets/bg/BookClose.png" id="6_d7cgj"]
+[ext_resource type="Texture2D" uid="uid://b7uhxfm84x0gq" path="res://Assets/Textures/Icons/TelBouton.png" id="6_hoafa"]
+[ext_resource type="Texture2D" uid="uid://2231qx8vs643" path="res://Assets/images.png" id="6_ubu1g"]
+[ext_resource type="Texture2D" uid="uid://bxrqtv6kbscvr" path="res://Assets/bg/T_UI_Book.png" id="6_unlon"]
+[ext_resource type="Texture2D" uid="uid://sxshucoy858i" path="res://Assets/Textures/Icons/ButtonContinue.png" id="7_axkkt"]
+[ext_resource type="Texture2D" uid="uid://dfqun4ax8cuah" path="res://Assets/la rochelle.jpg" id="8_g70jw"]
+[ext_resource type="Texture2D" uid="uid://drb03h5d1am84" path="res://Assets/6522516.png" id="14_07jvn"]
+[ext_resource type="Texture2D" uid="uid://cwfsycjgi5xxg" path="res://Assets/telephone.png" id="14_tjs7a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ukoup"]
 font_size = 166
@@ -37,8 +37,8 @@ colors = PackedColorArray(0.266667, 0.34902, 0.411765, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_q6d35"]
 gradient = SubResource("Gradient_7hjub")
-width = 599
-height = 124
+width = 714
+height = 139
 fill_from = Vector2(1, 1)
 fill_to = Vector2(0.257143, 0.826108)
 
@@ -51,8 +51,8 @@ shadow_color = Color(0, 0, 0, 0.8)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_guii4"]
 gradient = SubResource("Gradient_7hjub")
-width = 599
-height = 129
+width = 709
+height = 139
 fill_from = Vector2(0, 0.566567)
 
 [node name="Control" type="Control" node_paths=PackedStringArray("book", "phone", "next", "livreImage", "phoneImage", "cityString", "bookRessourcesCont", "bookObjPos", "ArgentCont", "ComfortCont", "SocialCont", "ARgentMark", "comfortMark", "SocialMark", "backgroundWorld")]
@@ -724,7 +724,7 @@ offset_bottom = -0.600098
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("13_47v21")
+texture = ExtResource("14_tjs7a")
 
 [node name="Label" type="Label" parent="pphone"]
 visible = false
@@ -746,13 +746,13 @@ vertical_alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="pphone"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.382
-anchor_top = 0.142
-anchor_right = 0.624
+anchor_left = 0.362
+anchor_top = 0.121
+anchor_right = 0.644
 anchor_bottom = 0.891
-offset_left = 1.07996
-offset_top = -0.200012
-offset_right = 0.559937
+offset_left = 1.27997
+offset_top = 0.399994
+offset_right = 0.359863
 offset_bottom = 0.399902
 grow_horizontal = 2
 grow_vertical = 2
@@ -796,7 +796,7 @@ ignore_texture_size = true
 [node name="Label2" type="Label" parent="pphone/VBoxContainer/TextureButton2"]
 layout_mode = 0
 offset_top = 4.0
-offset_right = 571.0
+offset_right = 683.0
 offset_bottom = 122.0
 text = "GENEVIève"
 label_settings = SubResource("LabelSettings_c3cge")
