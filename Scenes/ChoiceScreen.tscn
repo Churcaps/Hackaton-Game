@@ -263,7 +263,6 @@ label_settings = SubResource("LabelSettings_ffn3v")
 autowrap_mode = 2
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.11

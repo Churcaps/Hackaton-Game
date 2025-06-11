@@ -1,5 +1,6 @@
 using Com.IsartDigital.Hackaton;
 using Godot;
+using Godot.Collections;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design.Serialization;
@@ -21,7 +22,11 @@ public partial class InGame : Control
 	[Export] private Control ArgentCont, ComfortCont, SocialCont;
 	[Export] private ColorRect ARgentMark, comfortMark, SocialMark;
 
+	[Export] private TextureRect backgroundWorld;
+
 	private ChoicesManager choicesManager;
+	[Export] private Array<Texture2D> cityTexture = new Array<Texture2D>();
+
 
 	private int maxItemPerRow = 3;
 
@@ -40,7 +45,22 @@ public partial class InGame : Control
 		lTween.TweenInterval(0.33f);
 		lTween.Finished += ShowChoices;
 
-		cityString.Text = Manager.GetManager<GameManager>().cityName;
+		cityString.Text = GameManager.cityName;
+
+		switch (GameManager.cityName)
+		{
+			case "Strasbourg":
+				backgroundWorld.Texture = cityTexture[0];
+				break;
+
+			case "Frejus":
+				backgroundWorld.Texture = cityTexture[1];
+				break;
+
+			case "La Rochelle":
+				backgroundWorld.Texture = cityTexture[2];
+				break;
+		}
 	}
 
 	private void NextPhase()

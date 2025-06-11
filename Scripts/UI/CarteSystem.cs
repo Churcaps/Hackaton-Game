@@ -7,10 +7,11 @@ public partial class CarteSystem : Control
 {
 	[Export] private Array<Button> mapButtons = new Array<Button>();
 	[Export] private Array<string> stringNames = new Array<string>();
+	
 	[Export] private PackedScene inGameScene;
 	[Export] private Label textInfo, textStats;
 	[Export] private Label textStrasbourg, textRochelle, textFrejus;
-	[Export] private ColorRect colorStras, colorRoche, colorFrej;
+	[Export] private TextureRect colorStras, colorRoche, colorFrej;
 
 	private Cities currentCitySelected = Cities.NULL;
 	private Label currentLabelToShow;
@@ -25,8 +26,8 @@ public partial class CarteSystem : Control
         {Cities.LAROCHELLE, new Dictionary<StatType, int>() { {StatType.Argent, 0 }, {StatType.Social, -1 }, {StatType.Confort, 1 } } }
     };
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
 	{
 		Tween lTween = GetTree().CreateTween().SetTrans(Tween.TransitionType.Quart).SetEase(Tween.EaseType.Out);
 		lTween.TweenProperty(this, "modulate", Colors.White, 0.8f);
@@ -38,6 +39,9 @@ public partial class CarteSystem : Control
 
 			mapButtons[i].Pressed += () => SelectMap(index);
 		}
+
+		
+
 	}
 
 	private void SelectMap(int pIndex)
@@ -80,7 +84,7 @@ public partial class CarteSystem : Control
 	private void HideText(Cities pCity)
 	{
         Label lLabel = null;
-		ColorRect lColor = null;
+		TextureRect lColor = null;
         switch (pCity)
         {
             case Cities.STRASBOURG:
@@ -108,7 +112,7 @@ public partial class CarteSystem : Control
 	private void ShowText(Cities pCity)
 	{
 		Label lLabel = null;
-		ColorRect lColor = null;
+		TextureRect lColor = null;
 		switch (pCity)
 		{
 			case Cities.STRASBOURG:
@@ -145,7 +149,7 @@ public partial class CarteSystem : Control
         lTween.TweenProperty(this, "modulate", Colors.Black, 0.8f);
         lTween.Finished += () =>
         {
-            Manager.GetManager<GameManager>().cityName = stringNames[pIndex];
+            GameManager.cityName = stringNames[pIndex];
             GetTree().ChangeSceneToPacked(inGameScene);
         };
 		Dictionary<StatType, int> lStats = citiesStats[currentCitySelected];

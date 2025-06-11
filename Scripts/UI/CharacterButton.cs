@@ -59,20 +59,22 @@ namespace Com.IsartDigital.ProjectName
 
 						GetParent<CharacterSelection>().canShowText = true;
 						GetParent<CharacterSelection>().characterInfo.Visible = true;
+						
 						GetParent<CharacterSelection>().statsHolder.Visible = true;
+						lTween.TweenProperty(GetParent<CharacterSelection>().statsHolder, "modulate", Colors.White, 0.5f);
 
 						switch (i)
-						{
-							case 0:
-								GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Rich;
-								break;
-							case 1:
-								GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.OldLady;
-								break;
-							case 2:
-								GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Student;
-								break;
-						}
+					{
+						case 0:
+							GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Rich;
+							break;
+						case 1:
+							GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.OldLady;
+							break;
+						case 2:
+							GetParent<CharacterSelection>().characterSelected = Hackaton.CharactersEnum.Student;
+							break;
+					}
 						GetParent<CharacterSelection>().LoadStats();
 						continue;
 					}

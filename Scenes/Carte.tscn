@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://umjofpgqnlu8"]
+[gd_scene load_steps=19 format=3 uid="uid://umjofpgqnlu8"]
 
 [ext_resource type="Script" path="res://Scripts/UI/CarteSystem.cs" id="1_asinq"]
 [ext_resource type="PackedScene" uid="uid://b6g43eep4scsy" path="res://Scenes/Main.tscn" id="2_rw2ev"]
-[ext_resource type="Texture2D" uid="uid://dx2d01q2k4puc" path="res://Assets/Carte/T_UI_Carte_Global.png" id="3_38uod"]
+[ext_resource type="Texture2D" uid="uid://cpaocjdtkwcuu" path="res://Assets/Carte/T_UI_Carte_Global.png" id="3_38uod"]
 [ext_resource type="Script" path="res://Scripts/Managers/GameManager.cs" id="3_pnu1d"]
-[ext_resource type="Texture2D" uid="uid://bimoaw2chydx8" path="res://Assets/Carte/T_UI_Carte_Ping.png" id="3_pqa2w"]
+[ext_resource type="Texture2D" uid="uid://pder6d6xikn2" path="res://Assets/Carte/T_UI_Carte_Ping.png" id="3_pqa2w"]
 [ext_resource type="Script" path="res://Scripts/Managers/ChoicesManager.cs" id="4_6d1eg"]
-[ext_resource type="Texture2D" uid="uid://cf0rtqqfnq34s" path="res://Assets/Carte/T_UI_Carte_LArochelle.png" id="5_eivf6"]
-[ext_resource type="Texture2D" uid="uid://bq4h0i8r08u7l" path="res://Assets/Carte/T_UI_Carte_Frejus.png" id="6_qa0kp"]
-[ext_resource type="Texture2D" uid="uid://bm72kf85kadba" path="res://Assets/Carte/T_UI_Carte_Strasbourg.png" id="7_0eo6a"]
+[ext_resource type="Texture2D" uid="uid://me5oahw0p6gi" path="res://Assets/Carte/T_UI_Carte_LArochelle.png" id="5_eivf6"]
+[ext_resource type="Texture2D" uid="uid://72uxxfuyghgd" path="res://Assets/Carte/T_UI_Carte_Frejus.png" id="6_qa0kp"]
+[ext_resource type="Texture2D" uid="uid://1uwfe6u7bqdn" path="res://Assets/Carte/T_UI_Carte_Strasbourg.png" id="7_0eo6a"]
+[ext_resource type="Texture2D" uid="uid://boyvvf6w5di36" path="res://Assets/T_UI_Frame.png" id="8_b6mm7"]
 
 [sub_resource type="Gradient" id="Gradient_iypfo"]
 
@@ -27,9 +28,9 @@ font_size = 71
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw1l6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r00ax"]
-font_size = 32
+font_size = 30
 outline_size = 20
-outline_color = Color(0.396078, 0.34902, 0.431373, 1)
+outline_color = Color(0.772549, 0.490196, 0.403922, 1)
 
 [node name="Carte" type="Control" node_paths=PackedStringArray("mapButtons", "textStrasbourg", "textRochelle", "textFrejus", "colorStras", "colorRoche", "colorFrej")]
 modulate = Color(0, 0, 0, 1)
@@ -41,7 +42,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_asinq")
 mapButtons = [NodePath("France/Strasbourg/ButtonStras"), NodePath("France/Frejus/ButtonFrej"), NodePath("France/Rochelle/ButtonRoch")]
-stringNames = ["STRASBOURG", "FREJUS", "LA ROCHELLE"]
+stringNames = ["Strasbourg", "Frejus", "La Rochelle"]
 inGameScene = ExtResource("2_rw2ev")
 textStrasbourg = NodePath("France/Strasbourg/ColorRect/Text")
 textRochelle = NodePath("France/Rochelle/ColorRect/Text")
@@ -190,33 +191,37 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 
-[node name="ColorRect" type="ColorRect" parent="France/Strasbourg"]
+[node name="ColorRect" type="TextureRect" parent="France/Strasbourg"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.546
-anchor_top = 1.136
-anchor_right = 1.5
-anchor_bottom = 4.062
-offset_left = 0.076004
-offset_top = -0.0160065
-offset_right = -3.05176e-05
-offset_bottom = -0.0220337
+anchor_left = -0.65
+anchor_top = 0.617
+anchor_right = 1.706
+anchor_bottom = 5.086
+offset_left = -0.0999908
+offset_top = 0.022995
+offset_right = -0.0360107
+offset_bottom = 0.0339661
 pivot_offset = Vector2(308, 99)
-color = Color(0.933333, 0.980392, 1, 0.85098)
+texture = ExtResource("8_b6mm7")
 
 [node name="Text" type="Label" parent="France/Strasbourg/ColorRect"]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.122
+anchor_right = 0.878
 anchor_bottom = 1.0
+offset_left = 0.0379944
+offset_right = -0.0380249
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(314, 89)
 text = "Votre groupe d’amis du lycée s’est retrouvé à Strasbourg, l’un deux accepte de vous héberger, mais vous allez vivre à deux dans un petit appartement…"
 label_settings = SubResource("LabelSettings_r00ax")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Frejus" type="TextureRect" parent="France"]
@@ -261,20 +266,20 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 
-[node name="ColorRect" type="ColorRect" parent="France/Frejus"]
+[node name="ColorRect" type="TextureRect" parent="France/Frejus"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.756
-anchor_top = 1.266
-anchor_right = 1.78
-anchor_bottom = 5.051
-offset_left = 1.52588e-05
-offset_top = -0.0139847
-offset_right = -3.05176e-05
-offset_bottom = -0.0290222
+anchor_left = -0.968
+anchor_top = 0.684
+anchor_right = 1.916
+anchor_bottom = 5.266
+offset_left = 0.000427246
+offset_top = -0.0359077
+offset_right = 3.05176e-05
+offset_bottom = -0.0144958
 pivot_offset = Vector2(308, 99)
-color = Color(0.933333, 0.980392, 1, 0.85098)
+texture = ExtResource("8_b6mm7")
 
 [node name="Text" type="Label" parent="France/Frejus/ColorRect"]
 visible = false
@@ -282,6 +287,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 65.0
+offset_right = -65.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(297, 89)
@@ -289,6 +296,7 @@ text = "Chez votre mère, vous ne vous entendiez pas très bien avant votre dém
 "
 label_settings = SubResource("LabelSettings_r00ax")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Rochelle" type="TextureRect" parent="France"]
@@ -334,27 +342,31 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_51ppa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_com4g")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xw1l6")
 
-[node name="ColorRect" type="ColorRect" parent="France/Rochelle"]
+[node name="ColorRect" type="TextureRect" parent="France/Rochelle"]
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 2.322
-anchor_top = -2.066
-anchor_right = 13.017
-anchor_bottom = 1.0
-offset_left = 0.00209045
-offset_top = 9.02606
-offset_right = -6.00275
-offset_bottom = 1.00006
+anchor_left = 1.797
+anchor_top = -2.705
+anchor_right = 13.61
+anchor_bottom = 3.033
+offset_left = -0.0229111
+offset_top = 0.00506592
+offset_right = 0.0102539
+offset_bottom = -0.0129547
 pivot_offset = Vector2(308, 99)
-color = Color(0.933333, 0.980392, 1, 0.85098)
+texture = ExtResource("8_b6mm7")
+expand_mode = 1
 
 [node name="Text" type="Label" parent="France/Rochelle/ColorRect"]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.092
+anchor_right = 0.908
 anchor_bottom = 1.0
+offset_left = -0.124008
+offset_right = 0.123962
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(307, 98)
@@ -362,6 +374,7 @@ text = "Votre grand-mère possède une maison à La Rochelle, mais vous n’y co
 "
 label_settings = SubResource("LabelSettings_r00ax")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Managers" type="Node2D" parent="."]

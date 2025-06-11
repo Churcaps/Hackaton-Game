@@ -126,7 +126,9 @@ public partial class CharacterSelection : Control
 
 			canShowText = false;
 			characterInfo.Visible = false;
-			statsHolder.Hide();
+			
+			lTween2.TweenProperty(statsHolder, "modulate", Colors.Transparent, 0.5f);
+			lTween2.Finished += () => statsHolder.Hide();
 			currentCharacterCount = 0;
 
 			for (int i = 0; i < charactersButton.Count; i++)
