@@ -19,7 +19,7 @@ namespace Com.IsartDigital.Hackaton
 		private const string EVENT_2_PATH = "res://Assets/Ressource/Problemes/Event2.tres";
 		private const string EVENT_3_PATH = "res://Assets/Ressource/Problemes/Event3.tres";
 		private static ProblemRessource probRes = GD.Load<ProblemRessource>(EVENT_1_PATH);
-		public ColorRect resultColorRect2;
+		public TextureRect resultColorRect2;
 		public ColorRect phoneImage;
 
 		public static Texture2D backgroundCharacterSelected;

@@ -19,7 +19,7 @@ namespace Com.IsartDigital.Hackaton
 		[Export] public Label[] choiceTexts;
 		[Export] public Label[] choiceCosts;
 		[Export] public Label[] choiceNames;
-		[Export] public ColorRect resultColorRect;
+		[Export] public TextureRect resultColorRect;
 
         [Export] private VBoxContainer[] choicesContainers;
 
