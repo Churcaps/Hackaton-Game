@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1flswopg03m1"]
 
-[ext_resource type="Texture2D" uid="uid://dmqdkw68rgkrp" path="res://Assets/Textures/Icons/Clothing.png" id="1_cvh4l"]
+[ext_resource type="Texture2D" uid="uid://cxy6yqfjqlp4g" path="res://Assets/Textures/Icons/Clothing.png" id="1_cvh4l"]
 
 [node name="TextureRect" type="TextureRect"]
 custom_minimum_size = Vector2(125, 150)
